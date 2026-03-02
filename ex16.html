@@ -1,0 +1,33 @@
+<!--  css Properties
+border ==> prop used to draw a line around the html tags
+	Syn:		border:thick  style  color;  <== 4sides
+					border-left:thick  style  color;   <== only left side
+					border-right:thick  style  color;   <== only right side
+					border-top:thick  style  color;   <== only top of tag
+					border-bottom:thick  style  color;   <== only bottom of tag
+
+border-radius ==> prop used to draw curved/rounded edges
+	Syn:	border-radius:Npx;
+-->
+<html lang="en">
+	<head>
+		<title>Ex16</title>
+		<link rel="icon" href="logo2.png"/>
+	</head>
+	<body>		
+		<h3>demo on borders</h3>
+		<p style="border-bottom:5px solid; border-top:5px solid;">
+		EditPlus is not free software. You may use this software for evaluation purposes without charge for a period of 30 days. If you use this software after the 30 day evaluation period, you must buy the license.</p>
+		<h1 style="border:4px ridge #ff0033;">Evaluation and Purchase</h1>
+		<!-- solid, double, inset, outset, dashed, dotted, ridge, groove, none -->
+		<img src="images/animal.png" width="400px" height="300px" style="border:10px inset blue; "/>
+		<p style="border-radius:10px; background-color:cyan;">
+		EditPlus is not free software. You may use this software for evaluation purposes without charge for a period of 30 days. If you use this software after the 30 day evaluation period, you must buy the license.</p>
+		
+		<img src="images/walk.gif" width="200px" height="100px" style="border-radius:100px;"/>
+		<img src="images/walk.gif" width="200px" height="100px" style="border-radius:50px  150px;"/>
+
+		<img src="images/walk.gif" width="200px" height="100px" style="border-radius:50%;"/>
+
+	</body>
+</html>
