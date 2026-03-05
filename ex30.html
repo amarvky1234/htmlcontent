@@ -1,0 +1,51 @@
+<!--display property-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EX30</title>
+        <link rel="icon" href="images/Vanamo_Logo.png">
+        <style>
+                a{
+                    color: white;
+                    text-decoration: none; /* or  underline   or   overline   or  line-through*/
+                }
+                a:hover{
+                    background: red;
+                    color: yellow;
+                    text-decoration: underline;
+                }
+        </style>
+</head>
+<body>
+        <!--block => inline-->
+        <img src="images/art1.jpg"  width="70px" height="70px"/>
+        <h1 style="display: inline;">ART PAINTING</h1>
+        <img src="images/animal.jpg" width="75px" height="75px"/>
+        <h1 style="display: inline; color: burlywood;">Kamodo Dargon</h1>
+        <br><br><br>
+        <!--inline => block-->
+        <span style="display: block; background: cyan;">Username</span>
+        <span style="display: block; background: hotpink;">Password</span>
+        <br><br>
+
+        <input type="radio" name="r" onchange="div.style.display='block'"/> <span>Show</span> &nbsp;&nbsp;
+        <input type="radio" name="r" onchange="div.style.display='none'"/> <span>Hide</span>
+        <br>
+        <div id="div1">
+            <h2>Samsung</h2>
+            <h2>LG</h2>
+            <h2>Sony</h2>
+            <h2>Onida</h2>
+        </div>
+
+        <div style="background: blue; text-align: center;">
+            <a href="" style="display:inline-block; width:100px;">Home</a>
+			<a href="" style="display:inline-block; width:100px;">Service</a>
+			<a href="" style="display:inline-block; width:100px;">Contact Us</a>
+			<a href="" style="display:inline-block; width:100px;">Enroll</a>
+			<a href="" style="display:inline-block; width:100px;">New Batches</a>
+        </div>
+</body>
+</html>
