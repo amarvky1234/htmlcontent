@@ -1,0 +1,57 @@
+<!--example on table-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX40</title>
+    <link rel="icon" href="images/Vanamo_Logo.png"/>
+    <style>
+        thead{
+            color: red;
+        }
+        tbody{
+            color: blue;
+        }
+        tfoot{
+            text-align: right;
+            color: brown;
+        }
+        caption{
+            color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+        <table border style="margin: auto; background: cyan;">
+            <caption><b>Marks Report</b></caption>
+            <thead>
+                <tr>
+                    <th>SNO</th> <th>Subject</th> <th>Internal<br>Marks</th> <th>External<br>Marks</th> <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td> <td>Math</td> <td>25</td> <td>55</td> <td>80</td>
+                </tr>
+                <tr>
+                    <td>2</td> <td>Science</td> <td>22</td> <td>54</td> <td>76</td>
+                </tr>
+                <tr>
+                    <td>3</td> <td>Social Studies</td> <td>20</td> <td>45</td> <td>65</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">Total Marks : 221</td>
+                </tr>
+                <tr>
+                    <td colspan="5">Average Marks : 73</td>
+                </tr>
+                <tr>
+                    <td colspan="5">Grade : A</td>
+                </tr>
+            </tfoot>
+        </table>
+</body>
+</html>
