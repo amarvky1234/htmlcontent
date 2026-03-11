@@ -1,0 +1,34 @@
+<!--input tag-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX51</title>
+    <link rel="icon" href="images/Vanamo_Logo.png">
+</head>
+<body>
+        <h2>demo on email, url, date & time fields</h2>
+        <form action="test" method="get" style="background: cyan;">
+            <label>Enter Email</label>
+            <input type="email" name="mid" id="mid">
+            <br><br>
+            <label>Enter Url</label>
+            <input type="url" name="url" id="url">
+            <br><br>
+            <label>Enter Date</label>
+            <input type="date" name="d" id="d">
+            <br><br>
+            <label>Date of Birth</label>
+            <input type="date" name="dob" id="dob" min="1990-01-01" max="2025-12-12">
+            <br><br>
+            <label>Enter Time</label>
+            <input type="time" name="t" id="t">
+            <br><br>
+            <label>Enter Date&Time</label>
+            <input type="datetime-local" name="dt" id="dt">
+            <br><br>
+            <input type="submit" name="sb">
+        </form>
+</body>
+</html>
