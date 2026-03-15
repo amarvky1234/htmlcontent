@@ -1,0 +1,30 @@
+/*external styles for Grid Application*/
+body{
+    background: #3a3a3a;
+}
+#grid-div{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 70%;
+    margin: auto;
+    grid-gap: 10px;
+}
+#grid-div img{
+    width: 200px;
+    height: 200px;
+    border: solid;
+}
+#grid-div a{
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    display: flex;
+}
+#grid-div a:hover{
+    color: cyan;
+    text-decoration: underline;
+}
+.slogan{
+    text-align: center;
+    color: white;
+}
