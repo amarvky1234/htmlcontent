@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Details</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Working all form comps in form page</h1>
+    <form action="formurl" method="get">
+        <table align="center" bgcolor="cyan" width="40%">
+            <tr>
+                <td>Person Name : </td>
+                <td><input type="text" name="pname"></td>
+            </tr>
+            <tr>
+                <td>Person Age : </td>
+                <td><input type="text" name="page"></td>
+            </tr>
+            <tr>
+                <td>Address : </td>
+                <td><textarea name="paddrs" rows="3" cols="14"></textarea></td>
+            </tr>
+            <tr>
+                <td>Gender : </td>
+                <td>
+                    <input type="radio" name="gender" value="M">Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender" value="F">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Martial Status : </td>
+                <td><input type="checkbox" name="ms" value="unmarried">UnMarried</td>
+            </tr>
+            <tr>
+                <td>Qualification : </td>
+                <td>
+                    <select name="qlfy">
+                        <option value="">Select a value...</option>
+                        <option value="engineer">B.E/B.Tech</option>
+                        <option value="medico">MBBS/MD</option>
+                        <option value="arts">BA</option>
+                        <option value="science">B.sc/M.sc</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Courses : </td>
+                <td>
+                    <select name="course" multiple>
+                        <option value="java" selected>Java Package</option>
+                        <option value=".net">Net Package</option>
+                        <option value="php">PHP Package</option>
+                        <option value="UI">UI Stack</option>
+                        <option value="spring" selected>Spring Stack</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Person Email : </td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td>Person DOB : </td>
+                <td><input type="date" name="dob"></td>
+            </tr>
+            <tr>
+                <td>Person Time of Birth : </td>
+                <td><input type="time" name="tob"></td>
+            </tr>
+            <tr>
+                <td>Week of birth : </td>
+                <td><input type="week" name="wob"></td>
+            </tr>
+            <tr>
+                <td>FB Url : </td>
+                <td><input type="url" name="fburl"></td>
+            </tr>
+            <tr>
+                <td>Mobile Number : </td>
+                <td><input type="tel" name="mobileNo" maxlength="10"></td>
+            </tr>
+            <tr>
+                <td>Favourite Number : </td>
+                <td><input type="number" name="fvno"></td>
+            </tr>
+            <tr>
+                <td>Favourite Color : </td>
+                <td><input type="color" name="fvcolor"></td>
+            </tr>
+            <tr>
+                <td>Salary : </td>
+                <td><input type="range" name="sal" min="25000" max="150000"></td>
+            </tr>
+            <tr>
+                <td>Search Something : </td>
+                <td><input type="search" name="itemSearch"></td>
+            </tr>
+            <tr>
+                <th>
+                    <input type="submit" value="Process Request">
+                </th>
+                <th>
+                    <input type="reset" value="cancel">
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
