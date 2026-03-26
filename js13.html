@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS13</title>
+    <link rel="icon" href="images/Vanamo_Logo.png">
+</head>
+<body>
+        <h3>demo on operator</h3>
+        <script>
+                let x = 25, y=8;
+                //Arthmetic
+                document.write(x+y, "<br>")
+                document.write(x*2, "<br>")
+                document.write(x**2, "<br> <br>")
+
+                //Relational
+                document.write(x>=0, "<br>")
+                let z = "8";
+                document.write(y==z, "<br>")
+                document.write(y===z, "<br>")
+                document.write(y!=z, "<br>")
+                document.write(y!==z, "<br><br>")
+
+                //Logical
+                document.write(y>=1 && y<=10, "<br>")
+                document.write(y==1 || y==8, "<br><br>")
+
+                //BitWise
+                z=100>>2;
+                document.write(z, "<br>")
+                z=50<<5;
+                document.write(z, "<br><br>")
+
+                //Assignment
+                x += 40;
+                y *= 20;
+                document.write(x, "<br>", y, "<br><br>")
+
+                //Concate
+                document.write("Rama"+"rao"+"<br>")
+                document.write(100+"Apples <br>")
+                document.write(20+true, "<br><br>")
+
+                //Unary
+                x++;
+                document.write(x, "<br>")
+                ++x;
+                document.write(x, "<br>")
+                y--;
+                document.write(y, "<br>")
+                --y;
+                document.write(y, "<br><br>")
+
+                //Ternary
+                document.write(y%2 == 0 ? "Even Number" : "Odd Number")
+                document.write("<br>")
+                document.write(x%2 == 0 ? "Even Number" : "Odd Number")
+        </script>
+</body>
+</html>
