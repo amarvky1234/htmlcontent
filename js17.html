@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS17</title>
+</head>
+<body>
+        <h3>finding sum of two numbers</h3>
+        <label>enter first number</label><br>
+        <input type="text" id="firstnum"><br>
+        <label>enter second number</label><br>
+        <input type="text" id="secnum"><br>
+        <button onclick="addition()">Addition</button><br>
+
+        <output id="result"></output>
+        <script>
+                function addition()
+                {
+                    let x, y, res;
+                    x=firstnum.value;
+                    y=secnum.value;
+                    res = parseFloat(x) + parseFloat(y);
+                    //document.write(res)
+                    //alert("Sum is "+res);
+		    //console.log("Sum is "+res);
+		    result.value="Sum is "+res;
+                }
+        </script>
+</body>
+</html>
