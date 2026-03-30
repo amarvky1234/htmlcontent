@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+        color: red;
+    }
+    table {
+        background: cyan;
+    }
+</style>
+
+<body>
+    <h1>Customer Registration Form Using All Components</h1>
+    <form action="customerformurl" method="get">
+        <table align="center">
+            <tr>
+                <td>Customer Name </td>
+                <td><input type="text" id="cnm"></td>
+            </tr>
+            <tr>
+                <td>Age </td>
+                <td><input type="text" id="age"></td>
+            </tr>
+            <tr>
+                <td>Address </td>
+                <td><textarea name="addrs" rows="6" cols="24"></textarea></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" id="gender" value="m">Male</td>
+                <td><input type="radio" id="gender" value="f">Female</td>
+            </tr>
+            <tr>
+                <td>Maritial Status</td>
+                <td><input type="checkbox" id="ms">Married</td>
+                <td><input type="checkbox" id="ms">UnMarried</td>
+            </tr>
+            <tr>
+                <td>Email<span>*</span></td>
+                <td><input type="email" id="emid"></td>
+            </tr>
+            <tr>
+                <td>Mobile Number</td>
+                <td><input type="tel" id="mbno" maxlength="10"></td>
+            </tr>
+            <tr>
+                <td>Date Of Purchase</td>
+                <td><input type="date" id="dop"></td>
+            </tr>
+            <tr>
+                <td>Time Of Purchase</td>
+                <td><input type="time" id="top"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
