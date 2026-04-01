@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS31</title>
+    <link rel="icon" href="images/Vanamo_Logo.png">
+</head>
+<body>
+        <h2>demo on html with loops</h2>
+        <script>
+                for(let i=0; i<=9; i++) {
+				//document.write("<h3>Hello</h3>");
+				document.write("<button>"+i+"</button>");
+			}
+        </script>
+        <br><br>
+        <label>Date of Birth</label><br>
+        <!--date creation-->
+        <select name="day" id="day" style="width: 100px;">
+                <script>
+                        for(let d=1; d<=31; d++){
+                            document.write("<option>"+d+"</option>")
+                        }
+                </script>
+        </select>
+        <!--month creation-->
+        <select name="month" id="month" style="width: 100px;">
+                <script>
+                        const months=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+                        for(let m=0; m<=11; m++){
+                            document.write("<option>"+m+"</option>")
+                        }
+                </script>
+        </select>
+        <!--year creation-->
+        <select name="year" id="year" style="width: 100px;">
+                <script>
+                        for(let y=2026; y>=1910; y--){
+                            document.write("<option>"+y+"</option>")
+                        }
+                </script>
+        </select>
+</body>
+</html>
