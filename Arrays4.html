@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays4</title>
+    <link rel="icon" href="images/Instagram-Logo.jpg">
+</head>
+<body>
+        <h3>finding max and min elements</h3>
+        <script>
+                    const eles=[];
+                    let count =+ prompt("enter no of values")
+                    for(let i=0; i<count; i++){
+                        eles[i]=+ prompt(`enter eles(${i})`)
+                    }
+                    
+                    let max=eles[0];
+                    let min=eles[0];
+                    for(let i=1; i<eles.length; i++){
+                        if(eles[i]>max){
+                            max=eles[i];
+                        }
+                        if(eles[i]<min){
+                            min=eles[i];
+                        }
+                    }
+                    document.write(`Elements	:${eles}<br>`);	
+ 			        document.write(`Max Ele		:${max}<br>`);	
+ 			        document.write(`Min Ele		:${min}<br>`);
+        </script>
+</body>
+</html>

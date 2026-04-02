@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays1</title>
+    <link rel="icon" href="images/Instagram-Logo.jpg">
+</head>
+<body>
+        <h3>demo on arrays</h3>
+        <script>
+                let a = [];
+                document.write(`size => ${a.length}<br>`)
+                document.write(`Array => ${a}<br>`)
+                a[0] = 10;
+                a[1] = 20;
+                a[2] = 30;
+                document.write(`size => ${a.length}<br>`)
+                document.write(`Array => ${a}<br>`)
+
+                let runs=[4,3,10,9,12,8];
+                let total = 0;
+                //document.write(`${runs}<br>`)
+                for(let i=0; i<runs.length; i++){
+                    document.write(`Over${i+1} : ${runs[i]}<br>`)
+                    total = total+runs[i]
+                }
+                document.write(`Total runs : ${total}<br>`)
+                document.write(`Overs      :  ${runs.length}<br>`)
+                document.write(`RR  :  ${total/runs.length}<br>`)
+        </script>
+</body>
+</html>
