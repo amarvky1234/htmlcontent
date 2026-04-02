@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays3</title>
+    <link rel="icon" href="images/Instagram-Logo.jpg">
+</head>
+<body>
+        <h3>demo on arrays</h3>
+        <script>
+                let a = [];
+                a[0]=11;
+                a[1]=34;
+                a[3]=56;
+                document.write(`${a}<br>`);
+	        document.write(`${a.length}<br>`);
+
+                let b=["ram", 30, 5.10, true, new Date()]
+                document.write(`date  :${b}<br>`);
+	        document.write(`size  :${b.length}<br>`);
+
+                const c = [10,20,30,40];
+                document.write(`array  :${c}<br>`);
+                c[1]=202;
+                c[4]=50;
+                document.write(`array  :${c}<br>`);
+                //c=[1,2,3];
+
+                const d = [];
+                let count =+ prompt("enter no of values");
+                for(let i=0; i<count; i++){
+                        d[i]=prompt("enter value");
+                }
+                document.write(`Elements   :${d}<br>`)
+        </script>
+</body>
+</html>
