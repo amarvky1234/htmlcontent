@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays7</title>
+    <link rel="icon" href="images/Instagram-Logo.jpg">
+</head>
+<body>
+        <h3>demo on  for in loop (since JS6)</h3>
+        <script>
+                 const eles = [10, 20, 30, 40, 50];
+                 for(let i  in eles){
+                    document.write(`${i} &nbsp; ${eles[i]}<br>`);
+                    eles[i] += 1;
+                 }
+
+                 const str = "siva";
+                 for(let i in str){
+                    document.write(`${i} &nbsp; ${str[i]}<br>`);
+                 }
+        </script>
+</body>
+</html>
