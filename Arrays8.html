@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays8</title>
+    <link rel="icon" href="images/Instagram-Logo.jpg">
+</head>
+<body>
+        <h3>demo on spread ... operator (since JS6)</h3>
+        <script>
+                 const a1 = [10,20,30];
+                 //const a2 = a1;       not preferable, no use
+                 const a2 = [...a1];    // array copying
+                 document.write(`A1     :${a1}<br>`)
+                 document.write(`A2     :${a2}<br>`)
+                 
+                 const a3 = [...a1,40,50]    // array copying
+                 document.write(`A3     :${a3}<br>`)
+
+                 const x=[11,22,33];
+                 const y=[1,2];
+                 const z=[12,34,56,78,99];
+                 const xyz=[...x,...y,...z];  //merging arrays
+                 document.write(`X    :${x}<br>`)
+                 document.write(`Y    :${y}<br>`)
+                 document.write(`Z    :${z}<br>`)
+                 document.write(`XYZ    :${xyz}<br>`)
+        </script>
+</body>
+</html>
