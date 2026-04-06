@@ -1,0 +1,35 @@
+<!-- examples on  JS Arrays -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Arrays9</title>
+ </head>
+ <body>
+	<h3>demo on array destructuring </h3>
+  	<script>
+		const a = [10,20,30];
+		/* x=a[0];			y=a[1];			z=a[2];	OR */
+		let [x,y,z] = a		//destructuring		
+ 		document.write(`${a}<bR>`);
+ 		document.write(`${x}<bR>${y}<bR>${z}<bR>`);
+		
+		let p=101, q=202;
+ 		document.write(`P	${p}<bR>`);
+ 		document.write(`Q	${q}<bR>`);
+		[q,p]=[p,q];		//swapping
+ 		document.write(`P	${p}<bR>`);
+ 		document.write(`Q	${q}<bR>`);
+
+		const b=[11,22,33,44,55,66,77,88,99];
+		//let [i,j,k]=b;	OR
+		let [i, , ,j, , , ,k]=b;	//destructuring with skip opt
+ 		document.write(`${b}<bR>`);
+ 		document.write(`${i}<bR>${j}<bR>${k}<bR>`);
+
+		let [e1,e2,...e] =b;	//destructuring with rest ope
+ 		document.write(`e1: ${e1}<bR>e2: ${e2}<bR>e: ${e}<bR>`);
+		//let [e1, ,e2, , ...e]=b;		//destructuring with skip opt & rest ope
+	</script>			  
+ </body>
+</html>
