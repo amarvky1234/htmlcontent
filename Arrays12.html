@@ -1,0 +1,45 @@
+<!-- example on Array methods -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">		
+		<title>Arrays12</title>  
+	</head>	
+	<body>
+		<h2>demo on  includes, indexOf, lastIndexOf, reverse, sort and join methods</h2>
+		<script>	
+			const names=["rama","sama","gama","bhama"];
+			document.write(`${names.includes("gama")}<br>`);
+			document.write(`${names.includes("Gama")}<br>`);
+
+			let x=+prompt("enter number");
+			//if(x===10||x===20||x===30)		OR
+			document.write( [10,20,30].includes(x) ? "Element Found<br>" : "Element not Found<br>");
+
+			//indexOf() => index , -1,   1st occ,   0 => n
+			const elements=[20,10,30,20, 40,50,60,20,70,80,90,20];
+			document.write(`Elements	:${elements}<br>`);
+			document.write(`1st occ @${elements.indexOf(20)}<br>`);
+			document.write(`${elements.indexOf(55)}<br>`);
+			document.write(`${elements.indexOf(20,4)}<br>`);
+			document.write(`2nd occ @${elements.indexOf(20, elements.indexOf(20)+1)}<br>`);
+
+			document.write(`last occ	@${elements.lastIndexOf(20)}<br>`);
+
+			elements.reverse();
+			document.write(`rev	:${elements}<br>`);
+
+			elements.sort();		//ASC order
+			document.write(`sort		:${elements}<br>`);
+
+			const data=[`rama`,`ramarao`,`Ramakrishna`,`ramana`,`raman`,`Ramarama`,`ramakumar`];
+			document.write(`Names	:${data}<br>`);
+			 data.sort();  //A- Z order
+			document.write(`Names	:${data}<br>`);
+			data.reverse();	//Z-A order
+			document.write(`Names	:${data}<br>`);
+
+			document.write(`${data.join("$")}<br>`);  //data[0]+"$"+data[1]+"$"+data[2]...
+ 		</script>
+	</body>
+</html>

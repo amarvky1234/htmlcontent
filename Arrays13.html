@@ -1,0 +1,35 @@
+<!-- example on Array methods -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">		
+		<title>Arrays13</title>  
+	</head>	
+	<body>
+		<h2>demo on  array manipulations (splice) </h2>
+		<script>	
+			const eles=["html","css","javascript","bootstrap","ajax","jquery","angular"];
+			document.write(`Elements	:${eles}<br>`);
+
+			//deletion			splice(st-index, no.of eles)   
+			eles.splice(2, 1);		 
+ 			document.write(`after Del	:${eles}<br>`);
+			//eles.splice(1,0);		don't delete
+			let temp=eles.splice(1,3);
+ 			document.write(`after Del	:${eles}<br>`);
+ 			document.write(`Del Eles	:${temp}<br>`);			
+
+			//updation		splice(st-index, no.of eles, new ele's)
+			eles.splice(0,1,"HTML");
+ 			document.write(`after update	:${eles}<br>`);
+			eles.splice(1,2,"saas","react");
+ 			document.write(`after update	:${eles}<br>`);
+
+			//insertion		splice(st-index, 0, new ele's)
+			eles.splice(0,0,"XML");
+ 			document.write(`after ins		:${eles}<br>`);
+			eles.splice(3,0, "typescript", "nodejs");
+ 			document.write(`after ins		:${eles}<br>`);
+ 		</script>
+	</body>
+</html>

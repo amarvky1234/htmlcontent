@@ -1,0 +1,30 @@
+<!-- example on Array methods -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Arrays11</title> 
+ </head>
+ <body>
+    <h1> example on unshift & shift methods </h1>
+	<script>
+		let eles=new Array();		
+		eles.unshift(10);  //its adding ele @begining of array	
+		eles.unshift(20);
+		eles.unshift(30); 
+		let newLength = eles.unshift(40);
+		document.write(newLength +"<br>"); 
+		document.write(`Array		${eles}<br>`);
+	 
+		document.write(`1st shift ${eles.shift()}<br>`);    //it returns 1st ele & remove 1st ele 
+		document.write(`2nd shift ${eles.shift()}<br>`);
+		document.write(`Array		:${eles}<br>`);
+		eles.unshift(11,22,33);
+		document.write(`Array		:${eles}<br>`);
+	</script>
+		<!--
+				push(), pop() ==> End of array
+				unshfit(), shift() ==> begin of array
+				index ==> random		-->
+ </body>
+</html>
