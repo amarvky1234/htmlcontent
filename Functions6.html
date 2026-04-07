@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions6</title>
+    <link rel="icon" href="images/logo.png">
+    <script> 
+		//finding sum of 3values
+		function sum(a=0,b=0,c=0)  //parameter with default value  R=>L
+		{
+		  return a+b+c;
+		}					
+	</script>
+</head>
+<body>
+           <h2> Demo on parameter with default value (since JS6) </h2>
+                <script>
+                document.write("Total Val : " + sum(2,5,8) + "<br>");  //call1	
+                document.write("Total Val : " + sum(4,9) + "<br>");  //call2			
+                document.write("Total Val : " + sum() + "<br>");  //call3
+                document.write("Total Val : " + sum(11) + "<br>");  //call4
+            </script>
+</body>
+</html>
