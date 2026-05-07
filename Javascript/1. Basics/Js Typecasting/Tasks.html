@@ -1,0 +1,75 @@
+<!--1. Convert "abc" to a number and observe the result.
+
+2. Convert undefined and null into numbers, strings, and booleans.
+
+3. Use isNaN() to check for invalid conversions.
+
+4. Convert an empty array [] and a non-empty array [1,2,3] into numbers and strings.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            //1.
+            let s = "abc";
+            let n = parseInt(s);
+            document.write(n+"<br>")
+            console.log(n)
+
+            //2.
+            let k = undefined;
+            let b1 = Boolean(k);
+            let num1 = Number(k);
+            let str1 = String(k);
+            document.write(b1+"<br>")
+            document.write(num1+"<br>")
+            document.write(str1+"<br>")
+            console.log(b1)
+            console.log(num1)
+            console.log(str1)
+
+            let p = undefined;
+            let b2 = Boolean(p);
+            let num2 = Number(p);
+            let str2 = String(p);
+            document.write(b2+"<br>")
+            document.write(num2+"<br>")
+            document.write(str2+"<br>")
+            console.log(b2)
+            console.log(num2)
+            console.log(str2)
+            
+            //3.
+            //invalid conversion
+            let v1 = "abc";
+            let n1 = Number(v1);
+            document.write(isNaN(n1)+"<br>")
+            console.log(isNaN(n1))
+
+            //valid conversion
+            let v2 = "123";
+            let n2 = Number(v2);
+            document.write(isNaN(n2)+"<br>")
+            console.log(isNaN(n2))
+            //4.
+            let arr1 = [];
+            let nb1 = parseInt(arr1);
+            let st1 = String(arr1);
+            document.write(nb1+"  "+st1+"<br>")
+            console.log(nb1)
+            console.log(st1)
+
+            let arr2 = [1,2,3];
+            let nb2 = parseInt(arr2);
+            let st2 = String(arr2);
+            document.write(nb2+"<br>")
+            document.write(st2)
+            console.log(nb2)
+            console.log(st2)
+    </script>
+</body>
+</html>

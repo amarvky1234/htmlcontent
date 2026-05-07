@@ -1,0 +1,45 @@
+<!-- If a five-digit number is input through the keyboard, write a program to 
+ calculate the sum of its digits.(Hint: Use the modulus operator ‘%’)-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+            let a = +prompt();
+            console.log(a);
+
+
+
+            let sum = 0;
+
+            let k1 = a % 10
+            console.log(k1)
+            sum += k1;
+            a = Math.floor(a/10);
+
+            let k2 = a % 10
+            console.log(k2)
+            sum += k2;
+            a = Math.floor(a/10);
+
+            let k3 = a % 10
+            console.log(k3)
+            sum += k3;
+            a = Math.floor(a/10);
+
+            let k4 = a % 10
+            console.log(k4)
+            sum += k4;
+            a = Math.floor(a/10);
+
+            let k5 = a % 10
+            sum += k5;
+            console.log(sum)
+            document.write(sum)
+    </script>
+ </body>
+ </html>

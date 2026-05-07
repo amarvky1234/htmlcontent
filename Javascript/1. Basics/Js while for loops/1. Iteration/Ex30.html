@@ -1,0 +1,22 @@
+<!--Write a program to print only even digits of a given number The output should be 4,2,6 Ex. Let us take 154256-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let num = 154256;
+
+            while (num > 0) {
+                let n = num % 10
+                if(n % 2 == 0){
+                    console.log(n)
+                }
+                num = Math.floor(num / 10);
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!--Check if a character is a vowel or consonant.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ch = prompt("Enter a character")
+            console.log(ch)
+
+            if(ch.length === 1) {
+                if(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z'){
+                    if(ch === 'a' || ch === 'e' || ch === 'i' || ch === 'o' || ch === 'u' ||
+                            ch === 'A' || ch === 'E' || ch === 'I' || ch === 'O' || ch === 'U'){
+                        console.log("character is a vowel")
+                    }else {
+                        console.log("character is a consonant")
+                    }
+                }else {
+                    console.log("pass valid data given data is not alphabet character")
+                }
+            }else {
+                console.log("given only one character")
+                document.write("given only one character")
+            }
+
+
+
+            // let ch = prompt("Enter a character:").toLowerCase();
+            // console.log(ch)
+
+            // if (ch.length === 1 && ch.match(/[a-z]/)) {
+            //     if ("aeiou".includes(ch)) {
+            //         console.log("Vowel");
+            //     } else {
+            //         console.log("Consonant");
+            //     }
+            // } else {
+            //     console.log("Please enter a valid single alphabet character");
+            // }
+    </script>
+</body>
+</html>

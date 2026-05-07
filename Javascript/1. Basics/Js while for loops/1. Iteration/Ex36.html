@@ -1,0 +1,26 @@
+<!--Write a Javascript Program to print total number of factors (count) of a given number.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let fact = +prompt();
+
+            let i = 1;
+            let count = 0;
+
+            while(i <= fact){
+                if(fact % i == 0){
+                    console.log(i)
+                    count++
+                }
+                i++
+            }
+            console.log("count: "+count)
+    </script>
+</body>
+</html>

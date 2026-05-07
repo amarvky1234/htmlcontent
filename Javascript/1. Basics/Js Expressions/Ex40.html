@@ -1,0 +1,30 @@
+<!--The length & breadth of a rectangle and radius of a circle are input through the 
+keyboard. Write a, program to calculate the area & perimeter of the rectangle, and the 
+area & circumference of the circle. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let l = +prompt("enter length");
+            let b = +prompt("enter breadth");
+            let r = +prompt("enter radius");
+            console.log(l+"  "+b+"   "+r)
+
+            let perimeter = 2 * (l + b);
+            let circumference = 2 * 3.14 * r;
+
+            let areaRectangle = l * b;
+            let areaCircle = 3.14 * r * r;
+
+            console.log("perimeter: "+perimeter)
+            console.log("circumference: "+circumference)
+            console.log("Rectangle Area: "+areaRectangle)
+            console.log("Circle Area: "+areaRectangle)
+    </script>
+</body>
+</html>

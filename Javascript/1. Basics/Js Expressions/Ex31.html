@@ -1,0 +1,29 @@
+<!--Check a given number is positive or not using ternary operator-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let num = +prompt()
+            console.log(num)
+
+            // let n = num > 0 ? "Positive" : num == 0 ? "Neither Positive nor Negative" : "Negative";
+            // document.write(n)
+            // console.log(n)
+            if(num > 0) {
+                document.write(num+" is Positive")
+                console.log(num+" is Positive")
+            }else if(num == 0) {
+                document.write(num+" is Neither Positive nor Negative")
+                console.log(num+" is Neither Positive nor Negative")
+            }else {
+                document.write(num+" is Neagtive")
+                console.log(num+" is Neagtive")
+            }
+    </script>
+</body>
+</html>

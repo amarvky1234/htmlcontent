@@ -1,0 +1,46 @@
+<!--2. Convert a floating-point number 45.67 into an integer.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            //Using parseInt()
+            let x1 = 45.67;
+            let num = parseInt(x1);
+            document.write(num);
+            console.log(num);
+            document.write("<br>")
+
+            //Using Math.floor()
+            let x2 = 45.67;
+            let i = Math.floor(x2);
+            document.write(i);
+            console.log(i);
+            document.write("<br>")
+            
+            //Using Math.round()
+            let x3 = 45.67;
+            let n = Math.round(x3)
+            document.write(n);
+            console.log(n);
+            document.write("<br>")
+
+            //Using Math.ceil()
+            let x4 = 45.67;
+            let nb = Math.round(x4)
+            document.write(nb);
+            console.log(nb);
+            document.write("<br>")
+
+            //Using Bitwise Operator (~~)
+            let x5 = 45.67;
+            let res = ~~x5;
+            document.write(res)
+            console.log(res)
+    </script>
+</body>
+</html>

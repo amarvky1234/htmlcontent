@@ -1,0 +1,56 @@
+<!--Accumulation
+with Conditions:
+Sum of numbers between two given numbers
+Sum of even/odd numbers between two given numbers
+Product of odd numbers between 1 and 10-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let num1 = +prompt();
+            let num2 = +prompt();
+            console.log("num1: "+num1+"     num2: "+num2)
+
+            let i = num1 + 1;
+            let sum = 0;
+
+            while(i < num2){
+                console.log(i)
+                sum += i;
+                i++
+            }
+            console.log("Sum of numbers between two given numbers: "+sum)
+
+            let k = num1 + 1;
+            let evenSum = 0;
+            let oddSum = 0;
+
+            while(k < num2){
+                if(k % 2 == 0){
+                    evenSum += k;
+                }else{
+                    oddSum += k;
+                }
+                k++
+            }
+            console.log("Sum of even numbers between two given numbers: "+evenSum)
+            console.log("Sum of odd numbers between two given numbers: "+oddSum)
+
+
+            let product = 1;
+
+            for(var p = 1; p <= 10; p++){
+                if(p % 2 != 0){
+                    console.log(p)
+                    product *= p
+                }
+            }
+            console.log("Product of odd numbers between 1 and 10: "+product)
+    </script>
+</body>
+</html>
