@@ -1,0 +1,33 @@
+<!--Digit
+Manipulation:
+Count the number of ‘1’s in a given number
+Eliminate all 0’s from a given number
+Print all digits less than 5
+Greatest digit of a number
+Sum of all digits of a number
+Reverse digits of a number-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            //Greatest digit of a number
+            let num = +prompt();
+            console.log("num: "+num)
+            let digit = 0;
+
+            while(num > 0){
+                var x = num % 10 
+                if(x > digit) {
+                    digit = x;
+                }
+                num = Math.floor(num / 10)
+            }
+            console.log("Greatest digit of a number: "+digit)
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!--Simple
+Number Operations/Digit Extraction:
+Number of digits in a given number
+Print the binary value of 8-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let num = +prompt();
+            console.log(num)
+            let count = 0;
+
+            while(num > 0){
+                let k = num % 10
+                count++
+                num = Math.floor(num / 10)
+            }
+            console.log("Number of digits in a given number: "+count)
+
+            let n = +prompt();
+            let binary = "";
+            while(n > 0) {
+                let k = n % 2
+                binary = k + binary
+                n = Math.floor(n / 2)
+            }
+            console.log("binary value: "+binary)
+    </script>
+</body>
+</html>

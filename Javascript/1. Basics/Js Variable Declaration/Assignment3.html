@@ -1,0 +1,25 @@
+<!--3. What happens if we declare same variable name multiple times-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+                var a = 12;
+                var a = "Hello";
+                document.write(a)
+                //so here a will replace 12 with hello 
+
+                // let x = 12;
+                // let x = "Hello";
+                //Cannot redeclare block-scoped variable 'x'
+
+                // const k = 745;
+                // const k = "Hello";
+                //Cannot redeclare block-scoped variable 'k'
+        </script>
+</body>
+</html>

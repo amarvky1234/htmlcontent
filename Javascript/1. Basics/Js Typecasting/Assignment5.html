@@ -1,0 +1,35 @@
+<!--5. Convert an object or an array into a string.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            //Object -> String
+            let obj = {name: "John", age: 25};
+            let str = JSON.stringify(obj);
+            document.write(str)
+            console.log(str);
+            document.write("<br>")
+
+            //Array -> String
+            let arr = [1, 2, 3, 4];
+            let s = JSON.stringify(arr);
+            document.write(s)
+            console.log(s);
+            console.log(typeof(s))
+            document.write("<br>")
+
+            //using toString() (for arrays only)
+            let ar = [1, 2, 3, 4];
+            let st = ar.toString();
+            document.write(st)
+            console.log(st);
+            document.write("<br>")
+            console.log(typeof(st))
+    </script>
+</body>
+</html>

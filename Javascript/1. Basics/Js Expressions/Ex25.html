@@ -1,0 +1,21 @@
+<!--Write a program to print the max of given three numbers using ternary operator -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let x = Number(prompt("enter first number"))
+            let y = Number(prompt("enter second number"))
+            let z = Number(prompt("enter third number"))
+            console.log(x+"  "+y+"   "+z)
+            
+            let max = (x > y) && (x > z) ? x : (y > x) && (y > z) ? y : z ;
+            document.write(max)
+            console.log(max)
+    </script>
+</body>
+</html>

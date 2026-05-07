@@ -1,0 +1,33 @@
+<!--If the marks obtained by a student in five different subjects are input through the
+keyboard, find out the aggregate marks and percentage marks obtained by the student. 
+Assume that the maximum marks that can be obtained by a student in each subject is 
+100. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let m1 = +prompt();
+            let m2 = +prompt();
+            let m3 = +prompt();
+            let m4 = +prompt();
+            let m5 = +prompt();
+            console.log(m1+"  "+m2+"  "+m3+"  "+m4+"   "+m5)
+
+            let aggregateMarks = m1 + m2 + m3 + m4 + m5;
+            let totalMarks = 500;
+
+            let percentage = ((aggregateMarks / totalMarks) * 100).toFixed(2) ;
+
+            document.write(aggregateMarks)
+            document.write("<br>")
+            document.write(percentage+"%")
+            console.log(aggregateMarks)
+            console.log(percentage)
+    </script>
+</body>
+</html>

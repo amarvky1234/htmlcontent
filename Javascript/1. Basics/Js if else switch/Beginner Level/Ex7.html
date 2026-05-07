@@ -1,0 +1,24 @@
+<!--Check if a number is a three-digit number. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let num = +prompt("enter a number")
+
+            //if(num >= 100 && num <= 999 || num >= -999 && num <= -100) OR
+            if(Math.abs(num) >= 100 && Math.abs(num) <= 999) {
+                console.log(num+"  number is a three-digit number")
+                document.write(num+"  number is a three-digit number")
+            }   
+            else {
+                console.log(num+"  number is not a three-digit number")
+                document.write(num+"  number is not a three-digit number")
+            }
+    </script>
+</body>
+</html>

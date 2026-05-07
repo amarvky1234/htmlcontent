@@ -1,0 +1,29 @@
+<!--Check if a character is uppercase, lowercase, special character, or digit. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ch = prompt("enter a character");
+            console.log(ch)
+
+            if(ch.length === 1){
+                if(ch >= 'a' && ch <= 'z'){
+                    console.log("character is lowercase")
+                }else if(ch >= 'A' && ch <= 'Z'){
+                    console.log("character is uppercase")
+                }else if(ch >= 0 && ch <= 9){
+                    console.log("character is digit")
+                }else{
+                    console.log("character is special character")
+                }
+            }else{
+                console.log("enter only one character")
+            }
+    </script>
+</body>
+</html>

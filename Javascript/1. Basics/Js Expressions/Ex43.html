@@ -1,0 +1,43 @@
+<!--If a five-digit number is input through the keyboard, write a program to reverse 
+the number. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let a = +prompt("enter 5-digit number")
+            console.log(typeof a)
+
+            let rev= "";
+
+            let k1 = a % 10
+            console.log(k1)
+            rev += k1;
+            a = Math.floor(a/10);
+
+            let k2 = a % 10
+            console.log(k2)
+            rev += k2;
+            a = Math.floor(a/10);
+
+            let k3 = a % 10
+            console.log(k3)
+            rev += k3;
+            a = Math.floor(a/10);
+
+            let k4 = a % 10
+            console.log(k4)
+            rev += k4;
+            a = Math.floor(a/10);
+
+            let k5 = a % 10
+            rev += k5;
+            console.log(rev)
+            document.write(rev)
+    </script>
+</body>
+</html>

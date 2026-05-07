@@ -1,0 +1,19 @@
+<!--Temperature of a city in Fahrenheit degrees is input through the keyboard. Write a 
+program to convert this temperature into Centigrade degrees. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let temperature = +prompt();
+
+            let convert = ((temperature - 32) * 1.8).toFixed(2)
+            console.log(convert)
+            document.write(convert)
+    </script>
+</body>
+</html>

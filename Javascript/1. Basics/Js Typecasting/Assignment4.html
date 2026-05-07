@@ -1,0 +1,41 @@
+<!--4. Convert a boolean into a string and a number.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Boolean -> String
+            //Using String()
+            let val = true;
+            let str = String(val)
+            document.write(str)
+            console.log(str)
+            document.write("<br>")
+
+            //using toString()
+            let value = false;
+            let s = value.toString();
+            document.write(s)
+            console.log(s)
+            document.write("<br>")
+
+        //Boolean -> number
+            //Using Number()
+            let b1 = true;
+            let num = Number(b1)
+            document.write(num)
+            console.log(num)
+            document.write("<br>")
+            
+            //Using Unary +
+            let b2 = false;
+            let n = +b2;
+            document.write(n);
+            console.log(n)
+    </script>
+</body>
+</html>

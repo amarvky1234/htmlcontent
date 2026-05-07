@@ -1,0 +1,23 @@
+<!--Write a program to print only odd digits of a given number Ex. Let us take 1542763 The output should be 1,5,7,3-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let num = 1542763;
+
+            while (num > 0) {
+                let n = num % 10
+                if(n % 2 != 0){
+                    console.log(n)
+                    document.write(n+"<br>")
+                }
+                num = Math.floor(num / 10);
+            }
+    </script>
+</body>
+</html>
