@@ -1,0 +1,25 @@
+<!--Write a program to add hyphens (-) between groups of 4 digits in a credit card
+number.
+Example: Input: '6484638463487486' → Output: '6484-6384-6348-7486'-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let input = '6484638463487486';
+
+            let output = []
+            
+            for(let i =0; i<input.length; i += 4){
+                output.push(input.substring(i, i+4));
+            }
+            console.log(output)
+            console.log(output.join("-"))
+            console.log(output)
+    </script>
+</body>
+</html>

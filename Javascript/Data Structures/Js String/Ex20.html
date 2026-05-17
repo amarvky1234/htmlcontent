@@ -1,0 +1,63 @@
+<!--Write a program to hide the middle six digits of a phone number.
+Example: Input: '9876543210' → Output: '98XXXXXX10'-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let input = '9876543210';
+
+            //using repeat() and slice()
+            let res1 = input.slice(0, 2) + "X".repeat(6) + input.slice(8)
+            console.log(res1)
+
+            //using substring()
+            let res2 = input.substring(0, 2) + "X".repeat(6) + input.substring(8)
+            console.log(res2)
+            
+            //Using for loop
+            let res3 = "";
+
+            for (let i = 0; i < input.length; i++) {
+                if(i < 2){
+                    res3 += input[i];
+                }
+                else if (i>=2 && i < 8) {
+                    res3 += "X";
+                } else {
+                    res3 += input[i];
+                }
+            }
+            console.log("using for loop: "+res3);
+
+            //Using split() and map()
+            let res4 = input.split("")
+                            .map(function(ch, index){
+                                if(index < 2){
+                                    return ch;
+                                }
+                                else if(index < 8){
+                                    return "X";
+                                }
+                                return ch;
+                            }).join("");
+            console.log(res4)
+
+            //Using reduce()
+            let res5 = input.split("").reduce(function(acc, ch, index){
+                if(index < 2){
+                    return acc + ch;
+                }
+                if(index < 8){
+                    return acc + "X";
+                }
+                return acc + ch;
+            }, "");
+            console.log("using reduce() :"+res5);
+    </script>
+</body>
+</html>

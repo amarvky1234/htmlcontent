@@ -1,0 +1,160 @@
+<!--Now, here are the assignment questions, sorted by difficulty level:
+Intermediate Level (Advanced Array Methods and Filtering)
+5. Average Salary:
+Write a function that calculates and returns the average salary of all 
+employees in the company.
+
+6. Update Employee Status:
+Write a function that takes an employee ID and a new status ("active" or 
+"inactive") as parameters and updates the employee's status.If the employee 
+doesn't exist, return "Employee not found".
+
+7. Remove Employee by ID:
+Write a function that removes an employee from the array based on their ID.
+If the employee doesn’t exist, return "Employee not found".
+
+8. Employees with Salary Above a Threshold:
+Write a function that takes a salary threshold as input and returns an array 
+of employees who earn more than the specified salary.
+
+9. Sort Employees by Salary:
+Write a function that sorts employees in descending order by their 
+salary.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+             const employees = [
+                {
+                    id: 1,
+                    name: "John Doe",
+                    department: "Engineering",
+                    salary: 55000,
+                    status: "active"
+                },
+                {
+                    id: 2,
+                    name: "Jane Smith",
+                    department: "Marketing",
+                    salary: 60000,
+                    status: "inactive"
+                },
+                {
+                    id: 3,
+                    name: "Michael Johnson",
+                    department: "Engineering",
+                    salary: 75000,
+                    status: "active"
+                },
+                {
+                    id: 4,
+                    name: "Emily Davis",
+                    department: "Human Resources",
+                    salary: 48000,
+                    status: "active"
+                },
+                {
+                    id: 5,
+                    name: "Chris Lee",
+                    department: "Marketing",
+                    salary: 53000,
+                    status: "inactive"
+                },
+                {
+                    id: 6,
+                    name: "Sarah Brown",
+                    department: "Engineering",
+                    salary: 62000,
+                    status: "active"
+                },
+                {
+                    id: 7,
+                    name: "David Wilson",
+                    department: "Human Resources",
+                    salary: 47000,
+                    status: "active"
+                },
+                {
+                    id: 8,
+                    name: "Anna White",
+                    department: "Marketing",
+                    salary: 59000,
+                    status: "inactive"
+                }
+            ];
+
+
+            //5.
+            function averageSalaryOfAllEmployees() {
+                let avgSal = employees.reduce(function(sum, emp){
+                        return sum += emp.salary
+                }, 0) / employees.length
+
+                return avgSal.toFixed(2);
+            }
+            console.log(averageSalaryOfAllEmployees())
+            
+            //6.
+            function updatedEmployeeStatus(empId, newStatus) {
+                let empAr = employees.filter(function(emp){
+                    return emp.id === empId;
+                }).map(function(emp){
+                    emp.status = newStatus;
+                    return emp;
+                })
+
+                if(empAr.length !== 0){
+                    return empAr;
+                }else {
+                    return "Employee not found";
+                }
+            }
+            console.log(updatedEmployeeStatus(2, "active"))
+
+            //7.
+            // function removeEmployeeByID(empID) {
+            //     let index = employees.findIndex(function(emp){
+            //         return emp.id === empID;
+            //     })
+
+            //     if(index !== -1){
+            //         employees.splice(index, 1);
+            //         return employees;
+            //     }else {
+            //         return "Employee not found";
+            //     }
+            // }
+            // console.log(removeEmployeeByID(2))
+            // console.log(removeEmployeeByID(2))
+
+            //8.
+            function employeesWithMoreThanSalary(sal) {
+                let empAr = employees.filter(function(emp){
+                    return emp.salary > sal;
+                })
+                
+                if(empAr.length > 0) {
+                    return empAr;
+                }else {
+                    return "No Employee Salary is more than given Salary";
+                }
+            }
+            console.log(employeesWithMoreThanSalary(78000));
+            console.log(employeesWithMoreThanSalary(59000));
+
+            //9.
+            function sortEmployeesBySalary() {
+                employees.sort(function(a, b){
+                    return b.salary - a.salary;
+                })
+                return employees;
+            }
+            console.log(sortEmployeesBySalary())
+    </script>
+</body>
+</html>

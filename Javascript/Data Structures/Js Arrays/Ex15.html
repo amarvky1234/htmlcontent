@@ -1,0 +1,26 @@
+<!--Find the average of all elements in an array.
+o Input: [23, 34, 54, 10, 4, 7] → Output: 22-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                let ar =  [23, 34, 54, 10, 4, 7]
+                let sum = 0;
+                    
+                for(var i=0; i < ar.length; i++) {
+                   sum += ar[i]      
+                }
+                console.log("avg: "+Math.floor(sum / ar.length))
+
+                let avg = ar.reduce(function(prev, curr){
+                    return prev + curr;
+                }) / ar.length
+                console.log(avg)
+    </script>
+</body>
+</html>

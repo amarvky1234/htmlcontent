@@ -1,0 +1,35 @@
+<!--Remove all spaces from a given string-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            //1st way
+            let str = "India is Country";
+            console.log(str.split(' ').join(''))
+
+            //2nd way
+            let str1 = " Yahoo  .com"
+            console.log(str1.replaceAll(' ', ''))
+
+            //3rd way
+            let str2 = "Amar jeet";
+            console.log(str2.replace(/\s+/g, ''))
+
+            //4th way
+            let str3 = "Hello !";
+            console.log(str3.length+"     "+str3)
+            let res = "";
+            for (let i = 0; i < str3.length; i++) {
+                if (str3[i] !== ' ') {
+                    res += str3[i]
+                }
+            }
+            console.log(res.length+"     "+res)
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!--Print only even numbers from an array.
+o Input: [23, 34, 54, 10, 4, 7] → Output: 34 54 10 4-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar =  [23, 34, 54, 10, 4, 7]
+            
+            // for(var i=0; i < ar.length; i++) {
+            //     if(ar[i] % 2 == 0){
+            //         console.log(ar[i])
+            //         document.write(ar[i]+"  ")
+            //     }    
+            // }
+
+            let evenAr = ar.filter(function(ele){
+                if(ele % 2 === 0){
+                    return true;
+                }
+            })
+            console.log(evenAr);
+    </script>
+</body>
+</html>

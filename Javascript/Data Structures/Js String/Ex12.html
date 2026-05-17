@@ -1,0 +1,36 @@
+<!--12. Check if a given string is a valid Gmail ID.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isValidGmail(str1) {
+            let i = str1.indexOf('@');
+
+            if (str1.includes(' ')) {
+                return false;
+            } else if (!str1.endsWith('@gmail.com')) {
+                return false;
+            } else if (i <= 0) {
+                return false;
+            } else if (str1.indexOf('@') !== str1.lastIndexOf('@')) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        let str1 = "amarvky1234@gmail.com";
+
+        if (isValidGmail(str1)) {
+            console.log("Valid gmail");
+        } else {
+            console.log("Invalid gmail");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!--Reduce each element of an array by 25% and store in another array.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [100, 200, 300, 400, 500]
+            let br = []
+
+            for(var i=0; i<=ar.length-1; i++){
+                br[i] = ar[i] - (ar[i] * 0.25)
+            }
+            console.log(ar)
+            console.log(br)
+
+            let arr = ar.map(function(ele){
+                return ele - (ele * 0.25)
+            })
+            console.log(arr)
+    </script>
+</body>
+</html>

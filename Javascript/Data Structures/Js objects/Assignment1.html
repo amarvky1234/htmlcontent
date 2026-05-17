@@ -1,0 +1,52 @@
+<!--1.Given an object: 
+Const person = {
+
+"firstName":"Harry",
+
+"lastName":"Potter",
+
+"gender":"male",
+
+"skill":"ReactJS",
+
+"expertise":"Beginner",
+}
+
+1. Print the firstname
+
+2. Print the lastname. 
+
+3. Print the fullname("Harry Potter").
+
+4. If the age is less than 18, then print "false". If the age is more than 18, 
+then print "true". -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const person = {
+                "firstName":"Harry",
+                "lastName":"Potter",
+                "gender":"male",
+                "age":30,
+                "skill":"ReactJS",
+                "expertise":"Beginner"}
+
+            console.log(person.firstName)
+            console.log(person.lastName)
+            console.log(person.firstName+" "+person.lastName)
+            
+            //4.
+            if(person.age > 18){
+                console.log("true")
+            }else{
+                console.log("false")
+            }
+    </script>
+</body>
+</html>

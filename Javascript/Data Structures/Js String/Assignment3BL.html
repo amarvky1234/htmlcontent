@@ -1,0 +1,188 @@
+<!--Basic Level (1-20)
+1. Use a for loop to print each animal name.
+2. Use a for loop to print each animal name along with its index.
+3. Use a for loop to print only the first 5 animals.
+4. Use a for loop to print the array in reverse order.
+5. Use a for loop to count how many animals are in the array.
+6. Use a for loop to find and print the longest animal name.
+7. Use a for loop to print all animals that contain the letter "o".
+8. Use a for loop to remove "Tiger" from the array.
+9. Use a for loop to count how many animals start with "L".
+10. Use a for loop to print all animals that have an even number of letters.
+11. Use a for loop to swap the first and last animals.
+12. Use a for loop to print the animal names in uppercase.
+13. Use a for loop to find the shortest animal name.
+14. Use a for loop to print only animals with exactly 6 letters.
+15. Use a for loop to count how many animals contain the letter "e".
+16. Use a for loop to remove duplicates from the array.
+17. Use a for loop to print only animals that start and end with the same letter.
+18. Use a for loop to reverse each animal name (e.g., "Lion" → "noiL").
+19. Use a for loop to create an array of animals in lowercase.
+20. Use a for loop to check if "Penguin" exists in the array.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+             const animals = ["Lion", "Tiger", "Elephant", "Giraffe", 
+                "Monkey", "Zebra", "Kangaroo", "Panda", "Leopard",
+                "Cheetah", "Rhinoceros", "Hippopotamus", "Wolf", "Fox", 
+                "Deer", "Rabbit", "Squirrel", "Crocodile", "Alligator", 
+                "Ostrich", "Peacock", "Eagle", "Falcon", "Penguin", 
+                "Dolphin", "Shark", "Whale", "Octopus", "Jellyfish", 
+                "Starfish"
+            ];
+
+            //1.
+            // for(let i in animals){
+            //     console.log(animals[i]);
+            //     document.write(animals[i]+"<br>")
+            // }
+
+            //2.
+            // for (let index = 0; index < animals.length; index++) {
+            //     console.log(animals[index], index)
+            // }
+
+            //3.
+            // for (let i = 0; i < 5; i++) {
+            //     console.log(animals[i])
+            // }
+
+            //4.
+            // for (let i = animals.length-1; i >=0 ; i--) {
+            //     console.log(animals[i])
+            //     document.write(animals[i]+"<br>")
+            // }
+
+            //5.
+            // let count = 0;
+            // for (let i = 0; i < animals.length; i++) {
+            //     count++;
+            // }
+            // console.log(count)
+
+            //6.
+            // let longest = animals[0];
+            // for (let i = 1; i < animals.length; i++) {
+            //     if(animals[i].length > longest.length){
+            //         longest = animals[i]
+            //     }
+            // }
+            // console.log(longest)
+
+            //7.
+            // for (let i = 0; i < animals.length; i++) {
+            //     if(animals[i].includes("o")){
+            //         console.log(animals[i])
+            //     }
+            // }
+
+            //8.
+            // for (let i = 0; i < animals.length; i++) {
+            //     if(animals[i] === "Tiger"){
+            //         animals.splice(i, 1);
+            //     }
+            // }
+            // console.log(animals)
+
+            //9.
+            // let count = 0;
+            // for (let i = 0; i < animals.length; i++) {
+            //     if(animals[i].startsWith("L")){
+            //         console.log(animals[i]);
+            //         count++;
+            //     }
+            // }
+            // console.log(count)
+
+            //10.
+            // for (let i = 0; i < animals.length; i++) {
+            //     if(animals[i].length % 2 === 0){
+            //         console.log(animals[i]);
+            //     }
+            // }
+
+            //11.
+            // for (let i = 0; i < 1; i++) {
+            //     let temp = animals[0];
+            //     animals[0] = animals[animals.length - 1];
+            //     animals[animals.length -1] = temp;
+            // }
+            // console.log(animals)
+
+            //12.
+            // for (let i = 0; i < animals.length; i++) {
+            //     console.log(animals[i].toUpperCase());
+            // }
+
+            //13.
+            // let shortest = animals[0];
+            // for (let i = 1; i < animals.length; i++) {
+            //     if(animals[i].length < shortest.length){
+            //         shortest = animals[i]
+            //     }
+            // }
+            // console.log(shortest)
+
+            //14.
+            // for (let i = 1; i < animals.length; i++) {
+            //     if(animals[i].length === 6){
+            //         console.log(animals[i])
+            //     }
+            // }
+
+            //15.
+            // let count = 0;
+            // for (let i = 0; i < animals.length; i++) {
+            //     if(animals[i].includes("e")){
+            //         console.log(animals[i])
+            //         count++
+            //     }
+            // }
+            // console.log(count);
+
+            //16.
+            // let unique = [];
+            // for (let i = 0; i < animals.length; i++) {
+            //     if(!unique.includes(animals[i])){
+            //         unique.push(animals[i])
+            //     }
+            // }
+            // console.log(unique);
+
+            //17.
+            //add eagle then check
+            // for (let i = 0; i < animals.length; i++) {
+            //     let word = animals[i];
+            //     if(word[0] === word[word.length -1]){
+            //         console.log(word);
+            //     }
+            // }
+            
+            //18.
+            // for (let i = 0; i < animals.length; i++) {
+            //     let reversed = animals[i].split("").reverse().join("");
+            //     console.log(reversed)
+            // }
+
+            //19.
+            // let animalsAr = [];
+            // for (let i = 0; i < animals.length; i++) {
+            //     animalsAr.push(animals[i].toLowerCase());
+            // }
+            // console.log(animalsAr)
+
+            //20.
+            for(let i =0; i <animals.length; i++){
+                if(animals[i] === "Penguin"){
+                    console.log("exists")
+                }
+            }
+     </script>
+</body>
+</html>

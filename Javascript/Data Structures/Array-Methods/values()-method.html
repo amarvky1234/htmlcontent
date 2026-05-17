@@ -1,0 +1,30 @@
+<!--values() is used to get an iterator of all values in an array.
+👉 It does not return an array directly — it returns an iterator object.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [23, 45, 342, 56, 22, 12]
+
+            // let iterator = ar.values();
+            // console.log(iterator);
+            // console.log(iterator.next());
+            // console.log(iterator.next());
+            // console.log(iterator.next());
+            // console.log(iterator.next());
+            // console.log(iterator.next());
+
+            // for(let val of ar.values()){
+            //     console.log(val)
+            // }
+
+            let values = [...ar.values()];
+            console.log(values)
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!--toSpliced() is a modern ES2023 method that works like splice() but does 
+NOT modify the original array.
+👉 Think of it as a safe (non-mutating) version of splice()-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [12, 34, 45, 67, 23, 22]
+            let res1 = ar.toSpliced(1, 3);
+            console.log(res1)
+            console.log(ar)
+            let res2 = ar.toSpliced(1,0,311);
+            console.log(res2)
+            console.log(ar)
+    </script>
+</body>
+</html>

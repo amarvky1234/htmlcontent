@@ -1,0 +1,25 @@
+<!--Print the first 4 elements in an array-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar =  [23, 34, 54, 0, 4, 7]
+            
+            // for(var i=0; i<4; i++) {
+            //     console.log(ar[i])
+            //     document.write(ar[i]+"  ")
+            // }
+
+            ar.forEach(function(v, i){
+                if(i < 4){
+                    console.log(v)
+                }
+            })
+    </script>
+</body>
+</html>

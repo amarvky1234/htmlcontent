@@ -1,0 +1,26 @@
+<!--Search if a number exists in an array.
+o Input: [23, 34, 54, 10, 4, 7], Query: 34 → Output: true-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                let ar =  [23, 34, 54, 10, 4, 7]
+                    
+                for(var i=0; i < ar.length; i++) {
+                   if(ar[i] === 34){
+                        console.log(true)
+                   }     
+                }
+
+                ar.forEach(function(ele){
+                    if(ele === 34)
+                        console.log(true)
+                })
+    </script>
+</body>
+</html>

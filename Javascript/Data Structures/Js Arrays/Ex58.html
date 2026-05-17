@@ -1,0 +1,50 @@
+<!--Merge two arrays into a third array. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [23, 21, 33, 45]
+            let br = [11, 32, 15, 17]
+
+            //1.using concat()
+            // let tr = ar.concat(br)
+            // console.log(tr)
+
+            //2.Using Spread Operator (...) (modern & most used)
+            // var tr = [...ar, ...br]
+            // console.log(tr)
+
+            //3.Using forEach() (callback)
+            let tr = []
+            ar.forEach(function(a){
+                tr.push(a)
+            })
+            console.log(tr)
+
+            br.forEach(function(a){
+                tr.push(a)
+            })
+            console.log(tr)
+
+            //4.Using reduce()
+            // console.log("using reduce()")
+            // let c = [ar, br].reduce((acc, curr) => acc.concat(curr), []);
+            // console.log(c);
+
+            //5.Using Array.from()
+            // console.log("Using Array.from()")
+            // let c = Array.from(ar).concat(br);
+            // console.log(c);
+
+            //6.Using flat()
+            // console.log("using flat()")
+            // let c = [ar, br].flat();
+            // console.log(c);
+    </script>
+</body>
+</html>

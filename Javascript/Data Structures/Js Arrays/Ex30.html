@@ -1,0 +1,22 @@
+<!--For each salary, calculate the final amount after adding 40% HRA, 92% DA, and 
+deducting 10% tax.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [25000, 32000, 41500, 35000, 78500]
+            console.log(ar)
+
+            for(var i=0 ; i<=ar.length-1; i++){
+                var grossAmount = ar[i] + (ar[i] * 0.40) + (ar[i] * 0.92)
+                var finalAmount = grossAmount - (grossAmount * 0.10)
+                console.log("for slaray "+ar[i]+" final amount: "+finalAmount)
+            }
+    </script>
+</body>
+</html>

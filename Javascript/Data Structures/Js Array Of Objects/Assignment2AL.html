@@ -1,0 +1,167 @@
+<!--Advanced level:
+1. Print all the product names in ascending order of their prices.
+2. Separate all Hardgood and Software and store them in separate arrays.
+3. Store all the categories in an array.There should not be any duplicates.
+4. Print all the product names with numbering.
+    Expected output:
+    "1. Duracell - AAA Batteries (4-Pack)"
+    "2. Hard Rock TrackPak - Mac" ……..and so on.
+5. Print the product names of all the Hardgoods in alphabetical order(a - z).
+6. Print the product names of all the Softwares in reverse alphabetical order(z - a).
+7. Decrease the price of all products by 10 % and print the new array of objects.
+8. Check whether any of the manufacturers is "Metra".
+9. Check whether all products are manufactured by "Duracell".
+10. Add a "discount" property to each object and print the new array of objects.For example,
+    add "discount": 1.5 to each object.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var products = [
+                {
+                    "name": "Duracell - AAA Batteries (4-Pack)",
+                    "type": "HardGood",
+                    "price": 5.49,
+                    "category": "Household Batteries",
+                    "manufacturer": "Duracell"
+                },
+                {
+                    "name": "Hard Rock TrackPak - Mac",
+                    "type": "Software",
+                    "price": 29.99,
+                    "category": "Recording Equipment",
+                    "manufacturer": "Hal Leonard"
+                },
+                {
+                    "name": "Duracell - AA 1.5V CopperTop Batteries (4-Pack)",
+                    "type": "HardGood",
+                    "price": 5.62,
+                    "category": "Household Batteries",
+                    "manufacturer": "Duracell"
+                },
+                {
+                    "name": "Energizer - MAX Batteries AA (4-Pack)",
+                    "type": "HardGood",
+                    "price": 5.32,
+                    "category": "Household Batteries",
+                    "manufacturer": "Energizer"
+                },
+                {
+                    "name": "METRA - Antenna Cable Adapter - Black",
+                    "type": "HardGood",
+                    "price": 13.99,
+                    "category": "Antennas & Adapters",
+                    "manufacturer": "Metra"
+                },
+                {
+                    "name": "WipeDrive Six - Mac|Windows",
+                    "type": "Software",
+                    "price": 23.99,
+                    "category": "Maintenance Software",
+                    "manufacturer": "White Canyon"
+                }
+            ];
+
+            //1.Print all the product names in ascending order of their prices.
+            // products.toSorted(function(a, b){
+            //     return a.price - b.price;
+            // }).forEach(function(product){
+            //     console.log(product.name+"  "+product.price)
+            // })
+
+            //2.Separate all Hardgood and Software and store them in separate arrays.
+            // let hargoodType = products.filter(function(product){
+            //             return product.type === 'HardGood'
+            // })
+            // console.log(hargoodType)
+
+            // let softwareType = products.filter(function(product){
+            //             return product.type === 'Software'
+            // })
+            // console.log(softwareType)
+
+            //3.Store all the categories in an array.There should not be any duplicates.
+            // let categories = [];
+
+            // products.forEach(function(product){
+            //     if(!categories.includes(product.category)){
+            //         categories.push(product.category)
+            //     }
+            // })
+            // console.log(categories)
+
+            //4.Print all the product names with numbering.
+            // products.forEach(function(p, i){
+            //     console.log((i+1)+". "+p.name)
+            // })
+
+            //5.Print the product names of all the Hardgoods in alphabetical order(a - z).
+            // let names = products.filter(function(product){
+            //         return product.type === "HardGood";
+            // }).map(function(p){
+            //     return p.name
+            // }).toSorted();
+            // console.log(names)
+
+            //6.Print the product names of all the Softwares in reverse alphabetical order(z - a).
+            // let names = products.filter(function(product){
+            //     if(product.type === "Software"){
+            //         return true
+            //     }
+            // }).map(function(p){
+            //      return p.name
+            // }).toReversed();
+            // console.log(names)
+
+            //7.Decrease the price of all products by 10 % and print the new array of objects.
+            // products.forEach(p => console.log(p.price));
+
+            // let newPAr = products.map(function(product){
+            //     product.price = product.price - (product.price * 0.1);
+            //     return product
+            // })
+            // console.log(newPAr)
+
+            //8.Check whether any of the manufacturers is "Metra".
+            // let checkMetra = products.filter(function(p){
+            //     if(p.manufacturer === "Metra"){
+            //         return true;
+            //     }
+            // }).length
+            
+            // if(checkMetra > 0){
+            //     console.log("yes")
+            // }else{
+            //     console.log("no")
+            // }
+
+            //9.Check whether all products are manufactured by "Duracell".
+            // let checkAll = products.filter(function(p){
+            //     if(p.manufacturer === "Duracell"){
+            //         return true;
+            //     }
+            // }).length
+            
+            // if(products.length === checkAll){
+            //     console.log("yes, All")
+            // }else{
+            //     console.log("no, not all")
+            // }
+
+            //10.
+            let newPArr = products.map(function(product){
+                return {
+                    ...product,
+                    "discount" : "1.5 to each object"
+                }
+            })
+            console.log(newPArr)
+            console.log(products)
+    </script>
+</body>
+</html>

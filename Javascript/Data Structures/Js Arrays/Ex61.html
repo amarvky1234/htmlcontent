@@ -1,0 +1,22 @@
+<!--Search for an element in an array-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [12, 156, -28, 45, 0, 27, 65]
+
+            //1.Using includes()
+            // console.log(ar.includes(-28))
+            // console.log(ar.includes(-34))
+
+            //2.Using some()
+            let found = ar.some(ele => ele === 1156)
+            console.log(found ? "found" : "not found")
+    </script>
+</body>
+</html>

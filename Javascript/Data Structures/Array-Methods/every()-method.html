@@ -1,0 +1,25 @@
+<!--every() is used to check if all elements in an array satisfy a condition.
+👉 It returns:
+✅ true → if all elements pass the condition
+❌ false → if any one fails-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [34, 112, 134, 156, 1370];
+            let res = ar.every(function(x){
+                if(x % 2 === 0){
+                    return false
+                }else{
+                    return true
+                }
+            })
+            console.log(res)
+    </script>
+</body>
+</html>

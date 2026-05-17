@@ -1,0 +1,60 @@
+<!--Eliminate duplicates in an array.
+o Input: [23, 34, 54, 10, 34, 7, 23] → Output: [23, 34, 54, 10, 7]-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                let ar = [23, 34, 54, 10, 34, 7, 23]
+                
+                //using Set
+                // let unique = [...new Set(ar)]
+                // console.log(unique)
+
+                //using filter()
+                let br = ar.filter((val, index, self) => {
+                    return self.indexOf(val) === index;
+                })
+                console.log(br)
+
+                // using for loop (with in-built methods)
+                // console.log("using for loop with in-built methods")
+                // let unique = [];
+
+                // for (let i = 0; i < ar.length; i++) {
+                //     if (!unique.includes(ar[i])) {
+                //         unique.push(ar[i]);
+                //     }
+                // }
+                // console.log(unique);
+
+                //using for loop
+                // console.log("using for loop")
+                // let uniqueAr = [];
+
+                // for (let i = 0; i < ar.length; i++) {
+                // let isDuplicate = false;
+
+                //     // checking if arr[i] already exists in unique[]
+                //     console.log(uniqueAr.length)
+                //     for (let j = 0; j < uniqueAr.length; j++) {
+                //         if (ar[i] === uniqueAr[j]) {
+                //         isDuplicate = true;
+                //         break;
+                //         }
+                //     }
+
+                //     // if not duplicate, add to unique[]
+                //     if (!isDuplicate) {
+                //         uniqueAr[uniqueAr.length] = ar[i]; // push without using push()
+                //     }
+                // }
+
+                // console.log(uniqueAr)
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!--Print only the last 4 elements of an array.
+o Input: [23, 34, 54, 0, 4, 7] → Output: 54 0 4 7-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar =  [23, 34, 54, 0, 4, 7]
+            
+            // for(var i=ar.length-4; i <= ar.length-1; i++) {
+            //     console.log(ar[i])
+            //     document.write(ar[i]+"  ")
+            // }
+
+            ar.forEach(function(ele, i, ar){
+                if(i >= ar.length-4  && i < ar.length){
+                    console.log(ele)
+                }
+            })
+    </script>
+</body>
+</html>

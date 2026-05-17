@@ -1,0 +1,30 @@
+<!--Remove an element from a specific position. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [2, 11, 34, 67, -43, 69]
+            console.log(ar)
+            
+            // console.log(ar.splice(4, 1))
+            // console.log(ar)
+
+            let pos = 4; // remove element at index 4 (value -43)
+
+            // shift elements to left
+            for (let i = pos; i <= ar.length - 1; i++) {
+                ar[i] = ar[i + 1];
+            }
+
+            // reduce array size
+            ar.length = ar.length - 1;
+
+            console.log(ar);
+    </script>
+</body>
+</html>

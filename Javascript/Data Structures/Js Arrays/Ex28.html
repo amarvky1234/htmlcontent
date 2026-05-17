@@ -1,0 +1,22 @@
+<!--Print numbers that are factors of 54 AND 42.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = []
+
+            for(var i=1 ; i<=54; i++){
+                if(54 % i ===0 && 42 % i === 0){
+                    console.log(i)
+                    ar.push(i)
+                }
+            }
+            console.log(ar)
+    </script>
+</body>
+</html>

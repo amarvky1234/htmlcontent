@@ -1,0 +1,24 @@
+<!--Find the reverse of an array.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [23, 21, 33, 45]
+
+            //console.log(ar.reverse())
+
+            //using for each
+            let rev = [];
+            ar.forEach(function(val){
+                rev.unshift(val)
+                console.log(rev, val)
+            })
+            console.log(rev)
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!--Assignment 3: 
+Const person = {
+    name:"Alice",
+    age:30,
+    city:"New York",
+    hobbies: ["reading", "hiking", "coding"],
+    isStudent:false
+};
+Advanced Level
+8. Object Copying & Spread Operator: 
+    Create a new object newPersonby copying person but changing the age to 35. 
+9. Checking Property Existence: 
+    Write a function that checks if a given property exists in the person object. 
+10. Merging Objects: 
+    Merge person with anotherobject { country:"USA", language: "English" }. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const person = {
+                name:"Alice",
+                age:30,
+                city:"New York",
+                hobbies: ["reading", "hiking", "coding"],
+                isStudent:false
+            };
+
+            //8.
+            // const newPerson = {
+            //     ...person,
+            //     age: 35
+            // }
+            // console.log(newPerson)
+
+            //9.
+            // function checkProperty(obj, propertyName){
+            //     return propertyName in obj;
+            // }
+
+            // console.log(checkProperty(person, "age"))
+            // console.log(checkProperty(person, "salary"))
+            // console.log(checkProperty(person, "hobbies"))
+
+            //10.
+            const country = {
+                country: "USA",
+                language: "English"
+            }
+
+            //meriging person and country object
+            const personCountry = {
+                ...person,
+                ...country
+            };
+            console.log(personCountry)
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- Count the total duplicate elements in an array. -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+            let ar = [1, 3, 2, 1, 5, 3, 7, 2, 11,1]
+
+            //using filter
+            let count = ar.filter(function(val, index, array) {
+                return array.indexOf(val) != index
+            }).length
+            console.log(count)
+
+            //using loop
+            // var c = 0
+            // for(let i=0; i<=ar.length-1; i++){
+            //     for(var j=0; j<i; j++){
+            //         if(ar[i] === ar[j]){
+            //             c++
+            //             break
+            //         }
+            //     }
+            // }
+            // console.log(c)
+    </script>
+ </body>
+ </html>

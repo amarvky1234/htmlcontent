@@ -1,0 +1,32 @@
+<!--9. Average Age: Write a function that calculates and returns the average age of 
+all students in the array.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const students = [
+                { name: "John", age: 18 },
+                { name: "Emily", age: 20 },
+                { name: "Michael", age: 22 },
+                { name: "Sarah", age: 19 }
+            ];
+
+            //1.
+            function avgAgeOfAllStudents() {
+
+                let avg = students.reduce(function(sum , stud) {
+                    return sum += stud.age;
+                }, 0) / students.length
+
+                return avg;
+            }
+
+            console.log(avgAgeOfAllStudents())
+    </script>
+</body>
+</html>

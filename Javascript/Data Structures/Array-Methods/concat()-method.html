@@ -1,0 +1,42 @@
+<!--concat() is used to merge two or more arrays (or values) and returns a new array.
+#Important: It does NOT modify the original array (non-mutating)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // let ar = [12, 47, 78, 0]
+            // let br = [0, -23, -21, -12, -44]
+
+            // let newAr = ar.concat(br);
+            // console.log(newAr)
+            // console.log(ar)
+            // console.log(br)
+
+            //Add Values (not just arrays)
+            // let ar = [56, 78, 66];
+
+            // let newAr = ar.concat(43, 31);
+            // console.log(newAr)
+            // console.log(ar)
+
+            //Merge Multiple Arrays
+            // let ar = [12, 47, 78, 0]
+            // let br = [0, -23, -21, -12, -44]
+            // let cr = [21, 11, 13, "pay"]
+
+            // let newAr = ar.concat(br, cr);
+            // console.log(newAr)
+
+            //Nested Arrays (Important)
+            let ar = [12, 47, 78, 0];
+
+            let newAr = ar.concat([99, 101])
+            console.log(newAr)
+    </script>
+</body>
+</html>

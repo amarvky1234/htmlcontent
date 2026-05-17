@@ -1,0 +1,29 @@
+<!--Find the maximum number in an array.
+o Input: [23, 34, 54, 10, 4, 7] → Output: 54-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                let ar =  [23, 34, 54, 10, 4, 7]
+                let max = ar[0];
+                    
+                for(var i=0; i < ar.length; i++) {
+                   if(ar[i] > max) {
+                        max = ar[i]
+                   }       
+                }
+                console.log("max: "+max)
+
+
+                let maxNum = ar.reduce(function(prev, curr){
+                    return prev > curr ? prev : curr;
+                })
+                console.log(maxNum)
+    </script>
+</body>
+</html>

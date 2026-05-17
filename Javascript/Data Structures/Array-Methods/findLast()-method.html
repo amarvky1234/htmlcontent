@@ -1,0 +1,40 @@
+<!--findLast() is a modern ES2023 method used to get the last element that 
+satisfies a condition.
+👉 It searches from right → left
+👉 It returns:
+✅ the last matching element
+❌ undefined if no match found-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [12, -34, 56, 37, 389];
+
+            //let res = ar.findLast(x => x < 0)
+            let res = ar.findLast(function(x){
+                console.log(x)
+                if(x < 0){
+                    return true
+                }else{
+                    return false
+                }
+            })
+            console.log("res: "+res)
+
+            // let ar1 = [12, 34, 56, 37, 389];
+            // let res = ar1.findLast(function(x){
+            //     if(x < 0){
+            //         return true
+            //     }else{
+            //         return false
+            //     }
+            // })
+            // console.log(res) //undefined
+    </script>
+</body>
+</html>

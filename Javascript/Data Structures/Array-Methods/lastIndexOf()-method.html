@@ -1,0 +1,28 @@
+<!--lastIndexOf() is used to find the index of the last occurrence of a 
+value in an array.
+👉 It searches from right to left
+👉 Returns:
+✅ index (0, 1, 2, …) if found
+❌ -1 if not found-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [21, 34, 56, 78, 23, 7, 21, 34, 11, 78, 7]
+            // console.log(ar.lastIndexOf(23))
+            // console.log(ar.lastIndexOf(55))
+            // console.log(ar.indexOf(78)+"       "+ar.lastIndexOf(78))
+
+            console.log(ar.lastIndexOf(23, 6))
+            console.log(ar.lastIndexOf(23, 3))
+            console.log(ar.lastIndexOf(24, -1))
+            console.log(ar.lastIndexOf(78, 4))
+            console.log(ar.lastIndexOf(78, 2))
+    </script>
+</body>
+</html>

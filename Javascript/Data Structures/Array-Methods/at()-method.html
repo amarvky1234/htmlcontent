@@ -1,0 +1,29 @@
+<!--at() is a modern JavaScript method used to access elements by index, 
+including negative indexes (which is the main advantage).
+
+#Return Type of at()
+It returns:
+The element at the given index
+OR undefined if index is out of range-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [5, 67, 76, -98, 34, 31, 0, 34, 22];
+            // console.log(ar.at(5))
+            // console.log(ar.at(-5))
+            // console.log(ar.at(11))
+
+            //Compare at() vs bracket notation
+            console.log(ar.at(5))
+            console.log(ar[5])
+            console.log(ar.at(-1))
+            console.log(ar[-1])
+    </script>
+</body>
+</html>

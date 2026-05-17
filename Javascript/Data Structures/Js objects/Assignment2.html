@@ -1,0 +1,54 @@
+<!--Assignment 2:
+ const person = {
+    name:"Alice",
+    age:30,
+    city:"New York",
+    hobbies:["reading", "hiking","coding"],
+    isStudent:false
+};
+
+1. What is Alice's age? 
+2. How would you change Alice's city to "Los Angeles"? 
+3. How would you add a new property called "occupation" with the value "Software Engineer"? 
+4. How would you loop through all of Alice's hobbies? 
+5. How would you check if the object has a property called "occupation"? 
+6. What is the data type of the isStudent property?   -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const person = {
+                name:"Alice",
+                age:30,
+                city:"New York",
+                hobbies:["reading", "hiking","coding"],
+                isStudent:false
+            };
+
+            //1.
+            // console.log("Alice's age: "+person.age);
+
+            //2.
+            // console.log(person.city)
+            // person.city = "Los Angeles";
+            // console.log(person.city)
+
+            //3.
+            // person.occupation = "Software Engineer";
+            // console.log(person)
+
+            //4.
+            for(let k in person.hobbies){
+                console.log(person.hobbies[k])
+            }
+
+            //5.
+            console.log(person.hasOwnProperty("occupation"))
+    </script>
+</body>
+</html>

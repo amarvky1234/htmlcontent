@@ -1,0 +1,50 @@
+<!--fill() is used to fill all or part of an array with a static value.
+👉 Important:
+✅ It modifies (mutates) the original array
+❌ Does not create a new array
+✅ Returns the same array (updated)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // let ar = [11, 23, 111, -67, 5]
+
+            // ar.fill(0);
+            // console.log(ar);
+
+            //Fill Part of Array
+            // let ar = [11, 23, 111, -67, 5]
+
+            // ar.fill(9, 1, 4);
+            // console.log(ar);
+
+            //Negative Index
+            // let ar = [11, 23, 111, -67, 5]
+
+            // ar.fill(17, -3);
+            // console.log(ar);
+
+            //Create Array with Same Values
+            // let ar = new Array(5).fill(11);
+            // console.log(ar)
+
+            //Return Value
+            // let ar = [11, 23, 111, -67, 5]
+
+            // let res = ar.fill("amar") //Returns same array reference
+            // console.log(res)
+            // console.log(ar)
+
+            //Important Interview Trap (Objects)
+            let arr = new Array(3).fill({});
+
+            arr[0].a = 10;
+            console.log(arr); //Same object reference is copied
+    </script>
+</body>
+</html>

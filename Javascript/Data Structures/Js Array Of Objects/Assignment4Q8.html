@@ -1,0 +1,32 @@
+<!--8. Sort Students by Age: Write a function that sorts the array of students 
+by age in ascending order.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const students = [
+                { name: "John", age: 18 },
+                { name: "Emily", age: 20 },
+                { name: "Michael", age: 22 },
+                { name: "Sarah", age: 19 }
+            ];
+
+            //1.
+            function sortStudentByAge() {
+
+                students.sort(function(a, b) {
+                    return a.age - b.age;
+                });
+
+                return students;
+            }
+
+            console.log(sortStudentByAge())
+    </script>
+</body>
+</html>

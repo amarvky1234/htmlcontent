@@ -1,0 +1,29 @@
+<!-- Write a program to count all alphabets in a given string (not words).-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+            let str = "Cam123 is Working";
+            console.log(str.length)
+
+            // let count = 0;
+
+            // for(var k in str){
+            //    if(str[k] >= 'a' && str[k] <= 'z' || str[k] >= 'A' && str[k] <= 'Z') {
+            //         count++
+            //    }
+            // }
+            // console.log(count)
+
+            let count = str.split('')
+                           .filter(ch => ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' )
+                           .length  
+            console.log(count)
+    </script>
+ </body>
+ </html>

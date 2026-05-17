@@ -1,0 +1,53 @@
+<!--This is a built-in static method in JavaScript used to check whether a value is an array or not.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // console.log(Array.isArray([1, 2, 3]))
+            // console.log(Array.isArray("hello"))
+            // console.log(Array.isArray(123))
+            // console.log(Array.isArray({}))
+            // console.log(Array.isArray(new Array()))
+            // console.log(Array.isArray(new Array(23, 234, -567)))
+            // console.log(Array.isArray([]))
+            // console.log(Array.isArray(null))
+            // console.log(Array.isArray(undefined))
+
+            // let ar = [12, "priya", 56, "universal"]
+            // console.log(Array.isArray(ar))
+
+            //why not use typeOf?
+            // let ar = [45, 67, 66, 23]
+            // console.log(typeof ar)   // here Arrays are treated as object
+            // console.log(Array.isArray(ar)) // so it is correct way
+
+            //Why not use instanceof Array?
+            // let ar = [45, 67, 66, 23];
+            // console.log(ar instanceof Array) //But this can fail in special cases (like if arrays come from different iframes)
+            // console.log(Array.isArray(ar)) // best to use this always reliable
+
+            //Real Use cases
+            function processData(data) {
+                if (!Array.isArray(data)) {
+                    console.log("Invalid input, expected array");
+                    return;
+                }else{
+                    return data;
+                }
+
+                //data.forEach(x => console.log(x));
+            }
+
+            processData("raja")
+            let x1 = processData([2, 3, 5])
+            console.log(x1)
+            let x2 = processData(new Array())
+            console.log(x2)
+    </script>
+</body>
+</html>

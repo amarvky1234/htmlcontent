@@ -1,0 +1,31 @@
+<!--Store an array into another array (copy array).
+o Input: ar = [23, 34, 54, 10, 4, 7] → Output: br = [23, 34, 54, 10, 4, 7] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [23, 34, 54, 10, 4, 7]
+            let br =[]
+
+            // for(var i=0; i<= ar.length-1; i++){
+            //     br[i] = ar[i]
+            // }
+            // console.log(br)
+
+            // let cr = ar;
+            // console.log(cr)
+            // document.write(cr)
+
+            let fr = [];
+            ar.forEach(function(num){
+                fr.push(num)
+            })
+            console.log(fr);
+    </script>
+</body>
+</html>

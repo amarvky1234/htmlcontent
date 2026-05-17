@@ -1,0 +1,41 @@
+<!--map() is one of the most important array methods in JavaScript.
+👉 It is used to transform each element of an array and returns a new array.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            //Basic Example
+            // let arr = [1, 2, 3];
+            // let result = arr.map(x => x * 2);
+            // console.log(result);
+
+            //Convert numbers to squares
+            // let ar = [23, 12, 11, 45, 3, 15, 20]
+            // let squares = ar.map(function(a){
+            //     return a * a;
+            // })
+            // console.log(squares)
+
+            //Extract property from objects
+            // let users = [{name: "raja", age: 20}, {name: "rani", age: 25}]
+
+            // let names = users.map(function(user){
+            //     return user.name;
+            // })
+            // console.log(names)
+
+            //Convert string array to uppercase
+            let ar = ['a', "amarjeet", 'z', "raja", 'p', "priya"];
+            
+            let upperCase = ar.map(function(str){
+                return str.toUpperCase();
+            })
+            console.log(upperCase)
+    </script>
+</body>
+</html>

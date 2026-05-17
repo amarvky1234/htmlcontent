@@ -1,0 +1,62 @@
+<!--Assignment 2 :Array of Strings Processing Assignments with for loop
+Here are JavaScript assignment questions using for loops with an array of 
+strings:
+Basic Level
+1. Use a for loop to print each fruit in the fruits array.
+2. Use a for loop to print the index and value of each fruit.
+3. Use a for loop to count how many fruits are in the array.
+4. Use a for loop to find and print the longest fruit name.
+5. Use a for loop to print only fruits that contain the letter "a".-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const fruits = ["Apple", "Banana", "Cherry", "Mango", "Orange", 
+            "Grapes"];
+
+            //1.
+            // for(let k in fruits) {
+            //     console.log(fruits[k]);
+            // }
+
+            //2.
+            // for(let k in fruits) {
+            //     console.log(fruits[k] +"     "+k);
+            // }
+
+            //3.
+            // let count = 0;
+            // for(let i=0; i<=fruits.length-1; i++) {
+            //     count++;
+            // }
+            // console.log("no. of fruits in the array :"+count)
+
+            //4.
+            // let fruitNm = fruits[0];
+            // for(let i=1; i<=fruits.length-1; i++) {
+            //     if(fruits[i].length > fruitNm.length){
+            //         console.log(fruits[i].length, fruitNm.length)
+            //         fruitNm = fruits[i];
+            //     }
+            // }
+            // console.log("print the longest fruit name :"+fruitNm)
+
+
+            //5.
+            console.log(fruits)
+            for(let i in fruits){
+                // if(fruits[i].indexOf('a') !== -1){
+                //     console.log(fruits[i])
+                // }
+                if(fruits[i].includes('a')){
+                    console.log(fruits[i])
+                }
+            }
+    </script>
+</body>
+</html>

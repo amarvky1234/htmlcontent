@@ -1,0 +1,58 @@
+<!--findLastIndex() is a modern JavaScript (ES2023) method used to find the 
+index of the last element that satisfies a condition.
+👉 It searches from right → left
+👉 It returns:
+✅ index of the last matching element
+❌ -1 if no match found-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // let ar = [11, 13, 17, -54, 67];
+            // let index = ar.lastIndexOf(function(val, i){
+            //     if(val % 2 === 0){
+            //         return true;
+            //     }else{
+            //         return false;
+            //     }
+            // })
+            // console.log(index)
+
+            // let ar = [11, 12, 17, -57, 67];
+            // let index = ar.findLastIndex(function(val, i){
+            //     if(val % 2 === 0){
+            //         return true;
+            //     }else{
+            //         return false;
+            //     }
+            // })
+            // console.log(index)
+
+
+            let ar = [12, 34, 245, 14, 12, 24, 61]
+            let index = ar.findLastIndex(function(val){
+                if (val === 12) {
+                    return true;
+                }else {
+                    return false;
+                }
+            })
+            console.log(index);
+
+            //Remove last occurrence
+            let br = [12, 34, 245, 14, 12, 24, 61]
+
+            let i = ar.findLastIndex(x => x === 12)
+
+            if(i !== -1){
+                br.splice(i, 1)
+            }
+            console.log(br)
+    </script>
+</body>
+</html>
