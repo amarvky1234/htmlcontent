@@ -1,0 +1,30 @@
+<!--1. Reverse of a number using toString, split, reverse, and join methods..-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let a = 1234;
+            console.log(a+"     "+typeof a)
+            console.log()
+            a = a.toString()
+            console.log(a+"     "+typeof a)
+            a = a.split('')
+            console.log(typeof a)
+            console.log(a)
+            a = a.reverse();
+            console.log(a)
+            a = a.join("")
+            console.log(a+"     "+typeof a)
+            a = +a;
+            console.log(a+"       "+typeof a)
+            // let rev = Number(a.toString().split('').reverse().join(''))
+            // console.log(rev)
+            // console.log(typeof rev)
+    </script>
+</body>
+</html>

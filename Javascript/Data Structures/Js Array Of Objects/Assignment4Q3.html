@@ -1,0 +1,45 @@
+<!--Assignment 4:
+Here’s a simple array of objects, which could represent a list of students with 
+their names and ages: 
+    const students = [
+        { name: "John", age: 18 },
+        { name: "Emily", age: 20 },
+        { name: "Michael", age: 22 },
+        { name: "Sarah", age: 19 }
+    ];
+Now, here are some assignment questions based on this array of objects: 
+3. Find Oldest Student: Write a function that finds the oldest student from the 
+array and returns their name and age.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const students = [
+                { name: "John", age: 18 },
+                { name: "Emily", age: 20 },
+                { name: "Michael", age: 22 },
+                { name: "Sarah", age: 19 }
+            ];
+
+            //1.
+            function getOldestStudent() {
+                let oldest = students[0];
+                
+                students.forEach(function(s){
+                    if(s.age > oldest.age){
+                        oldest = s;
+                    }
+                });
+
+                return oldest;
+            }
+
+            console.log(getOldestStudent())
+    </script>
+</body>
+</html>

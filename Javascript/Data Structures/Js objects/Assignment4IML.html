@@ -1,0 +1,130 @@
+<!--Assignment 4: 
+Here’s a more complex object with nested structures, arrays, and methods: 
+
+  Const person = {
+        name:"Alice",
+        age:30,
+        address: {
+        street:"123 Main St",
+        city:"New York",
+        country:"USA"
+    },
+    hobbies: ["reading", "hiking", "coding"],
+    isStudent:false,
+    contacts: [
+        { type:"email", value:"alice@example.com" },
+        { type:"phone", value:"+1234567890" }
+    ],
+
+    skills: {
+        programming: ["JavaScript", "Python", "Java"],
+        softSkills: ["communication", "teamwork"]
+    },
+
+    greet:function () {
+        return`Hello, my name is ${this.name} and I live in ${this.address.city}.`;
+    },
+
+    addHobby:function (newHobby) {
+        this.hobbies.push(newHobby);
+    }
+};
+
+Intermediate Level
+1. Add a method displayContacts() that logs all contact types and values. 
+2. Write a function that adds a new skill under skills.programming. 
+3. Write a function to remove a hobby from the hobbies array. 
+4. Loop through skills.programming and print each programming language. 
+5. Use object destructuring to extract name and age.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+                name:"Alice",
+                age:30,
+                address: {
+                street:"123 Main St",
+                city:"New York",
+                country:"USA"
+            },
+            hobbies: ["reading", "hiking", "coding"],
+            isStudent:false,
+            contacts: [
+                { type:"email", value:"alice@example.com" },
+                { type:"phone", value:"+1234567890" }
+            ],
+
+            skills: {
+                programming: ["JavaScript", "Python", "Java"],
+                softSkills: ["communication", "teamwork"]
+            },
+
+            greet:function () {
+                return`Hello, my name is ${this.name} and I live in ${this.address.city}.`;
+            },
+
+            addHobby:function (newHobby) {
+                this.hobbies.push(newHobby);
+            }
+        };
+
+        //1.
+        // person.displayContact = function() {
+        //     this.contacts.forEach(function(contact){
+        //         console.log(contact.type +": "+ contact.value)
+        //     })
+        // }
+
+        // person.displayContact();
+
+        //2.
+        // function addProgrammingSkill(obj, skill){
+        //     obj.skills.programming.push(skill)
+        // }
+
+        // addProgrammingSkill(person, ".net")
+
+        // console.log(person.skills.programming)
+
+        //3.
+        // function removeHobby(obj){
+        //     return obj.hobbies.pop();
+        // }
+    
+        // console.log(removeHobby(person))
+        // console.log(person.hobbies)
+
+        // function removeHobby(obj, hobbyName) {
+        //     obj.hobbies = obj.hobbies.filter(function(hobby) {
+        //         return hobby !== hobbyName;
+        //     });
+        // }
+
+        // removeHobby(person, "hiking");
+
+        // console.log(person.hobbies);
+
+        //4.
+        // let skill = person.skills.programming;
+        // console.log(skill)
+
+        for(let i in person.skills.programming){
+            console.log(person.skills.programming[i])
+        }
+
+        //5.
+        let {name, age, address} = person;
+        console.log(name)
+        console.log(age)
+        for(let i in address){
+            console.log(i.padEnd(15)+": "+address[i])
+        }
+    </script>
+</body>
+</html>

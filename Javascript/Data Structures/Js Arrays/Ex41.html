@@ -1,0 +1,29 @@
+<!--Merge two arrays with values of the second array appearing first. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [1, 2, 3, 4, 5]
+            let br = [6, 7, 8, 9, 10]
+
+            let mergeAr = []
+
+            for(var i=0; i<=br.length-1; i++){
+                mergeAr[i] = br[i]
+            }
+            console.log(mergeAr)
+            let k = mergeAr.length
+            console.log(k)
+
+            for(var i=0; i<=ar.length-1; i++){
+                mergeAr[k + i] = ar[i]
+            }
+            console.log(mergeAr)
+    </script>
+</body>
+</html>

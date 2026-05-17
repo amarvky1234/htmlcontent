@@ -1,0 +1,52 @@
+<!--Assignment 4:
+Here’s a simple array of objects, which could represent a list of students with 
+their names and ages: 
+    const students = [
+        { name: "John", age: 18 },
+        { name: "Emily", age: 20 },
+        { name: "Michael", age: 22 },
+        { name: "Sarah", age: 19 }
+    ];
+Now, here are some assignment questions based on this array of objects: 
+1. Access Object Properties: Write a function that takes the name of a student 
+as input and returns the corresponding age of the student. If the student 
+doesn't exist, return null.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const students = [
+                { name: "John", age: 18 },
+                { name: "Emily", age: 20 },
+                { name: "Michael", age: 22 },
+                { name: "Sarah", age: 19 }
+            ];
+
+            //1.
+            function getStudentAge(studentName) {
+
+                let student = students.find(function(s) {
+                    return s.name === studentName;
+                });
+
+                if (student) {
+                    return student.age;
+                }
+
+                return null;
+            }
+
+            console.log(getStudentAge("Emily"))
+            console.log(getStudentAge("John"))
+            console.log(getStudentAge("Rahul"))
+            console.log(getStudentAge("Michael"))
+            console.log(getStudentAge("Ravi"))
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!--Count the total even and odd elements in an array.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [10, 45, 23, 67, 34, 67, 90];
+
+            let evenCount = 0
+            let oddCount = 0
+
+            for(var i=0; i<=ar.length-1; i++){
+                if(ar[i] % 2 === 0){
+                    evenCount++
+                }else {
+                    oddCount++
+                }
+            }
+            console.log("total even elements: "+evenCount)
+            console.log("total odd elements: "+oddCount)
+    </script>
+</body>
+</html>

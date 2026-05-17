@@ -1,0 +1,201 @@
+<!--Now, here are the assignment questions, sorted by difficulty level:
+Advanced Level (Complex Array Operations)
+10. Department-wise Salary Calculation:
+Write a function that calculates the total salary expense for each department.
+The result should be an object where the keys are department names, and the 
+values are the total salaries for each department.
+
+11. Employee with the Highest Salary:
+Write a function that returns the employee who has the highest salary, along 
+with their name, department, and salary.
+
+12. Average Salary by Department:
+Write a function that calculates and returns the average salary of employees 
+in each department.The result should be an object where the keys are 
+department names, and the values are the average salary for each department.
+
+13. Inactive Employees Count:
+Write a function that returns the number of employees who have an "inactive" 
+status.
+
+14. Update Salary Based on Department:
+Write a function that increases the salary of all employees in a specific 
+department by a certain percentage. The function should take the department 
+name and percentage increase as parameters.
+
+15. Promote Employees (Based on Salary):
+Write a function that promotes employees who have a salary above a certain 
+threshold (e.g., $60,000) by giving them a $10,000 raise.
+Return the updated list of employees with the new salary.
+
+16. Employee Report:
+Write a function that returns a report of all employees in the following 
+format:
+Name: [name], Department: [department], Salary: [salary], Status: [status].
+The report should be sorted alphabetically by employee name.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+             const employees = [
+                {
+                    id: 1,
+                    name: "John Doe",
+                    department: "Engineering",
+                    salary: 55000,
+                    status: "active"
+                },
+                {
+                    id: 2,
+                    name: "Jane Smith",
+                    department: "Marketing",
+                    salary: 60000,
+                    status: "inactive"
+                },
+                {
+                    id: 3,
+                    name: "Michael Johnson",
+                    department: "Engineering",
+                    salary: 75000,
+                    status: "active"
+                },
+                {
+                    id: 4,
+                    name: "Emily Davis",
+                    department: "Human Resources",
+                    salary: 48000,
+                    status: "active"
+                },
+                {
+                    id: 5,
+                    name: "Chris Lee",
+                    department: "Marketing",
+                    salary: 53000,
+                    status: "inactive"
+                },
+                {
+                    id: 6,
+                    name: "Sarah Brown",
+                    department: "Engineering",
+                    salary: 62000,
+                    status: "active"
+                },
+                {
+                    id: 7,
+                    name: "David Wilson",
+                    department: "Human Resources",
+                    salary: 47000,
+                    status: "active"
+                },
+                {
+                    id: 8,
+                    name: "Anna White",
+                    department: "Marketing",
+                    salary: 59000,
+                    status: "inactive"
+                }
+            ];
+
+
+            //10.
+            // function departmentWiseSalaryCalculation() {
+            //     let result = employees.reduce(function(res, emp){
+            //         if(res[emp.department]){
+            //             res[emp.department] += emp.salary;
+            //         } else {
+            //             res[emp.department] = emp.salary;
+            //         }
+            //         return res;
+            //     }, {})
+                
+            //     return result;
+            // }
+            // console.log(departmentWiseSalaryCalculation());
+            
+            //11.
+            // function employeeWithTheHighestSalary() {
+            //     let result = employees.reduce(function(highest, emp){
+            //         if(emp.salary > highest.salary){
+            //             return emp;
+            //         }else {
+            //             return highest;
+            //         }
+            //     })
+
+            //     let name = result.name;
+            //     let dept = result.department;
+            //     let sal = result.salary;
+
+            //     let res = "Name: "+name+"  Department: "+dept+"  Salary:"+sal
+            //     return res;
+            // }
+            // console.log(employeeWithTheHighestSalary())
+
+            //12.
+
+            //13.
+            // function inactiveEmployeesCount() {
+            //     let count = employees.filter(function(emp){
+            //         return emp.status === "inactive";
+            //     }).length
+
+            //     return count;
+            // }
+            // console.log(inactiveEmployeesCount())
+
+            //14.
+            // function updateSalaryBasedOnDepartment(deptNm, percentage) {
+            //     let empAr = employees.filter(function(emp){
+            //         if(emp.department === deptNm){
+            //             return true;
+            //         }
+            //     }).map(function(emp){ 
+            //         return {
+            //             ...emp,
+            //             salary : emp.salary + (emp.salary * percentage) /100
+            //         };
+            //     })
+
+            //     if(empAr.length > 0) {
+            //         return empAr;
+            //     } else {
+            //         return "Pass Valid Department Name";
+            //     }
+            // }
+            // console.log(updateSalaryBasedOnDepartment("Marketing", 8))
+            // console.log(employees)
+
+            //15.
+            // function promoteEmployeesBasedOnSalary() {
+            //     employees.filter(function(emp){
+            //         return emp.salary > 60000
+            //     }).map(function(emp){
+            //         emp.salary += 10000
+            //         return emp;
+            //     })
+
+            //     return employees;
+            // }
+            // console.log(promoteEmployeesBasedOnSalary())
+
+            //16.
+            function employeeReport() {
+                employees.sort(function(a, b){
+                    return a.name.localeCompare(b.name)
+                })
+                return employees.forEach(function(emp){
+                    console.log("Name: "+emp.name, "Department: "+emp.department,
+                        "Salary: "+emp.salary, "Status: "+emp.status
+                    )
+                })
+            }
+
+            employeeReport();
+    </script>
+</body>
+</html>

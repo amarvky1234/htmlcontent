@@ -1,0 +1,141 @@
+<!--Now, here are the assignment questions, sorted by difficulty level:
+Beginner Level (Basic Array and Object Manipulation)
+1. Access Employee Data:
+Write a function that takes an employee's ID as input and returns the 
+employee's name and department. If the employee doesn't exist, return 
+"Employee not found".
+2. Total Number of Employees:
+Write a function that returns the total number of employees in the array.
+3. List Active Employees:
+Write a function that returns an array of names of all employees who are 
+currently "active."
+4. Find Employee by Department:
+Write a function that takes a department name as input and returns a list of 
+employees working in that department.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+             const employees = [
+                {
+                    id: 1,
+                    name: "John Doe",
+                    department: "Engineering",
+                    salary: 55000,
+                    status: "active"
+                },
+                {
+                    id: 2,
+                    name: "Jane Smith",
+                    department: "Marketing",
+                    salary: 60000,
+                    status: "inactive"
+                },
+                {
+                    id: 3,
+                    name: "Michael Johnson",
+                    department: "Engineering",
+                    salary: 75000,
+                    status: "active"
+                },
+                {
+                    id: 4,
+                    name: "Emily Davis",
+                    department: "Human Resources",
+                    salary: 48000,
+                    status: "active"
+                },
+                {
+                    id: 5,
+                    name: "Chris Lee",
+                    department: "Marketing",
+                    salary: 53000,
+                    status: "inactive"
+                },
+                {
+                    id: 6,
+                    name: "Sarah Brown",
+                    department: "Engineering",
+                    salary: 62000,
+                    status: "active"
+                },
+                {
+                    id: 7,
+                    name: "David Wilson",
+                    department: "Human Resources",
+                    salary: 47000,
+                    status: "active"
+                },
+                {
+                    id: 8,
+                    name: "Anna White",
+                    department: "Marketing",
+                    salary: 59000,
+                    status: "inactive"
+                }
+            ];
+
+
+            //1.
+            function empNameAndDepart(empId) {
+                let empAr = employees.filter(function(emp){
+                    if(emp.id === empId){
+                        return true;
+                    }
+                }).map(function(emp){
+                    let name = emp.name;
+                    let dept = emp.department;
+                    return "Name: "+name+"    "+"  Department: "+dept;
+                })
+
+                if(empAr.length !== 0){
+                    return empAr;
+                }else{
+                    return "Employee not found";
+                }
+            }
+
+            console.log(empNameAndDepart(25))
+            console.log(empNameAndDepart(8))
+
+            //2.
+            function totalEmployees() {
+                let count = employees.length;
+                return "Total number of employees: "+count;
+            }
+            console.log(totalEmployees())
+
+            //3.
+            function activeEmployeesName() {
+                let empAr = employees.filter(function(emp){
+                    return emp.status === 'active'
+                }).map(function(emp){
+                    return emp.name;
+                })
+                
+                return empAr;
+            }
+            console.log(activeEmployeesName())
+
+            //4.
+            function findEmployeeByDepartment(deptNm) {
+                let empAr = employees.filter(function(emp){
+                    return emp.department === deptNm;
+                })
+
+                if(empAr.length !== 0){
+                    return empAr;
+                }else {
+                    return "No Department Available With this name";
+                }
+            }
+            console.log(findEmployeeByDepartment("abc"))
+            console.log(findEmployeeByDepartment("Marketing"))
+    </script>
+</body>
+</html>

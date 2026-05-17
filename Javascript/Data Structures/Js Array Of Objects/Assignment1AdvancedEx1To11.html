@@ -1,0 +1,216 @@
+<!--Advanced:
+1. Print all the full names in ascending order of their salaries.
+2. Separate all male and female people and store them in separate arrays.
+3. Store all the cities in an array.There should not be any duplicates.
+4. Print all the full names with the first letter in uppercase.
+Example: "Praveen Gubbala".
+5. Print the full names of all the male people in alphabetical order(a - z).
+6. Print the full names of all the female people in reverse alphabetical 
+order(z - a).
+7. Increase the salaries of all people by 15 % and print the new array of 
+objects.
+8. Check whether any person is having the letter 'k' in their first names.
+9. Check whether all people are having the letter 'a' in their last names.
+10. Add a "role" property to each object and print the new array of 
+objects.For example, add
+            "role": "Lead Engineer" to each object.
+11. Sort the array based on their lastname-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var people = [
+
+            {
+                "firstname": "praveen",
+                "lastname": "gubbala",
+                "age": 36,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 10000
+            },
+
+            {
+                "firstname": "srikanth",
+                "lastname": "gubbala",
+                "age": 32,
+                "gender": "male",
+                "city": "bengaluru",
+                "salary": 20000
+            },
+
+            {
+                "firstname": "pradeep",
+                "lastname": "reddy",
+                "age": 21,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 25000
+            },
+
+            {
+                "firstname": "mounika",
+                "lastname": "mudiraj",
+                "age": 20,
+                "gender": "female",
+                "city": "nalgonda",
+                "salary": 30000
+            },
+
+            {
+                "firstname": "nikhil",
+                "lastname": "m",
+                "age": 22,
+                "gender": "male",
+                "city": "guntur",
+                "salary": 2000
+            },
+
+            {
+                "firstname": "riya",
+                "lastname": "bhadouria",
+                "age": 14,
+                "gender": "female",
+                "city": "indore",
+                "salary": 40000
+            }
+
+        ];
+        // let k = 1
+        // people.forEach(function(p){
+        //     console.log("person "+k++)
+        //     for(let i in p){
+        //         console.log(i.padEnd(10)+": "+p[i])
+        //     }
+        // })
+
+        //1.Print all the full names in ascending order of their salaries.
+        // let fullnames = people.toSorted(function(a, b){
+        //     return a.salary - b.salary;
+        // }).map(function(p){
+        //     return p.firstname+" "+p.lastname
+        // })
+        // console.log(fullnames)
+
+        // let sortedPeople = people.toSorted(function(a, b){
+        //     return a.salary - b.salary;
+        // })
+        // sortedPeople.forEach(function(p){
+        //     console.log(p.firstname+" "+p.lastname+"  "+p.salary)
+        // })
+
+        //2.Separate all male and female people and store them in separate arrays.
+        // let maleAr = people.filter(function(p){
+        //     if(p.gender === 'male'){
+        //         return true;
+        //     }
+        // })
+        // let femaleAr = people.filter(function(p){
+        //     if(p.gender === 'female'){
+        //         return true;
+        //     }
+        // })
+        // console.log(maleAr)
+        // console.log(femaleAr)
+
+        //3. Store all the cities in an array.There should not be any duplicates.
+        // let cities = [];
+        // people.forEach(function(p){
+        //     if(!cities.includes(p.city)){
+        //         cities.push(p.city)
+        //     }
+        // })
+        // console.log(cities)
+
+        //4. Print all the full names with the first letter in uppercase.Example: "Praveen Gubbala".
+        // people.forEach(function(p){
+        //     let firstNm = p.firstname.charAt(0).toUpperCase() + p.firstname.slice(1);
+        //     let latNm = p.lastname.charAt(0).toUpperCase() + p.lastname.slice(1);
+        //     console.log(firstNm+" "+latNm)
+        // })
+
+        //5. Print the full names of all the male people in alphabetical order(a - z).
+        // let fullnames = people.filter(function(p){
+        //     if(p.gender === 'male'){
+        //         return true;
+        //     }
+        // }).map(function(p){
+        //     return p.firstname+" "+p.lastname
+        // }).toSorted();
+        // console.log(fullnames)
+
+        //6. Print the full names of all the female people in reverse alphabetical order(z - a).
+        // let fullname = people.filter(function(p){
+        //     if(p.gender === 'female'){
+        //         return true;
+        //     }
+        // }).map(function(p){
+        //     return p.firstname+" "+p.lastname
+        // }).toReversed();
+        // console.log(fullname)
+
+        //7. Increase the salaries of all people by 15 % and print the new array of objects.
+        // let pp = people.map(function(p){
+        //     p.salary = p.salary + (p.salary * 0.15)
+        //     return p;
+        // })
+        // console.log(pp)
+
+        //8. Check whether any person is having the letter 'k' in their first names.
+        // let ar = people.filter(function(p){
+        //     if(p.firstname.includes('k')){
+        //         return true;
+        //     }
+        // })
+        // console.log(ar)
+
+        // if(ar.length !== 0){
+        //     console.log("yes, there are person is having the letter 'k' in their first names")
+        // }else{
+        //     console.log("no, there are no person is having the letter 'k' in their first names")
+        // }
+
+        //9. Check whether all people are having the letter 'a' in their last names.
+        // let totalPeople = people.length
+        // let ar = people.filter(function(p){
+        //     if(p.lastname.includes('a')){
+        //         return true;
+        //     }
+        // })
+        // console.log(ar)
+
+        // if(ar.length === totalPeople){
+        //     console.log("yes, all people are having the letter 'a' in their last names")
+        // }else{
+        //     console.log("no, all people are not having the letter 'a' in their last names")
+        // }
+
+        //10.
+        // let updatedPeople = people.map(function(p){
+        //     return{
+        //         ...p,
+        //         role: "Lead Engineer"
+        //     };
+        // })
+        // console.log(updatedPeople)
+
+        // people.forEach(function(p){
+        //     p.role = "Lead Engineer"
+        // })
+        // console.log(people)
+
+        //11. Sort the array based on their lastname
+        let sortBasedOnLastNm = people.toSorted(function(a, b){
+            return a.lastname.localeCompare(b.lastname)
+        });
+
+        console.log(sortBasedOnLastNm)
+        console.log(people)
+    </script>
+</body>
+</html>

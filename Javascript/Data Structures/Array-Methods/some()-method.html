@@ -1,0 +1,31 @@
+<!--some() is used to check if at least one element in an array satisfies a condition.
+👉 It returns:
+✅ true → if any one element passes
+❌ false → if all elements fail-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // let ar = [12, 34, -56, 37, 389];
+
+            // let res = ar.some(function(num){
+            //     if(num < 0){
+            //         return true
+            //     }else {
+            //         return false
+            //     }
+            // })
+            // console.log(res)
+
+            let ar = [12, -34, 56, 37, 389];
+
+            let res = ar.some(x => x < 0)
+            console.log(res)
+    </script>
+</body>
+</html>

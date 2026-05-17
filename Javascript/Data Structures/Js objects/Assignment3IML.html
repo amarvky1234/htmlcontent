@@ -1,0 +1,61 @@
+<!--Assignment 3: 
+Const person = {
+    name:"Alice",
+    age:30,
+    city:"New York",
+    hobbies: ["reading", "hiking", "coding"],
+    isStudent:false
+};
+5. Object Methods:
+    Add a method greet() to person that returns "Hello,my name is Alice!". 
+    Modify greet() to dynamically return "Hello,my name is [name] and I am [age] 
+    years old!". 
+6. Object Destructuring: 
+    Use object destructuring to extract name and age from person. 
+7. Using this in an Object Method: 
+    Add a method displayHobbies()that logs all hobbies in a formatted string. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const person = {
+                name:"Alice",
+                age:30,
+                city:"New York",
+                hobbies: ["reading", "hiking", "coding"],
+                isStudent:false,
+
+                displayHobbies: function() {
+                console.log(`${this.name}'s hobbies are: ${this.hobbies.join(", ")}`)
+                }
+            };
+
+            //5.
+            // person.greet = function() {
+            //     console.log("Hello,my name is Alice!");
+            // };
+
+            // person.greet();
+
+            // person.greet = function() {
+            //     console.log("Hello,my name is "+person.name+" and I am " +person.age+" years old!");
+            // };
+            // person.greet();
+
+            //6.
+            // const {name, age, city, hobbies} = person;
+            // console.log(name)
+            // console.log(age)
+            // console.log(city)
+            // console.log(hobbies)
+
+            //7.
+            person.displayHobbies();
+    </script>
+</body>
+</html>

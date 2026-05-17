@@ -1,0 +1,33 @@
+<!--Write a program to remove elements that are not in ascending order.
+o Input: [12, 34, 11, 56, 37, 98, 23] → Output: [12, 34, 56, 98]-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let arr = [12, 34, 11, 56, 37, 98, 23];
+            console.log(arr)
+
+            let k = 1;
+
+            for (let i = 1; i < arr.length-1; i++) {
+                if(arr[i] > arr[k - 1]){
+                    arr[k] = arr[i]
+                    k++
+                }
+            }
+            // console.log(arr)
+
+            // for(let i=0; i<k; i++){
+            //     console.log(arr[i])
+            // }
+
+            arr.length = k
+            console.log(arr)
+    </script>
+</body>
+</html>

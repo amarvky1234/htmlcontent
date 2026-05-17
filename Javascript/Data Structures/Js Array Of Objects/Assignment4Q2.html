@@ -1,0 +1,38 @@
+<!--Assignment 4:
+Here’s a simple array of objects, which could represent a list of students with 
+their names and ages: 
+    const students = [
+        { name: "John", age: 18 },
+        { name: "Emily", age: 20 },
+        { name: "Michael", age: 22 },
+        { name: "Sarah", age: 19 }
+    ];
+Now, here are some assignment questions based on this array of objects: 
+2. Array Length: Write a function that returns the total number of students in 
+the array.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const students = [
+                { name: "John", age: 18 },
+                { name: "Emily", age: 20 },
+                { name: "Michael", age: 22 },
+                { name: "Sarah", age: 19 }
+            ];
+
+            //1.
+            function getTotalStudents(studentName) {
+                return students.length;
+            }
+
+            console.log(getTotalStudents());
+    </script>
+</body>
+</html>

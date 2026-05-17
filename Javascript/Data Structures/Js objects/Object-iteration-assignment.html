@@ -1,0 +1,178 @@
+<!--var marks = {
+    "maths": 34,
+    "english": 56,
+    "science":32,
+    "hindi": 75,
+    "socialscience": 65
+};
+
+1. Print the marks of all the subjects. 
+2. Print the names of all the subjects fromthe given object. 
+3. Count the number of subjects from the givenobject. 
+4. Print the percentage of the marks of thestudent. 
+5. Print only those subjects where the student scored more than 35. 
+6. Print the pass/fail status of the subjects provided 35 is the pass mark. 
+7. Print only the passed subjects. 
+8. Count the number of passed subjects. 
+9. Print only the failed subjects. 
+10. Count the number of failed subjects. 
+11. Print the least scored subject. 
+12. Print the highest scored subject. 
+13. Check whether the student has passed in all the subjects or not. 
+14. Take the subject name from the student through prompt box and print 
+the subject marks and pass/fail status. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var marks = {
+                "maths": 34,
+                "english": 56,
+                "science":32,
+                "hindi": 75,
+                "socialscience": 65
+            };
+
+            //1.
+            // for(let k in marks){
+            //     console.log(marks[k])
+            // }
+
+            //2.
+            // for(let k in marks){
+            //     console.log(k)
+            // }
+
+            //3.
+            // let count = 0;
+            // for(let k in marks){
+            //     count++;
+            // }
+            // console.log("number of subjects: "+count)
+
+            //4.
+            // let totalMarks = 0;
+            // let totalSubjects = 0;
+            // for(let k in marks){
+            //     totalMarks += marks[k]
+            //     totalSubjects++;
+            // }
+
+            // let percentage = totalMarks / totalSubjects;
+            // console.log("percentage of the marks of the student: "+percentage+"%")
+
+            //5.
+            // for(let k in marks){
+            //     if(marks[k] > 35){
+            //         console.log(k)
+            //     }
+            // }
+
+            //6.
+            // for(let k in marks){
+            //     if(marks[k] >= 35){
+            //         console.log("Pass in subject :"+k)
+            //     }else {
+            //         console.log("Fail in subject :"+k)
+            //     }
+            // }
+
+            //7.
+            // console.log("the passed subjects : ")
+            // for(let k in marks){
+            //     if(marks[k] > 35){
+            //         console.log(k)
+            //     }
+            // }
+
+            //8.
+            // let count = 0;
+            // for(let k in marks){
+            //     if(marks[k] > 35){
+            //         count++;
+            //     }
+            // }
+            // console.log("total passed subjects : "+count)
+
+            //9.
+            // console.log("the failed subjects : ")
+            // for(let k in marks){
+            //     if(marks[k] < 35){
+            //         console.log(k)
+            //     }
+            // }
+
+            //10.
+            // let count = 0;
+            // for(let k in marks){
+            //     if(marks[k] < 35){
+            //         count++;
+            //     }
+            // }
+            // console.log("total failed subjects : "+count)
+
+            //11.
+            // let leastScored = Infinity;
+            // let subjectName = "";
+            // for(let m in marks){
+            //     if(marks[m] < leastScored){
+            //         leastScored = marks[m]
+            //         subjectName = m;
+            //     }
+            // }
+            // console.log(leastScored)
+            // console.log(subjectName)
+
+            //12.
+            // let maxScored = 0;
+            // let subjectName = "";
+            // for(let m in marks){
+            //     if(marks[m] > maxScored){
+            //         maxScored = marks[m]
+            //         subjectName = m;
+            //     }
+            // }
+            // console.log(maxScored)
+            // console.log(subjectName)
+
+            //13.
+            let isPassed = true;
+
+            for(let sub in marks){
+                if(marks[sub] < 35 ){
+                   isPassed = false;
+                    break;
+                }
+            }
+
+            if(isPassed){
+                console.log("Student passed in all subjects");
+            }else{
+                console.log("Student failed");
+            }
+
+            //14.
+            // let subject = prompt("enter your subject: ")
+
+            // if (marks[subject] !== undefined){
+            //     let markS = marks[subject];
+
+            //     console.log("Marks:", markS);
+
+            //     if (markS >= 35) {
+            //         console.log("Pass");
+            //     } else {
+            //         console.log("Fail");
+            //     }
+
+            // } else {
+            //     console.log("Subject not found");
+            // }
+    </script>
+</body>
+</html>

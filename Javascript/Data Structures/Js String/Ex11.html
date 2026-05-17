@@ -1,0 +1,44 @@
+<!--11. Write a program to print only numeric characters from a string.
+Example: Input: 'Q1STR5684AK' → Output: '15684'-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let str = "1abc25deF23@iL6L!";
+            
+            //1st way
+            let st = "";
+
+            for (let i = 0; i < str.length; i++) {
+                if(str[i] >= '0' && str[i] <= '9'){
+                    st += str[i];
+                }
+            }
+            console.log(st)
+
+            2
+            // let x = str.split('')
+            // console.log(typeof x)
+            // console.log(x)
+
+            // x = x.filter(ch => !(ch >= '0' && ch <= '9'))
+            // console.log(typeof x)
+            // console.log(x)
+
+            // x = x.join('')
+            // console.log(typeof x)
+            // console.log(x)
+
+            let s = "Q1STR5684AK";
+            let x = s.split('')
+                       .filter(ch => (ch >= '0' && ch <= '9'))
+                       .join('');
+            console.log(x+"        "+typeof x)
+    </script>
+</body>
+</html>

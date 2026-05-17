@@ -1,0 +1,76 @@
+<!--Assignment 2 :
+Array of Strings Processing Assignments with for loop
+Here are JavaScript assignment questions using for loops with an array of 
+strings:
+Advanced Level
+11. Use a for loop to count how many times each letter appears in all fruit names.
+12. Use a for loop to shuffle the elements of the array randomly.
+13. Use a for loop to check if all fruits have more than 3 letters.
+14. Use a for loop to swap the first and last element of the array.
+15. Use a for loop to create an object where each fruit is a key and its length is the value.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const fruits = ["Apple", "Banana", "Cherry", "Mango", "Orange", 
+            "Grapes"];
+
+            //11.
+            // let str = fruits.join("");
+            // console.log(str)
+
+            // let count = {};
+            // for(let i=0; i<= str.length-1; i++){
+            //     let ch = str.charAt(i);
+            //     count[ch] = (count[ch] || 0) + 1;
+            // }
+            // console.log(count)
+
+            //13.
+            // let allFruits = true;
+            // for(let k in fruits){
+            //     if(fruits[k].length <= 3){
+            //         allFruits = false;
+            //         break;
+            //     }
+            // }
+            // if(allFruits == true){
+            //     console.log("all fruits have more than 3 letters.")
+            // }else{
+            //     console.log("no, all fruits not have more than 3 letters.")
+            // }
+
+            //14.
+            // let last = fruits.pop()
+            // console.log(last)
+            // let first = fruits.shift()
+            // console.log(first)
+            // console.log(fruits)
+            // fruits.unshift(last)
+            // console.log(fruits)
+            // fruits.push(first)
+            // console.log(fruits)
+
+            // for(let i=0; i<1; i++){
+            //     let temp = fruits[0];
+            //     fruits[0] = fruits[fruits.length -1];
+            //     fruits[fruits.length - 1] = temp;
+            // }
+            // console.log(fruits)
+
+            //15.
+            let fruitObj = {};
+
+            for(let i=0; i<=fruits.length-1; i++){
+                fruitObj[fruits[i]] = fruits[i].length;
+            }
+            console.log(fruitObj)
+    </script>
+</body>
+</html>

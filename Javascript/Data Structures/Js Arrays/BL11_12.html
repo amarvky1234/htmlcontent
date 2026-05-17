@@ -1,0 +1,26 @@
+<!--Print all the numbers from the last index to the first index except the first element.
+Print all the numbers from the last index to the first index except the last element. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar =  [23, 34, 54, 10, 4, 7]
+            
+            for(var i=1; i < ar.length; i++) {
+                console.log(ar[i])
+                document.write(ar[i]+"  ")  
+            }
+            console.log("======")
+            document.write("<br><br>")
+            for(var i=0; i < ar.length-1; i++) {
+                console.log(ar[i])
+                document.write(ar[i]+"  ")  
+            }
+    </script>
+</body>
+</html>

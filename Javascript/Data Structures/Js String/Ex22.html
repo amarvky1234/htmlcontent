@@ -1,0 +1,24 @@
+<!--22. Check if a number is a valid phone number.
+Criteria:
+o Must be 10 digits.
+o Must not contain letters.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let phoneN = prompt("enter a number");
+            console.log(phoneN)
+
+            if(phoneN.length === 10 && phoneN >=0 || phoneN <=9){
+                console.log("valid phone number")
+            }else {
+                console.log("not valid phone number")
+            }
+    </script>
+</body>
+</html>

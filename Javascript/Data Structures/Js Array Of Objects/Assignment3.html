@@ -1,0 +1,187 @@
+<!--1. Print all the product titles in ascending order of their prices.
+2. Separate all the Apple and non - Apple products and store them in separate arrays.
+3. Store all the brands in an array.There should not be any duplicates.
+4. Modify all the descriptions so that they have only 20 characters and print the new descriptions.
+        Expected output:
+        "An apple mobile whic"
+        "6.5-inch Super Retin" ……and so on
+5. Print the product titles having price more than 500 in alphabetical order(a - z).
+6. Print the product names having stock less than 50 in reverse alphabetical order(z - a).
+7. Decrease the "discountPercentage" of all products by 3 % and print the new array of objects.
+8. Check whether any of the products has stock less than 10.
+9. Check whether all products have thumbnails or not.
+10. Add a "newPrice" property to each object by calculating the price according 
+to the discountPercentage and print the new array of objects.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var products = [
+                {
+                    "id": 1,
+                    "title": "iPhone 9",
+                    "description": "An apple mobile which is nothing like apple",
+                    "price": 549,
+                    "discountPercentage": 12.96,
+                    "rating": 4.69,
+                    "stock": 94,
+                    "brand": "Apple",
+                    "category": "smartphones",
+                    "thumbnail": "products/1/thumbnail.jpg"
+                },
+                {
+                    "id": 2,
+                    "title": "iPhone X",
+                    "description": "6.5-inch Super Retina HD display with OLED",
+                    "price": 899,
+                    "discountPercentage": 17.94,
+                    "rating": 4.44,
+                    "stock": 34,
+                    "brand": "Apple",
+                    "category": "smartphones",
+                    "thumbnail": "products/2/thumbnail.jpg"
+                },
+                {
+                    "id": 3,
+                    "title": "Samsung Universe 9",
+                    "description": "Samsung's new phone which goes beyond Galaxy",
+                    "price": 1249,
+                    "discountPercentage": 15.46,
+                    "rating": 4.09,
+                    "stock": 36,
+                    "brand": "Samsung",
+                    "category": "smartphones",
+                    "thumbnail": "products/3/thumbnail.jpg"
+                },
+                {
+                    "id": 4,
+                    "title": "OPPOF19",
+                    "description": "OPPO F19 is officially announced on April 2021.",
+                    "price": 280,
+                    "discountPercentage": 17.91,
+                    "rating": 4.3,
+                    "stock": 123,
+                    "brand": "OPPO",
+                    "category": "smartphones",
+                    "thumbnail": "products/4/thumbnail.jpg"
+                },
+                {
+                    "id": 5,
+                    "title": "Huawei P30",
+                    "description": "Huawei's re-badged P30 Pro New Edition",
+                    "price": 499,
+                    "discountPercentage": 10.58,
+                    "rating": 4.09,
+                    "stock": 32,
+                    "brand": "Huawei",
+                    "category": "smartphones"
+                }
+            ];
+            
+            //1.
+            // let title = products.toSorted(function(a, b){
+            //     return a.price - b.price;
+            // })
+            // console.log(title)
+            // title.forEach(function(p){
+            //     console.log(p.title.padEnd(25)+"  "+p.price)
+            // })
+
+            //2.
+            // let appleProduct = products.filter(function(product){
+            //     if(product.brand === "Apple"){
+            //         return true;
+            //     }
+            // })
+            // console.log(appleProduct)
+
+            // let nonAppleProduct = products.filter(function(product){
+            //     if(product.brand !== "Apple"){
+            //         return true;
+            //     }
+            // })
+            // console.log(nonAppleProduct)
+
+            //3.
+            // let brand = [];
+
+            // products.forEach(function(product){
+            //     if(!brand.includes(product.brand)){
+            //         brand.push(product.brand)
+            //     }
+            // })
+            // console.log(brand)
+
+            //4.
+            // let description = products.map(function(product){
+            //     return product.description.slice(0, 20)
+            // })
+            // console.log(description)
+            // console.log(products)
+
+            //5.
+            // let title = products.filter(function(product){
+            //     return product.price > 500;
+            // }).sort(function(a, b){
+            //     return a.title.localeCompare(b.title)
+            // }).map(function(product){
+            //     return product.title;
+            // })
+            // console.log(title)
+
+            //6.
+            // let names = products.filter(function(product){
+            //     return product.stock < 50;
+            // }).sort(function(a, b){
+            //     return b.title.localeCompare(a.title)
+            // }).map(function(product){
+            //     return product.title;
+            // })
+            // console.log(names)
+            // console.log(products)
+
+            //7.
+            // let pArr = products.map(function(product){
+            //     product.discountPercentage = (product.discountPercentage - 3).toFixed(2);
+            //     return product
+            // })
+            // console.log(pArr)
+
+            //8.
+            // let checkAny = products.filter(function(product){
+            //     return product.stock < 10;
+            // }).length
+            
+            // if(checkAny !== 0){
+            //     console.log("Yes")
+            // }else{
+            //     console.log("No")
+            // }
+
+            //9.
+            // let checkAll = products.filter(function(product){
+            //     return product.thumbnail;
+            // }).length
+
+            // if(checkAll === products.length){
+            //     console.log("Yes, all")
+            // }else{
+            //     console.log("No, not all")
+            // }
+
+            //10.
+            let pArr = products.map(function(product){
+                return {
+                    ...product,
+                    "newPrice" : product.price - (product.price * product.discountPercentage) / 100
+                };
+            })
+            console.log(pArr)
+    </script>
+</body>
+</html>

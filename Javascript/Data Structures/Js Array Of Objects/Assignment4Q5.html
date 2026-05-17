@@ -1,0 +1,39 @@
+<!--5. Remove a Student by Name: Write a function that removes a student from the 
+array based on their name. If the student doesn't exist, return a message 
+saying "Student not found."-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const students = [
+                { name: "John", age: 18 },
+                { name: "Emily", age: 20 },
+                { name: "Michael", age: 22 },
+                { name: "Sarah", age: 19 }
+            ];
+
+            //1.
+            function removeStudent(studentName) {
+
+                let index = students.findIndex(function(s) {
+                    return s.name === studentName;
+                });
+
+                if (index !== -1) {
+                    students.splice(index, 1);
+                    return students;
+                } else {
+                    return "Student not found";
+                }
+            }
+
+            console.log(removeStudent("Emily"))
+            console.log(removeStudent("Smith"))
+    </script>
+</body>
+</html>

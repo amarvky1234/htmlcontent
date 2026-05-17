@@ -1,0 +1,26 @@
+<!--Print all elements in an array except the last element.
+o Input: [23, 34, 54, 0, 4, 7] → Output: 23 34 54 0 4 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar =  [23, 34, 54, 0, 4, 7]
+            
+            // for(var i=0; i < ar.length-1; i++) {
+            //     console.log(ar[i])
+            //     document.write(ar[i]+"  ")
+            // }
+
+            ar.forEach(function(n, i, ar){
+                if(i <= ar.length-2){
+                    console.log(ar[i])
+                }
+            })
+    </script>
+</body>
+</html>

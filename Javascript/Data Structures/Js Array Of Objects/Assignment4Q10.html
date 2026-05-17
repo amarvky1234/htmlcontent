@@ -1,0 +1,32 @@
+<!--10. Check if Student Exists: Write a function that checks if a student with 
+a specific name exists in the array. Return true if the student exists, 
+otherwise return false.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const students = [
+                { name: "John", age: 18 },
+                { name: "Emily", age: 20 },
+                { name: "Michael", age: 22 },
+                { name: "Sarah", age: 19 }
+            ];
+
+            //1.
+            function getStudentAge(studentName) {
+                return students.some(function(student){
+                    return student.name === studentName;
+                });
+            }
+
+            console.log(getStudentAge("Emily"))
+            console.log(getStudentAge("John"))
+            console.log(getStudentAge("Andrew"))
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!--Find the second-largest element in an array-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [10, 45, 23, 67, 34, 67];
+            
+            let max = ar[0];
+            let secMax = ar[0];
+
+            for(var i=0; i<=ar.length-1; i++){
+                if(ar[i] > max){
+                    secMax = max
+                    max = ar[i]
+                }else if(ar[i] > secMax && ar[i] !== max){
+                    secMax = ar[i]
+                }
+            }
+            console.log(secMax)
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!--includes() is used to check whether an array contains a specific value.
+👉 It returns:
+✅ true → if value exists
+❌ false → if not-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // let ar = [23, 10, 25, 15, -3]
+
+            // console.log(ar.includes(-3))
+            // console.log(ar.includes(11))
+
+            //With fromIndex
+            // let ar = [23, 10, 25, 15, -3]
+
+            // console.log(ar.includes(25, 2))
+            // console.log(ar.includes(15, 3))
+            // console.log(ar.includes(-3, 5))
+            // console.log(ar.includes(11, 3))
+
+            //Negative Index
+            let ar = [23, 10, 25, 15, -3]
+
+            console.log(ar.includes(25, -2))
+            console.log(ar.includes(15, -3))
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!--23. Check if a number is a valid credit card number.
+Criteria:
+o Must be 16 digits.
+o Must not contain letters.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let card = prompt("enter a number");
+            console.log(card)
+
+            if(card.length === 16 && card >=0 || card <=15){
+                console.log("valid credit card number")
+            }else {
+                console.log("not valid credit card number")
+            }
+    </script>
+</body>
+</html>

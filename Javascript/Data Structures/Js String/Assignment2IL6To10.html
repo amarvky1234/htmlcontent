@@ -1,0 +1,57 @@
+<!--Assignment 2 :Array of Strings Processing Assignments with for loop
+Here are JavaScript assignment questions using for loops with an array of 
+strings:
+Intermediate Level
+6. Use a for loop to reverse each fruit name (e.g., "Apple" → "elppA").
+7. Use a for loop to create a new array containing fruit names in uppercase.
+8. Use a for loop to add "Delicious " before each fruit name (e.g., "Delicious Apple").
+9. Use a for loop to find how many fruits have more than 5 letters.
+10. Use a for loop to remove all fruits that contain the letter "o".-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const fruits = ["Apple", "Banana", "Cherry", "Mango", "Orange", 
+            "Grapes"];
+
+            //6.
+            // for(let k in fruits) {
+            //     console.log(fruits[k].split("").toReversed().join(""));
+            // }
+
+            //7.
+            // let ar = [];
+            // for(let k in fruits) {
+            //     ar.push(fruits[k].toUpperCase())
+            // }
+            // console.log(ar)
+
+            //8.
+            // for(let k in fruits) {
+            //     console.log("Delicious"+" "+fruits[k])
+            // }
+
+            //4.
+            // let count = 0;
+            // for(let k in fruits) {
+            //     if(fruits[k].length > 5){
+            //         count++
+            //     }
+            // }
+            // console.log("fruits have more than 5 letters: "+count)
+
+            //5.
+            for(let k in fruits){
+                if(fruits[k].includes('o')){
+                    fruits.splice(k, 1)
+                }
+            }
+            console.log(fruits)
+    </script>
+</body>
+</html>

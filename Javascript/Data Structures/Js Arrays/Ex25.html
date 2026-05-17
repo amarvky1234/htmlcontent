@@ -1,0 +1,20 @@
+<!--Print only 2-digit numbers from an array.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [11, 102, 5, -29, 93, 2, 103, 9]
+
+            for(var i=0 ; i<=ar.length-1; i++){
+                if(Math.abs(ar[i]) >= 10 && Math.abs(ar[i]) <= 99){
+                    console.log(ar[i])
+                }
+            }
+    </script>
+</body>
+</html>

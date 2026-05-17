@@ -1,0 +1,23 @@
+<!--Count the total negative numbers in an array-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [10, -45, 23, -67, 34, 67, -90];
+
+            let count = 0
+
+            for(var i=0; i<=ar.length-1; i++){
+                if(ar[i] < 0){
+                    count++
+                }
+            }
+            console.log("total negative numbers in an array: "+count)
+    </script>
+</body>
+</html>

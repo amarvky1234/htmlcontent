@@ -1,0 +1,102 @@
+<!--Assignment 4: 
+Here’s a more complex object with nested structures, arrays, and methods: 
+
+  Const person = {
+        name:"Alice",
+        age:30,
+        address: {
+        street:"123 Main St",
+        city:"New York",
+        country:"USA"
+    },
+    hobbies: ["reading", "hiking", "coding"],
+    isStudent:false,
+    contacts: [
+        { type:"email", value:"alice@example.com" },
+        { type:"phone", value:"+1234567890" }
+    ],
+
+    skills: {
+        programming: ["JavaScript", "Python", "Java"],
+        softSkills: ["communication", "teamwork"]
+    },
+
+    greet:function () {
+        return`Hello, my name is ${this.name} and I live in ${this.address.city}.`;
+    },
+
+    addHobby:function (newHobby) {
+        this.hobbies.push(newHobby);
+    }
+};
+
+Basic Level
+1. Print Alice's city from the address object. 
+2. Add a new contact { type: "LinkedIn", value: "linkedin.com/alice" } to the contacts array. 
+3. Change Alice’s country to "Canada". 
+4. Print the first programming language Alice knows. 
+5. Call the greet() method and display its result. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+                name:"Alice",
+                age:30,
+                address: {
+                street:"123 Main St",
+                city:"New York",
+                country:"USA"
+            },
+            hobbies: ["reading", "hiking", "coding"],
+            isStudent:false,
+            contacts: [
+                { type:"email", value:"alice@example.com" },
+                { type:"phone", value:"+1234567890" }
+            ],
+
+            skills: {
+                programming: ["JavaScript", "Python", "Java"],
+                softSkills: ["communication", "teamwork"]
+            },
+
+            greet:function () {
+                return`Hello, my name is ${this.name} and I live in ${this.address.city}.`;
+            },
+
+            addHobby:function (newHobby) {
+                this.hobbies.push(newHobby);
+            }
+        };
+
+        //1.
+        let city = person.address.city;
+        console.log("Alice's city: "+city)
+
+        //2.
+        // person.contacts.push({
+        //     type:"LinkedIn",
+        //     value: "linkedin.com/alice" 
+        // })
+        // console.log(person.contacts)
+        // person.contacts.forEach(x => console.log(x))
+
+        //3.
+        // console.log(person.address.country)
+        // person.address.country = "Canada";
+        // console.log(person.address.country)
+
+        //4.
+        let firstPL = person.skills.programming[0];
+        console.log(firstPL)
+
+        //5.
+        console.log(person.greet());
+    </script>
+</body>
+</html>

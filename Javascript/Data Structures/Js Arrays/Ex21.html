@@ -1,0 +1,28 @@
+<!--Create a duplicate array for a given array.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [23, 34, 54, 10, 4, 7] 
+            // let br = ar;
+            // console.log(br)
+
+            let dupAr = []
+            console.log(dupAr)
+            // for(var i=0 ; i<=ar.length-1; i++){
+            //     dupAr[i] = ar[i]
+            // }
+            // console.log(dupAr)
+
+            ar.forEach(function(ele){
+                dupAr.push(ele)
+            })
+            console.log(dupAr)
+    </script>
+</body>
+</html>

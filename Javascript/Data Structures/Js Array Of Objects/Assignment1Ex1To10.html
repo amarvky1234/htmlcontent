@@ -1,0 +1,198 @@
+<!--1. Print all the firstnames.
+
+    2. Print all the full names.
+
+    3. Print only those names whose age is more than 25.
+
+    4. Print all female names.
+
+    5. Print only those names whose salary is more than 25000 and increase 
+    their salaries by 15 %.
+
+    6. Using prompt, print only those names whose city is "hyd".
+
+    7. Print the total salary of all the people.
+
+    8. Print all the female names.
+
+    9. Print all the firstnames whose salary is more than 25000.
+
+    10. Using prompt, print all names whose city is "hyd".-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var people = [
+
+            {
+                "firstname": "praveen",
+
+                "lastname": "gubbala",
+
+                "age": 36,
+
+                "gender": "male",
+
+                "city": "hyd",
+
+                "salary": 10000
+            },
+
+            {
+                "firstname": "srikanth",
+
+                "lastname": "gubbala",
+
+                "age": 32,
+
+                "gender": "male",
+
+                "city": "bengaluru",
+
+                "salary": 20000
+            },
+
+            {
+                "firstname": "pradeep",
+
+                "lastname": "reddy",
+
+                "age": 21,
+
+                "gender": "male",
+
+                "city": "hyd",
+
+                "salary": 25000
+            },
+
+            {
+                "firstname": "mounika",
+
+                "lastname": "mudiraj",
+
+                "age": 20,
+
+                "gender": "female",
+
+                "city": "nalgonda",
+
+                "salary": 30000
+            },
+
+            {
+                "firstname": "nikhil",
+
+                "lastname": "m",
+
+                "age": 22,
+
+                "gender": "male",
+
+                "city": "guntur",
+
+                "salary": 2000
+            },
+
+            {
+                "firstname": "riya",
+
+                "lastname": "bhadouria",
+
+                "age": 14,
+
+                "gender": "female",
+
+                "city": "indore",
+
+                "salary": 40000
+            }
+
+        ];
+        //console.log(people)
+
+        //1. Print all the firstnames.
+        // let firstname = people.map(function(nm){
+        //         return nm.firstname
+        // });
+        // console.log(firstname)
+
+        // let names = [];
+
+        // people.forEach(function(nm){
+        //     names.push(nm.firstname)
+        // })
+        // console.log(names)
+
+        //Print all the full names.
+        // let fullname = [];
+
+        // people.forEach(function(nm){
+        //     fullname.push(nm.firstname+" "+nm.lastname)
+        // })
+        // console.log(fullname)
+
+        //Print only those names whose age is more than 25.
+        // let emp = people.filter(function(emp){
+        //     if(emp.age > 25){
+        //         return true;
+        //     }
+        // })
+        
+        // let names = []
+        // emp.forEach(function(nm){
+        //     names.push(nm.firstname+" "+nm.lastname)
+        // })
+        // console.log(names)
+
+        //Print all female names.
+        // let names = people.filter(function(emp){
+        //     if(emp.gender === 'female'){
+        //         return true;
+        //     }
+        // }).map(function(emp){
+        //     return emp.firstname+" "+emp.lastname
+        // })
+        // console.log(names)
+
+        //Print only those names whose salary is more than 25000 and increase their salaries by 15 %
+        // let names = people.filter(function(emp){
+        //     if(emp.salary > 25000){
+        //         return true;
+        //     }
+        // }).map(function(emp){
+        //     let sal = emp.salary + (emp.salary * 0.15)
+        //     return emp.firstname+"      "+sal
+        // })
+        // console.log(names)
+
+        //Using prompt, print only those names whose city is "hyd".
+        // let city = prompt("enter your cities")
+
+        // let names = [];
+        // people.filter(function(emp){
+        //     if(emp.city == city){
+        //         return true;
+        //     }else{
+        //         return false;
+        //     }
+        // }).forEach(function(emp){
+        //     names.push(emp.firstname+" "+emp.lastname)
+        // })
+        // console.log(names)
+
+        //Print the total salary of all the people.
+        let totalSal = 0;
+
+        people.forEach(function(emp){
+            totalSal += emp.salary;
+        })
+        console.log(totalSal)
+    </script>
+</body>
+</html>

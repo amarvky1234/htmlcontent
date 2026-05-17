@@ -1,0 +1,36 @@
+<!--Print all unique elements in an array-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [1, 3, 2, 1, 5, 3, 7, 2, 11]
+
+            // for(var i=0; i<=ar.length-1; i++){
+            //     let isUnique = true;
+
+            //     for(var j=0; j<=ar.length-1; j++){
+            //         if(i !== j && ar[i] === ar[j]){
+            //             isUnique = false
+            //             break;
+            //         }
+            //     }
+
+            //     if(isUnique){
+            //         console.log(ar[i])
+            //     }
+            // }
+
+            //using filter
+            let unique = ar.filter(function(val, index, array) {
+                return array.indexOf(val) === array.lastIndexOf(val)
+            })
+
+            console.log(unique)
+    </script>
+</body>
+</html>

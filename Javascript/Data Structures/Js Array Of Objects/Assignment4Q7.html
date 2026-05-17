@@ -1,0 +1,39 @@
+<!--7. Update Student's Age: Write a function that takes a student's name and a new 
+age as parameters and updates that student's age in the array. If the student 
+doesn't exist, return a message saying "Student not found."-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const students = [
+                { name: "John", age: 18 },
+                { name: "Emily", age: 20 },
+                { name: "Michael", age: 22 },
+                { name: "Sarah", age: 19 }
+            ];
+
+            //1.
+            function updateStudentAge(studentName, newAge) {
+
+                let student = students.find(function(s) {
+                    return s.name === studentName;
+                });
+
+                if (student) {
+                    student.age = newAge;
+                    return students;
+                } else {
+                    return "Student not found";
+                }
+            }
+
+            console.log(updateStudentAge("Ravi", 22))
+            console.log(updateStudentAge("John", 23))
+    </script>
+</body>
+</html>

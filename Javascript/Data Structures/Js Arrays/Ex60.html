@@ -1,0 +1,27 @@
+<!-- Separate even and odd elements into two different arrays.-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+            let ar = [11, 12, 13, 14, 15, 16 , 17, 18]
+
+            let evenAr = ar.filter(function(val){
+                if(val % 2 === 0)
+                    return true
+            })
+            console.log(typeof evenAr)
+            console.log(evenAr)
+
+            let oddAr = ar.filter(function(val){
+                if(val % 2 !== 0)
+                    return true
+            })
+            console.log(oddAr)
+    </script>
+ </body>
+ </html>

@@ -1,0 +1,265 @@
+<!--Beginner Level (Basic Object and Array Manipulation)
+1.Access Department Data: Write a function that takes the name of a 
+department as input and returns the budget of that department. If the 
+department doesn't exist, return "Department not found". 
+2.List Employee Names: Write a function that takes a department name and 
+returns a list of allemployee names working in that department. 
+3.Employee Count in Department: Write a function that returns the number of 
+employees working in a specified department. 
+4.Get Project Names for Department: Write a function that returns the names 
+of all the projects in a given department. 
+5. Access the Company Name: Retrieve the name of the company from the 
+company object. 
+    1.Get the Budget of the First Department:
+    Access and retrieve the budget of the first department in the 
+    departments array. 
+    2.Get the Position of Employee with ID 2:
+    Retrieve the position of the employee with id: 2 from the employees 
+    array of the "Engineering" department. 
+    3.Find the Department of Employee "Anna White":
+    Access the department name for the employee named "Anna White". 
+    4.Get the Status of Project "Project E":
+    Retrieve the status of the project named "Project E" in the projects 
+    array of the "Marketing" department. 
+    5.Get the Salary of Employee with ID 6:
+    Access the salary of the employee with id: 6 from the "Human Resources" 
+    department. 
+    6.Access the List of Employees in the "Engineering"
+    Department:Retrieve the employees array from the "Engineering" 
+    department and access all employees in that department. 
+    7.Get the Name of the Last Employee in the "Marketing"
+    Department: Access and retrieve the name of the last employee in the 
+    "Marketing" department. 
+    8.Find the Budget of "Project C":
+    Retrieve the budget of the project named "Project C" from the 
+    "Engineering" department. 
+    9.Get the Number of Projects in the "Marketing" Department: Retrieve 
+    the length of the projects array for the "Marketing"department. 
+    10.Access the Department Budget for "Human Resources": Retrieve the 
+    budget for the "Human Resources" department. 
+    11.Find the Name of the First Project in the "Marketing"
+    Department:Access and retrieve the name of the first project in the
+    "Marketing" department. 
+    12.Get the List of All Project Names in the "Engineering"
+    Department:Retrieve the name of all projects in the "Engineering" 
+    department. 
+    13.Access the Location of the Company:
+    Retrieve the location of the company from the company object. 
+    14.Get the Status of All Projects in the "Human Resources"
+    Department:Retrieve and list the status of all projects in the 
+    "HumanResources" department. 
+    15.Get the Salary of the Employee Named "Chris Lee":
+    Retrieve the salary of the employee named "Chris Lee". 
+    16.Find the Name of the Department with the Highest Budget:
+    Access the department that has the highest budget and retrieve its name. 
+    17.Access the Employee with the Highest Salary in the
+    "Engineering" Department:Retrieve the name and salary of the employee 
+    with the highest salary in the "Engineering" department.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const company = {
+                name: "Tech Innovators Inc.",
+                founded: 2010,
+                location: "San Francisco",
+                departments: [
+                    {
+                        name: "Engineering",
+                        budget: 500000,
+                        employees: [
+                            { id: 1, name: "John Doe", 
+                            position: "Software Engineer", 
+                            salary: 80000, 
+                            projects: ["Project A", "Project B"] },
+
+                            { id: 2, name: "Michael Johnson", 
+                            position: "Lead Developer", 
+                            salary: 110000, 
+                            projects: ["Project A"] },
+
+                            { id: 3, name: "Sarah Brown", 
+                            position: "DevOps Engineer", 
+                            salary: 95000, 
+                            projects: ["Project C"] } ],
+
+                        projects: [
+                            { name: "Project A", budget: 200000,
+                                 status: "active" },
+
+                            { name: "Project B", budget: 150000, 
+                                status: "completed" },
+
+                            { name: "Project C", budget: 100000,
+                                 status: "active" } ]
+                    },
+
+                    {
+                        name: "Marketing",
+                        budget: 300000,
+                        employees: [
+                        { id: 4, name: "Anna White", position: "Marketing Manager", 
+                            salary: 85000, projects: ["Project D"] },
+
+                        { id: 5, name: "Chris Lee", position: "SEO Specialist",
+                        salary: 60000, projects: ["Project D", "Project E"] }
+                        ],
+                        projects: [
+                        { name: "Project D", budget: 100000, status: "active" },
+                        { name: "Project E", budget: 120000, status: "inactive" }]
+                    },
+
+                    {
+                        name: "Human Resources",
+                        budget: 100000,
+                        employees: [
+                        { id: 6, name: "Emily Davis", position: "HR Manager",
+                        salary: 70000, projects: ["Project F"] },
+
+                        { id: 7, name: "David Wilson", position: "Recruiter",
+                        salary: 50000, projects: [] } ],
+
+                        projects: [
+                        { name: "Project F", budget: 50000, status: "active" } ]
+                    }
+            ]
+        };
+        
+        
+        //5.
+        // console.log(company.name)
+
+        //1.
+        // let budget = company.departments[0].budget;
+        // console.log("budget of the first department: "+budget)
+
+        //2.
+        // let dept = company.departments.find(function(dept){
+        //     return dept.name === "Engineering";
+        // })
+
+        // let employee = dept.employees.find(function(emp){
+        //     return emp.id === 2;
+        // })
+        // console.log(dept)
+        // console.log(employee)
+        // console.log(employee.position)
+
+        //3.
+        // let department = company.departments.find(function(dept){
+        //     return dept.employees.some(function(emp){
+        //         return emp.name === "Anna White";
+        //     })
+        // })
+        // console.log(department)
+        // console.log(department.name)
+
+        //4.
+        // let project = company.departments.find(function(dept){
+        //     return dept.name === "Marketing"
+        // }).projects.find(function(proj){
+        //     return proj.name === "Project E"
+        // })
+        // console.log(project)
+        // console.log(project.status)
+
+        //5.
+        // let employee = company.departments.find(function(dept){
+        //     return dept.name === "Human Resources"
+        // }).employees.find(function(emp){
+        //     return emp.id === 6;
+        // })
+        // console.log(employee)
+        // console.log(employee.salary)
+
+        //6.
+        // let listEmployees = company.departments.find(function(dept){
+        //     return dept.name === "Engineering";
+        // }).employees;
+        // console.log(listEmployees)
+
+        //7.
+        // let listEmployees = company.departments.find(function(dept){
+        //     return dept.name === "Engineering";
+        // }).employees;
+        // console.log(listEmployees)
+        // console.log(listEmployees[listEmployees.length-1])
+        // console.log(listEmployees[listEmployees.length-1].name)
+
+        //8.
+        // let budget = company.departments.find(function(dept){
+        //     return dept.name === "Engineering";
+        // }).projects.find(function(proj){
+        //     return proj.name === "Project C";
+        // }).budget;
+        // console.log(budget)
+
+        //9.
+        // let countProject = company.departments.find(function(dept){
+        //     return dept.name === "Marketing";
+        // }).projects.length;
+        // console.log(countProject)
+
+        //10.
+        // let deptBudget = company.departments.find(function(dept){
+        //     return dept.name === "Human Resources";
+        // }).budget;
+        // console.log(deptBudget)
+
+        //11.
+        // let firtsProjectNm = company.departments.find(function(dept){
+        //     return dept.name === "Marketing";
+        // }).projects[0].name
+        // console.log(firtsProjectNm)
+
+        //12.
+        // let listOfProjectNm = company.departments.find(function(dept){
+        //     return dept.name === "Engineering";
+        // }).projects.map(function(proj){
+        //     return proj.name;
+        // })
+        // console.log(listOfProjectNm)
+
+        //13.
+        // let loc = company.location;
+        // console.log(loc);
+
+        //14.
+        // let status = company.departments.find(function(dept){
+        //     return dept.name === "Human Resources";
+        // }).projects.map(function(proj){
+        //     return proj.status;
+        // })
+        // console.log(status)
+
+        //15.
+        // let employee = company.departments.flatMap(function(dept){
+        //      return dept.employees
+        // }).find(function(emp){
+        //     return emp.name === "Chris Lee";
+        // })
+        // console.log(employee)
+        // console.log(employee.salary)
+
+        //16.
+        // let highestBudgetDept = company.departments.reduce(function(max, dept){
+        //     return dept.budget > max.budget ? dept : max;
+        // })
+        // console.log(highestBudgetDept)
+        // console.log(highestBudgetDept.name)
+
+        //17.
+        let employee = company.departments.find(function(dept){
+            return dept.name === "Engineering";
+        }).employees.reduce(function(max, emp){
+            return emp.salary > max.salary ? emp : max;
+        })
+        console.log(employee.name+"  "+employee.salary)
+    </script>
+</body>
+</html>

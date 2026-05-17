@@ -1,0 +1,33 @@
+<!--unshift() is used to add one or more elements to the beginning (start) of
+ an array.
+👉 Important:
+✅ Mutates (modifies) the original array
+✅ Returns the new length of the array
+##When you use unshift(), all existing elements are shifted one position to 
+the right, and the new element is placed at index 0.
+##unshift() is slower than push()
+Why?
+It shifts all existing elements to the right-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            //Basic Example
+            // let ar = [4, 12, 45, 13, 11];
+            // let length = ar.unshift(101);
+            // console.log(length)
+            // console.log(ar)
+
+            //Add Multiple Elements
+            let ar = [4, 12, 45, 13, 11];
+            let length = ar.unshift(17, 21);
+            console.log(length)
+            console.log(ar)
+    </script>
+</body>
+</html>

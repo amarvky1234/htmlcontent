@@ -1,0 +1,223 @@
+<!--Advanced Level (41-60)
+41. Use a for loop to randomly shuffle the elements in the array.
+42. Use a for loop to find all animals that contain at least three vowels.
+43. Use a for loop to split each animal name into an array of characters.
+44. Use a for loop to replace all vowels in animal names with "*".
+45. Use a for loop to find all animals whose names are palindromes.
+46. Use a for loop to create a function that removes an animal by its name.
+47. Use a for loop to create an array where each animal has its length appended.
+48. Use a for loop to create an array where each animal is listed twice.
+49. Use a for loop to find the most common starting letter in all animal names.
+50. Use a for loop to create a lookup object where each animal's index is its value.
+51. Use a for loop to create an object where the last letter is the key.
+52. Use a for loop to count how many animals contain the letter "p".
+53. Use a for loop to print animals sorted by their last letter.
+54. Use a for loop to find the longest common prefix among all names.
+55. Use a for loop to create an array where the first letter of each animal is capitalized.
+56. Use a for loop to create an array of animals grouped by odd or even length.
+57. Use a for loop to count how many animals have more consonants than vowels.
+58. Use a for loop to check if all animal names have at least one vowel.
+59. Use a for loop to print every third animal in the list.
+60. Use a for loop to create a fighting game, where two random animals "battle" each
+other.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+             const animals = ["Lion", "Tiger", "Elephant", "Giraffe", 
+                "Monkey", "Zebra", "Kangaroo", "Panda", "Leopard",
+                "Cheetah", "Rhinoceros", "Hippopotamus", "Wolf", "Fox", 
+                "Deer", "Rabbit", "Squirrel", "Crocodile", "Alligator", 
+                "Ostrich", "Peacock", "Eagle", "Falcon", "Penguin", 
+                "Dolphin", "Shark", "Whale", "Octopus", "Jellyfish", 
+                "Starfish", "Aidemedia"
+            ];
+
+            //41.
+            // for(let i = animals.length - 1; i > 0; i--) {
+
+            //     let randomIndex = Math.floor(Math.random() * (i + 1));
+
+            //     let temp = animals[i];
+            //     animals[i] = animals[randomIndex];
+            //     animals[randomIndex] = temp;
+            // }
+
+            // console.log(animals);
+
+            //42.
+            // for (let i = 0; i < animals.length; i++) {
+
+            //     let word = animals[i].toLowerCase();
+            //     let vowelCount = 0;
+
+            //     for(let j = 0; j < word.length; j++) {
+
+            //         if("aeiou".includes(word[j])) {
+            //             vowelCount++;
+            //         }
+            //     }
+
+            //     if(vowelCount >= 3){
+            //         console.log(animals[i])
+            //     }
+            // }
+
+            //43.
+            // let animalAr = []
+            // for (let i = 0; i < animals.length; i++) {
+            //     let ch = animals[i].split("");
+            //     console.log(ch);
+            //     animalAr.push(ch);
+            // }
+            // console.log(animalAr)
+
+            //44.
+            // for (let i = 0; i < animals.length ; i++) {
+            //     let word = "";
+
+            //     for(let j=0; j < animals[i].length; j++){
+            //         let ch = animals[i][j];
+            //         if("aeiouAEIOU".includes(ch)){
+            //             word += "*"
+            //         }else {
+            //             word += ch;
+            //         }
+            //     }
+            //     console.log(word)
+            // }
+
+            //45.
+            // for (let i = 0; i < animals.length; i++) {
+            //     let animal = animals[i].toLowerCase()
+            //     let reversed = animal.split("").reverse().join("");
+                
+            //     if(animals[i].toLowerCase() === reversed){
+            //         console.log(animals[i])
+            //     }
+            // }
+
+            //46.
+            // function removeAnimal(name) {
+
+            //     for (let i = 0; i < animals.length; i++) {
+            //         if(animals[i] === name){
+            //             animals.splice(i, 1);
+            //             break;
+            //         }
+            //     }
+            //     return animals;
+            // }
+            // console.log(removeAnimal("Lion"))
+            // console.log(removeAnimal("fox"))
+            // console.log(removeAnimal("Octopus"))
+
+            //47.
+            // let lengAr = [];
+            // for (let i = 0; i < animals.length; i++) {
+            //     lengAr.push(animals[i]+animals[i].length)
+            // }
+            // console.log(lengAr)
+
+            //48.
+            // let twicedAr = []
+            // for (let i = 0; i < animals.length; i++) {
+            //     twicedAr.push(animals[i], animals[i])
+            // }
+            // console.log(twicedAr)
+
+            //49.
+            // let count = {};
+            // for (let i = 0; i < animals.length; i++) {
+            //     let firstLetter = animals[i][0].toLowerCase();
+
+            //     if(count[firstLetter]){
+            //         count[firstLetter]++;
+            //     }else{
+            //         count[firstLetter] = 1;
+            //     }
+            // }
+            // console.log(count)
+
+            // let commonLetter = "";
+            // let letterCount = 0;
+
+            // for(let k in count){
+            //     if(count[k] > letterCount){
+            //         letterCount = count[k];
+            //         commonLetter = k;
+            //     }
+            // }
+            // console.log(commonLetter, letterCount);
+
+            //50.
+            // let lookupObj = {};
+            // for (let i = 0; i < animals.length; i++) {
+            //     //lookupObj[animals[i]] = animals.indexOf(animals[i]);
+            //     lookupObj[animals[i]] = i;
+            // }
+            // console.log(lookupObj)
+
+            //51.
+            // let animalObj = {};
+            // for (let i = 0; i < animals.length; i++) {
+            //     let lastLetter = animals[i][animals[i].length - 1]
+            //     animalObj[lastLetter] = animals[i]
+            // }
+            // console.log(animalObj)
+
+            //52.
+            // let count = 0;
+            // for (let i = 0; i < animals.length; i++) {
+            //     if(animals[i].toLowerCase().includes("p")){
+            //         count++
+            //         console.log(animals[i])
+            //     }
+            // }
+            // console.log(count)
+
+            //53.
+            let newAr = [];
+            for (let i = 1; i < animals.length; i++) {
+                
+            }
+            console.log(newAr)
+
+            //54.
+            
+
+            //55.
+            
+
+            //56.
+            // let evenAr = [];
+            // let oddAr = [];
+            // for (let i = 0; i < animals.length; i++) {
+            //     if(animals[i].length % 2 === 0){
+            //         evenAr.push(animals[i])
+            //     }else {
+            //         oddAr.push(animals[i])
+            //     }
+            // }
+            // console.log(evenAr)
+            // console.log(oddAr)
+
+            //57.
+            
+            
+            //58.
+            
+
+            //59.
+            console.log(animals)
+            for (let i = 2; i < animals.length; i += 3) {
+                    console.log(animals[i])
+            }
+     </script>
+</body>
+</html>

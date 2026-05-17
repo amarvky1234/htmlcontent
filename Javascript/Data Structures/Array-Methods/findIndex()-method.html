@@ -1,0 +1,36 @@
+<!--findIndex() is used to get the index of the first element that satisfies
+a condition.
+👉 It returns:
+✅ index (0, 1, 2, …) of first match
+❌ -1 if no match found-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // let ar = [11, 13, 17, -54, 67];
+            // let index = ar.findIndex(function(val, i){
+            //     if(val % 2 === 0){
+            //         return true;
+            //     }else{
+            //         return false;
+            //     }
+            // })
+            // console.log(index)
+
+            let ar = [11, 13, 17, -55, 67];
+            let index = ar.findIndex(function(val, i){
+                if(val % 2 === 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            })
+            console.log(index)
+    </script>
+</body>
+</html>

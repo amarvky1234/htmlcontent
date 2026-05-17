@@ -1,0 +1,187 @@
+<!--Advanced Level (Complex Data Manipulation) 
+1. Find Employees with Multiple Projects: Write a function that returns the 
+names of employees who are working on more than one project. 
+2. Total Salary Expense by Department: Write a function that calculates and 
+returns the total salary expense for each department. The result should be 
+an object where the keys are department names and the values are total 
+salaries. 
+3. Count Active Projects in Each Department: Write a function that returns 
+an object where the keys are department names and the values are the number 
+of active projects in that department. 
+4. Employee with the Highest Salary in Each Department: Write a function 
+that returns the employee with the highest salary in each department. The 
+result should be an object where the keys are department names, and the 
+values are the employee with the highest salary. 
+5. Promote Employee:Write a function that promotes an employee by increasing
+ their salary by a given percentage. If the employee doesn’t exist, return 
+ "Employee not found". After promotion, return the updated employee data. 
+6. Department with Most Projects: Write a function that returns the name of 
+the department with the most projects. If there’s a tie, return the 
+departments with the most projects in an array. 
+7. Project Status Report:Write a function that returns a report with the 
+names of all projects and their statuses across all departments in the 
+following format: Project Name: [name], Status: [status]. 
+8. Find All Employees Involved in Active Projects: Write a function that 
+returns the names of all employees who are working on projects that are 
+marked as "active." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const company = {
+                name: "Tech Innovators Inc.",
+                founded: 2010,
+                location: "San Francisco",
+                departments: [
+                    {
+                        name: "Engineering",
+                        budget: 500000,
+                        employees: [
+                            { id: 1, name: "John Doe", 
+                            position: "Software Engineer", 
+                            salary: 80000, 
+                            projects: ["Project A", "Project B"] },
+
+                            { id: 2, name: "Michael Johnson", 
+                            position: "Lead Developer", 
+                            salary: 110000, 
+                            projects: ["Project A"] },
+
+                            { id: 3, name: "Sarah Brown", 
+                            position: "DevOps Engineer", 
+                            salary: 95000, 
+                            projects: ["Project C"] } ],
+
+                        projects: [
+                            { name: "Project A", budget: 200000,
+                                 status: "active" },
+
+                            { name: "Project B", budget: 150000, 
+                                status: "completed" },
+
+                            { name: "Project C", budget: 100000,
+                                 status: "active" } ]
+                    },
+
+                    {
+                        name: "Marketing",
+                        budget: 300000,
+                        employees: [
+                        { id: 4, name: "Anna White", position: "Marketing Manager", 
+                            salary: 85000, projects: ["Project D"] },
+
+                        { id: 5, name: "Chris Lee", position: "SEO Specialist",
+                        salary: 60000, projects: ["Project D", "Project E"] }
+                        ],
+                        projects: [
+                        { name: "Project D", budget: 100000, status: "active" },
+                        { name: "Project E", budget: 120000, status: "inactive" }]
+                    },
+
+                    {
+                        name: "Human Resources",
+                        budget: 100000,
+                        employees: [
+                        { id: 6, name: "Emily Davis", position: "HR Manager",
+                        salary: 70000, projects: ["Project F"] },
+
+                        { id: 7, name: "David Wilson", position: "Recruiter",
+                        salary: 50000, projects: [] } ],
+
+                        projects: [
+                        { name: "Project F", budget: 50000, status: "active" } ]
+                    }
+            ]
+        };
+        document.write(company.name)
+        
+        
+        //1.
+        // function findEmployeeNameWithMultipleProject() {
+        //     let employees = company.departments.flatMap(function(dept){
+        //         return dept.employees;
+        //     })
+            
+        //     let names = employees.filter(function(emp){
+        //         if(emp.projects.length > 1) {
+        //             return true;
+        //         }
+        //     }).map(function(emp){
+        //         return emp.name;
+        //     })
+        //     return names;
+        // }
+        // console.log(findEmployeeNameWithMultipleProject())
+
+        //2.
+        // function getTotalSalaryExpense() {
+        //     return company.departments.reduce(function(result, dept){
+        //         let totalSalary = dept.employees.reduce(function(total, emp){
+        //             return total + emp.salary;
+        //         }, 0);
+
+        //         result[dept.name] = totalSalary;
+
+        //         return result;
+        //     }, {});
+        // }
+        // console.log(getTotalSalaryExpense());
+
+        //3.
+        // function countActiveProjects() {
+        //     return company.departments.reduce(function(result, dept){
+        //         let activeProj = dept.projects.filter(function(proj){
+        //             return proj.status === "active";
+        //         });
+
+        //         result[dept.name] = activeProj.length;
+
+        //         return result;
+        //     }, {})
+        // }
+        // console.log(countActiveProjects());
+
+        //4.
+        // function employeeWithHighestSalaryInEachDepartment() {
+        //     return company.departments.reduce(function(res, dept){
+        //         let highestSalEmp = dept.employees.reduce(function(max, emp){
+        //             return emp.salary > max.salary ? emp : max;
+        //         })
+        //         res[dept.name] = highestSalEmp;
+        //         return res;
+        //     }, {});
+        // }
+        // console.log(employeeWithHighestSalaryInEachDepartment())
+
+        //5.
+        function promoteEmployee(empID, percentage) {
+            let employeesList = company.departments.flatMap(function(dept){
+                return dept.employees;
+            })
+            
+            let employee = employeesList.filter(function(emp){
+                return emp.id === empID;
+            }).map(function(emp){
+                emp.salary = emp.salary + (emp.salary * percentage) / 100;
+                return emp;
+            })
+            
+            if(employee.length > 0){
+                return employee;
+            }else {
+                return "Employee not found";
+            }
+        }
+        console.log(promoteEmployee(2, 10));
+        console.log(promoteEmployee(20, 15));
+
+        //6.
+        
+    </script>
+</body>
+</html>

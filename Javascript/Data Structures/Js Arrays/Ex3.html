@@ -1,0 +1,24 @@
+<!--Print all numbers in an array except the first element.
+o Input: [23, 34, 54, 0, 4, 7] → Output: 34 54 0 4 7 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar =  [23, 34, 54, 0, 4, 7]
+            
+            // for(var i=1; i < ar.length; i++) {
+            //     console.log(ar[i])
+            //     document.write(ar[i]+"  ")
+            // }
+
+            ar.forEach(function(v, i, arr){
+                console.log(arr[i+1])
+            })
+    </script>
+</body>
+</html>

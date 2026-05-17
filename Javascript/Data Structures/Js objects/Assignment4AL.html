@@ -1,0 +1,130 @@
+<!--Assignment 4: 
+Here’s a more complex object with nested structures, arrays, and methods: 
+
+  Const person = {
+        name:"Alice",
+        age:30,
+        address: {
+        street:"123 Main St",
+        city:"New York",
+        country:"USA"
+    },
+    hobbies: ["reading", "hiking", "coding"],
+    isStudent:false,
+    contacts: [
+        { type:"email", value:"alice@example.com" },
+        { type:"phone", value:"+1234567890" }
+    ],
+
+    skills: {
+        programming: ["JavaScript", "Python", "Java"],
+        softSkills: ["communication", "teamwork"]
+    },
+
+    greet:function () {
+        return`Hello, my name is ${this.name} and I live in ${this.address.city}.`;
+    },
+
+    addHobby:function (newHobby) {
+        this.hobbies.push(newHobby);
+    }
+};
+
+Advanced Level
+1. Create a deep copy of the person object without modifying the original. 
+2. Write a function to find a contact by type (e.g., "email") and return 
+its value. 
+3. Merge person with another object { job: "Software Developer", 
+experience: 5 }. 
+4. Check if skills.softSkills contains "leadership" and add it if not. 
+5. Convert the person object to a JSON string and parse it back into an 
+object. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+                name:"Alice",
+                age:30,
+                address: {
+                street:"123 Main St",
+                city:"New York",
+                country:"USA"
+            },
+            hobbies: ["reading", "hiking", "coding"],
+            isStudent:false,
+            contacts: [
+                { type:"email", value:"alice@example.com" },
+                { type:"phone", value:"+1234567890" }
+            ],
+
+            skills: {
+                programming: ["JavaScript", "Python", "Java"],
+                softSkills: ["communication", "teamwork"]
+            },
+
+            greet:function () {
+                return`Hello, my name is ${this.name} and I live in ${this.address.city}.`;
+            },
+
+            addHobby:function (newHobby) {
+                this.hobbies.push(newHobby);
+            }
+        };
+
+        //1.
+        // let newPerson = {...person};
+        // console.log(newPerson)
+
+        // let newP = JSON.parse(JSON.stringify(person));
+        // console.log(newP)
+
+        //2.
+        // function findContactType(contactType) {
+        //    let val = person.contacts.find(function(tp){
+        //         if(tp.type === contactType) {
+        //             return tp;
+        //         }
+        //     })
+        //     return val.value;
+        // }
+        // console.log(findContactType("email"))
+
+        //3.
+        // let newObj = {
+        //      job: "Software Developer", 
+        //      experience: 5
+        // };
+        // console.log(newObj)
+        // console.log(person)
+
+        // let mergedObj = {
+        //     ...person,
+        //     ...newObj
+        // };
+        // console.log(mergedObj)
+
+        // let mergedObj = Object.assign({}, person, newObj);
+        // console.log(mergedObj);
+
+        //4.
+        let contain = person.skills.softSkills.includes("leadership");
+        if(contain !== true) {
+            person.skills.softSkills.push("leadership")
+        }
+        console.log(person.skills.softSkills)
+
+        //5.
+        let jsonData = JSON.stringify(person)
+        console.log(jsonData)
+
+        let newObj = JSON.parse(jsonData);
+        console.log(newObj)
+    </script>
+</body>
+</html>

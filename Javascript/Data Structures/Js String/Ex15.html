@@ -1,0 +1,33 @@
+<!--Eliminate duplicate characters in a given string.
+Example: Input: 'praveengubbala' → Output: 'pravengubl'-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let input1 = "amarjeet";
+            let input2 = "praveengubbala";
+
+
+            //using loop
+            let str = ""
+
+            for (let i = 0; i < input1.length; i++) {
+                if(!str.includes(input1[i])){
+                    str += input1[i];
+                }
+            }
+            console.log(str)
+            
+            //using filter
+            let res = input2.split('')
+                            .filter((ch, i, ar) => ar.indexOf(ch) === i)
+                            .join('');
+            console.log(res)
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!--Print only the perfect squares in an array.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let ar = [1, 2, 4, 7, 9, 10, 16, 20, 25];
+
+            for (let i = 0; i < ar.length; i++) {
+                let sqrt = Math.sqrt(ar[i]);
+
+                if (sqrt === Math.floor(sqrt)) {
+                    console.log(ar[i]);
+                }
+            }
+
+            let squares = ar.filter(function(ele){
+                let sqrt = Math.sqrt(ele);
+                if(sqrt === Math.floor(sqrt)){
+                    return true;
+                }
+            })
+            console.log(squares)
+    </script>
+</body>
+</html>

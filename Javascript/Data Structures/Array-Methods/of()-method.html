@@ -1,0 +1,24 @@
+<!--Array.of() creates a new array from the arguments you pass.
+**Why Array.of() exists (Important)
+ Because new Array() behaves weird with single number argument.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // let ar = Array.of(1, 3, 5, 7.4, 77)
+            // console.log(ar)
+
+            //Why Array.of() exists 
+            let ar = new Array(5);
+            console.log(ar)
+            let br = Array.of(5)
+            console.log(br)
+    </script>
+</body>
+</html>
