@@ -1,0 +1,40 @@
+<!--1. Reference Design
+3.Store the texts of each li element in an array.
+    <ul>
+    <li>Apple </li>
+    <li>Mango </li>
+    <li>Orange </li>
+    </ul>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Apple </li>
+        <li>Mango </li>
+        <li>Orange </li>
+        <li>Watermelon</li>
+    </ul>
+    <script>
+            // let items = document.querySelectorAll("li")
+            // let fruits = []
+            
+            // items.forEach(function(li){
+            //     fruits.push(li.innerText)
+            // })
+            // console.log(fruits)
+
+            let fruits = [...document.querySelectorAll("li")]
+                            .map(function(li){
+                                return li.innerText
+                            });
+
+            console.log(fruits)
+    </script>
+</body>
+</html>
