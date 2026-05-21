@@ -1,0 +1,53 @@
+<!--1. Reference Design
+1.Give an h1 element :
+    <h1>Hello word </h1>
+    a. Print the text inside the h1 element in the console.
+    b.Print the data type of the text inside the h1.
+    c.Print the text inside the h1 in uppercase in the console.
+    d.Change the text of the h1 to "Welcome to Edupoly".
+2.Print the texts inside the h1 and h2 elements in the console
+    <h1 class="a" > Hello </h1>
+    <h2 class="a" > Edupoly </h2>
+    <p class="b" > Training </p>
+3.Store the texts of each li element in an array.
+    <ul>
+    <li>Apple </li>
+    <li>Mango </li>
+    <li>Orange </li>
+    </ul>
+4.Print the text inside the first paragraph element in the console.
+    <h1>Hello</h1>
+    <p>Edupoly</p>
+    <p>Training</p>
+    <p>Something</p>
+5.Generate HTML Elements using document object
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <script>
+            let header = document.querySelector("h1")
+           
+            //a.Print the text inside the h1 element in the console.
+            console.log(header.innerText);
+
+            //b.Print the data type of the text inside the h1.
+            console.log(typeof header.innerText)
+
+            //c.Print the text inside the h1 in uppercase in the console.
+            console.log(header.innerText.toUpperCase());
+
+            //d.Change the text of the h1 to "Welcome to Edupoly".
+            header.innerText = "Welcome to Eduploy";
+            header.style.color = "blue";
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <ul id="list1"></ul>
+    <ul id="list2"></ul> -->
+
+    <table border="2">
+        <thead id="thh">
+                <!-- <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th>Salary</th>
+                </tr> -->
+        </thead>
+        <tbody id="tb"></tbody>
+    </table>
+    <script>
+        //1.Create one h1 element and put some text into it. 
+        //    let header = document.createElement("h1");
+        //    console.log(header)
+        //    header.innerText = "Hi! I am Raja";
+        //    document.body.appendChild(header)
+
+        //2. Create one h1 element,put some text into it and apply red font color to it.
+        //    let hTag = document.createElement("h1");
+        //    hTag.innerText = "Raja in Love!"
+        //    document.body.appendChild(hTag)
+        //    hTag.style.color = "Red";
+
+        //3.Take an array of names and create a list from it.
+        //    let names = ["ramesh", "suresh", "praveen", "raja", "amar"]
+
+        //    let ulTag = document.getElementById("list1")
+
+        //    names.forEach(function(name){
+        //     let liEle = document.createElement("li")
+        //     liEle.innerText = name;
+        //     ulTag.appendChild(liEle);
+        //    })
+
+        //4.Take an array of numbers and create a list from it
+        //    let ulEle = document.getElementById("list2");
+
+        //    for(let i=11; i<=17; i++){
+        //         let li = document.createElement("li")
+        //         li.innerText = i;
+        //         ulEle.appendChild(li)
+        //    }
+
+        //5.Take an array of objects and create a table form it.
+        //     var people = [
+
+        //         {
+        //             "name": "praveen",
+        //             "age": 36,
+        //             "gender": "male",
+        //             "city": "hyd",
+        //             "salary": 10000
+        //         },
+        //         {
+        //             "name": "srikanth",
+        //             "age": 32,
+        //             "gender": "male",
+        //             "city": "bengaluru",
+        //             "salary": 20000
+        //         },
+        //         {
+        //             "name": "pradeep",
+        //             "age": 21,
+        //             "gender": "male",
+        //             "city": "hyd",
+        //             "salary": 25000
+        //         },
+        //         {
+        //             "name": "mounika",
+        //             "age": 20,
+        //             "gender": "female",
+        //             "city": "nalgonda",
+        //             "salary": 30000
+        //         },
+        //         {
+        //             "name": "nikhil",
+        //             "age": 22,
+        //             "gender": "male",
+        //             "city": "guntur",
+        //             "salary": 2000
+        //         },
+        //         {
+        //             "name": "riya",
+        //             "age": 14,
+        //             "gender": "female",
+        //             "city": "indore",
+        //             "salary": 40000
+        //         }
+        // ];
+            
+            
+
+        //     let tbEle = document.getElementById("tb")
+        //     let thEle = document.getElementById("thh")
+        //     let th = document.createElement("th")
+        //     people.forEach(function(p, i){
+        //         let trEle = document.createElement("tr")
+        //         for(let i in p){
+        //             let tdEle = document.createElement("td")
+        //             tdEle.innerText = p[i];
+        //             trEle.appendChild(tdEle);
+        //         }
+        //         tbEle.appendChild(trEle)
+        //     })
+
+            //6.
+            let images = [
+                "images/art1.jpg",
+                "images/sunset.avif",
+                "images/photo-masthead-375-BoK_p8LG.webp"
+            ];
+
+            images.forEach(function(path){
+                let img = document.createElement("img")
+
+                img.src = path;
+                img.width = 200;
+                img.height = 200;
+
+                document.body.appendChild(img)
+            });
+    </script>
+</body>
+</html>

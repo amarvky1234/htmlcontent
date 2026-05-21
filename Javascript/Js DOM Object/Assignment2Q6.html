@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var students = [
+
+                {
+                    name:'jaya',
+                    gender:'female',
+                    place:'gachibowli',
+                },
+                {
+                    name:'dasu',
+                    gender:'male',
+                    place:'kphb'
+                },
+                {
+                    name:'swati',
+                    gender:'female',
+                    place:'pune'
+                },
+                {
+                    name:'pallavi',
+                    gender:'female',
+                    place:'assam'
+                },
+                {
+                    name:'kiran',
+                    gender:'male',
+                    place:'kondapur'
+                },
+                {
+                    name:'thirumala',
+                    gender:'male',
+                    place:'madhapur'
+                },
+                {
+                    name:'priya',
+                    gender:'female',
+                    place:'hitech'
+                },
+
+            ]
+            
+            
+            let div = document.createElement("div")
+            div.style.border = "4px solid red";
+
+            let ul = document.createElement("ul");
+
+            students.forEach(function(student){
+                let li = document.createElement("li");
+                li.innerText = student.name;
+
+                if(student.gender === "male"){
+                    li.style.backgroundColor = "lightblue";
+                }else {
+                    li.style.backgroundColor = "pink";
+                }
+
+                let innerUl = document.createElement("ul");
+
+                let genderLi = document.createElement("li");
+                genderLi.innerText = student.gender;
+
+                let placeLi = document.createElement("li");
+                placeLi.innerText = student.place;
+
+                innerUl.appendChild(genderLi);
+                innerUl.appendChild(placeLi)
+
+                li.appendChild(innerUl);
+                ul.appendChild(li);
+                div.appendChild(ul)
+            });
+
+            document.body.appendChild(div);
+    </script>
+</body>
+</html>

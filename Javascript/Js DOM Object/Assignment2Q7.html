@@ -1,0 +1,316 @@
+<!--. Generate UI using document object for the given Array of Objects
+var people = [
+                {
+                    "firstname": "praveen",
+                    "lastname": "gubbala",
+                    "age": 36,
+                    "gender": "male",
+                    "city": "hyd",
+                    "salary": 10000
+                },
+                {
+                    "firstname": "srikanth",
+                    "lastname": "gubbala",
+                    "age": 32,
+                    "gender": "male",
+                    "city": "bengaluru",
+                    "salary": 20000
+                },
+                {
+                    "firstname": "pradeep",
+                    "lastname": "reddy",
+                    "age": 21,
+                    "gender": "male",
+                    "city": "hyd",
+                    "salary": 30000
+                },
+                {
+                    "firstname": "mounika",
+                    "lastname": "mudiraj",
+                    "age": 20,
+                    "gender": "female",
+                    "city": "nalgonda",
+                    "salary": 30000
+                },
+                {
+                    "firstname": "nikhil",
+                    "lastname": "m",
+                    "age": 22,
+                    "gender": "male",
+                    "city": "guntur",
+                    "salary": 2000
+                },
+                {
+                    "firstname": "riya",
+                    "lastname": "bhadouria",
+                    "age": 14,
+                    "gender": "female",
+                    "city": "indore",
+                    "salary": 40000
+                }
+
+            ];
+1. Display people data in a table.
+2. Display all male and female people in two separate tables.
+3. Display only those people in a table who are having salaries more 
+than 20000.
+4. Display only the male people who are above the age of 25.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var people = [
+                {
+                    "firstname": "praveen",
+                    "lastname": "gubbala",
+                    "age": 36,
+                    "gender": "male",
+                    "city": "hyd",
+                    "salary": 10000
+                },
+                {
+                    "firstname": "srikanth",
+                    "lastname": "gubbala",
+                    "age": 32,
+                    "gender": "male",
+                    "city": "bengaluru",
+                    "salary": 20000
+                },
+                {
+                    "firstname": "pradeep",
+                    "lastname": "reddy",
+                    "age": 21,
+                    "gender": "male",
+                    "city": "hyd",
+                    "salary": 30000
+                },
+                {
+                    "firstname": "mounika",
+                    "lastname": "mudiraj",
+                    "age": 20,
+                    "gender": "female",
+                    "city": "nalgonda",
+                    "salary": 30000
+                },
+                {
+                    "firstname": "nikhil",
+                    "lastname": "m",
+                    "age": 22,
+                    "gender": "male",
+                    "city": "guntur",
+                    "salary": 2000
+                },
+                {
+                    "firstname": "riya",
+                    "lastname": "bhadouria",
+                    "age": 14,
+                    "gender": "female",
+                    "city": "indore",
+                    "salary": 40000
+                }
+
+            ];
+
+
+            //1.
+            // let table = document.createElement("table");
+            // table.border = "2";
+            // let thead = document.createElement("thead");
+            // thead.style.backgroundColor = "cyan";
+            // thead.style.color = "brown";
+            // let tbody = document.createElement("tbody");
+            // tbody.style.backgroundColor = "lightcoral";
+            // tbody.style.color = "white";
+            // table.appendChild(thead);
+            // table.appendChild(tbody);
+
+            // let arr = ["firstname", "lastname", "age", "gender",
+            //      "city", "salary"];
+
+            // let tr = document.createElement("tr");
+            
+            //  arr.forEach(function(ele){
+            //     let th = document.createElement("th");
+            //      th.innerText = ele.toUpperCase();
+            //      tr.appendChild(th);
+            //  })
+            //  thead.appendChild(tr);
+
+            // people.forEach(function(ele){
+            //     let tr = document.createElement("tr");
+            //     for(let i in ele){
+            //         let td = document.createElement("td")
+            //         td.innerText = ele[i];
+            //         tr.appendChild(td);
+            //     }
+            //     tbody.appendChild(tr);
+            // })
+
+            // document.body.appendChild(table);
+
+            //2.
+            // let tableMale = document.createElement("table");
+            // tableMale.border = "2";
+            // let theadM = document.createElement("thead");
+            // theadM.style.backgroundColor = "cyan";
+            // theadM.style.color = "brown";
+            // let tbodyM = document.createElement("tbody");
+            // tbodyM.style.backgroundColor = "lightcoral";
+            // tbodyM.style.color = "white";
+            // tableMale.appendChild(theadM);
+            // tableMale.appendChild(tbodyM);
+
+            // let tableFemale = document.createElement("table");
+            // tableFemale.border = "2";
+            // tableFemale.style.margin = "20px";
+            // let theadF = document.createElement("thead");
+            // theadF.style.backgroundColor = "blue";
+            // theadF.style.color = "yellow";
+            // let tbodyF = document.createElement("tbody");
+            // tbodyF.style.backgroundColor = "lightblue";
+            // tbodyF.style.color = "red";
+            // tableFemale.appendChild(theadF);
+            // tableFemale.appendChild(tbodyF);
+
+            // let arr1 = ["firstname", "lastname", "age", "gender",
+            //      "city", "salary"];
+
+            // let tr1 = document.createElement("tr");
+            
+            // arr1.forEach(function(ele){
+            //     let th = document.createElement("th");
+            //      th.innerText = ele.toUpperCase();
+            //      tr1.appendChild(th);
+            //  })
+            // theadM.appendChild(tr1);
+
+            // let arr2 = ["FirstName", "LastName", "Age", "Gender",
+            //      "City", "Salary"];
+            
+            // let tr2 = document.createElement("tr");
+
+            // arr2.forEach(function(ele){
+            //     let th = document.createElement("th");
+            //      th.innerText = ele;
+            //      tr2.appendChild(th);
+            //  })
+            // theadF.appendChild(tr2)
+
+            // let male = people.filter(function(p){
+            //     return p.gender === "male"
+            // }) 
+
+            // male.forEach(function(ele){
+            //     let tr = document.createElement("tr");
+            //     for(let i in ele){
+            //         let td = document.createElement("td")
+            //         td.innerText = ele[i];
+            //         tr.appendChild(td);
+            //     }
+            //     tbodyM.appendChild(tr);
+            // })
+
+            // let female = people.filter(function(p){
+            //     return p.gender === "female"
+            // }) 
+
+            // female.forEach(function(ele){
+            //     let tr = document.createElement("tr");
+            //     for(let i in ele){
+            //         let td = document.createElement("td")
+            //         td.innerText = ele[i];
+            //         tr.appendChild(td);
+            //     }
+            //     tbodyF.appendChild(tr);
+            // })
+
+            // document.body.appendChild(tableMale);
+            // document.body.appendChild(tableFemale);
+
+            //3.
+            // let table = document.createElement("table");
+            // table.border = "2";
+            // let thead = document.createElement("thead");
+            // thead.style.backgroundColor = "cyan";
+            // thead.style.color = "brown";
+            // let tbody = document.createElement("tbody");
+            // tbody.style.backgroundColor = "lightcoral";
+            // tbody.style.color = "white";
+            // table.appendChild(thead);
+            // table.appendChild(tbody);
+
+            // let arr = ["firstname", "lastname", "age", "gender",
+            //      "city", "salary"];
+
+            // let tr = document.createElement("tr");
+            
+            //  arr.forEach(function(ele){
+            //     let th = document.createElement("th");
+            //      th.innerText = ele.toUpperCase();
+            //      tr.appendChild(th);
+            //  })
+            //  thead.appendChild(tr);
+
+            // let peopleAr = people.filter(function(p){
+            //     return p.salary > 20000;
+            // })
+            
+            // peopleAr.forEach(function(ele){
+            //     let tr = document.createElement("tr");
+            //     for(let i in ele){
+            //         let td = document.createElement("td");
+            //         td.innerText = ele[i];
+            //         tr.appendChild(td);
+            //     }
+            //     tbody.appendChild(tr);
+            // })
+
+            // document.body.appendChild(table);
+
+            //4.
+            let table = document.createElement("table");
+            table.border = "2";
+            let thead = document.createElement("thead");
+            thead.style.backgroundColor = "cyan";
+            thead.style.color = "brown";
+            let tbody = document.createElement("tbody");
+            tbody.style.backgroundColor = "lightcoral";
+            tbody.style.color = "white";
+            table.appendChild(thead);
+            table.appendChild(tbody);
+
+            let arr = ["firstname", "lastname", "age", "gender",
+                 "city", "salary"];
+
+            let tr = document.createElement("tr");
+            
+             arr.forEach(function(ele){
+                let th = document.createElement("th");
+                 th.innerText = ele.toUpperCase();
+                 tr.appendChild(th);
+             })
+             thead.appendChild(tr);
+
+            let peopleAr = people.filter(function(p){
+                return p.age > 25;
+            })
+            
+            peopleAr.forEach(function(ele){
+                let tr = document.createElement("tr");
+                for(let i in ele){
+                    let td = document.createElement("td");
+                    td.innerText = ele[i];
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr);
+            })
+
+            document.body.appendChild(table);
+    </script>
+</body>
+</html>

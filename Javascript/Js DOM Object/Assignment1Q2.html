@@ -1,0 +1,35 @@
+<!--1. Reference Design
+2.Print the texts inside the h1 and h2 elements in the console
+    <h1 class="a" > Hello </h1>
+    <h2 class="a" > Edupoly </h2>
+    <p class="b" > Training </p>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="a" > Hello </h1>
+    <h2 class="a" > Edupoly </h2>
+    <p class="b" > Training </p>
+    <script>
+            let hd = document.getElementsByClassName("a");
+
+            // //console.log(hd.innerText) // it's return HTMLCollection so gives undefined
+            // console.log(hd[0].innerText)
+            // console.log(hd[1].innerText)
+            // console.log(hd[0].innerText+" "+hd[1].innerText)
+
+            for(let i=0; i<=hd.length-1; i++){
+                console.log(hd[i].innerText);
+            }
+
+            // let hd = document.querySelector(".a") // only returns first matching element directly
+            // console.log(hd.innerText)
+
+    </script>
+</body>
+</html>
