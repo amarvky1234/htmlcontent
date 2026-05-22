@@ -1,0 +1,35 @@
+<!--Display text box value in uppercase h1 on button click in
+React Component-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+         function Show() {
+            const [value, SetValue] = React.useState('');
+            const [dispaly, setDisplay] = React.useState("");
+
+            function showValue(){
+                setDisplay(value.toUpperCase());
+            }
+
+            return (
+                <div>
+                    <input type="text" onChange={(e) => SetValue(e.target.value)} />
+                    <button onClick={showValue}>Show in H1</button>
+                    <h1>{dispaly}</h1>
+                </div>
+            )
+         }
+         ReactDOM.render(<Show />, document.getElementById('div1'))
+    </script>
+</body>
+</html>

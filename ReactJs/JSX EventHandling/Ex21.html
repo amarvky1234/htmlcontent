@@ -1,0 +1,35 @@
+<!--Display respective image on radio button value-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divTag"></div>
+    <script type="text/babel"">
+        let male = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-male-cartoon-man-surprising-look-png-image_14584829.png";
+        let female = "https://www.shutterstock.com/image-vector/beautiful-vector-illustration-traditional-indian-260nw-2523085607.jpg";
+        function displayCountry(e) {
+            if(e.target.value === "male"){
+                document.getElementById("imgTag").src = male
+            }else{
+                document.getElementById("imgTag").src = female
+
+            }
+        }
+
+        let ele = <div>
+                    <input type="radio" name="gender" value="male" onChange={displayCountry} />male
+                    <input type="radio" name="gender" value="female" onChange={displayCountry} />Female
+                    <br/>
+                    <img id="imgTag" src="" alt="" width="300p" />
+                  </div>
+        ReactDOM.render(ele, document.getElementById("divTag"))
+    </script>
+</body>
+</html>

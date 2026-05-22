@@ -1,0 +1,45 @@
+<!--Display selected checkbox values in console in React Component-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+         function App() {
+            const [value, SetValue] = React.useState([]);
+
+            function display(event) {
+                SetValue([...value, event.target.value])
+            }
+
+            return (
+                <div>
+                    <input type="checkbox" value="react" onChange={display} />:ReactJS
+                    <br/>
+                    <input type="checkbox" value="angular" onChange={display}  />:Angular
+                    <br/>
+                    <input type="checkbox" value="nodejs" onChange={display}  />:Nodejs
+                    <br/>
+                    <input type="checkbox" value="express" onChange={display}  />:Express
+                    <br/>
+                    <input type="checkbox" value="mongo" onChange={display}  />:Mongodb
+                    <br/>
+                    <input type="checkbox" value="mongoose" onChange={display}  />:Mongoose
+                    <br/>
+                    <input type="checkbox" value="mysql" onChange={display} />:MySql
+                    <br/><br/>
+                    <h1>{value.join(',')}</h1>
+                </div>
+            )
+         }
+         ReactDOM.render(<App />, document.getElementById('div1'))
+    </script>
+</body>
+</html>

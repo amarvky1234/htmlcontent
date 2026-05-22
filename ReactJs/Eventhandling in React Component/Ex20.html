@@ -1,0 +1,72 @@
+<!--Display respective image on radio button value in React Component-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+        var maleimage="https://png.pngtree.com/png-clipart/20240523/original/pngtree-business-man-in-casual-office-look-cartoon-png-image_15163894.png";
+        var femaleimage="https://img.freepik.com/premium-vector/vector-image-business-woman-shirt-suit_1213699-3050.jpg";
+    
+        function App() {
+            const [gender, SetGender] = React.useState("male");
+
+            function showGenderImg(event){
+                SetGender(event.target.value);
+            }
+
+            return (
+                <div className="container mt-5">
+                    <div className="card shadow p-4 text-center">
+                        <h1 className="text-primary mb-4">
+                            Select Gender
+                        </h1>
+                        <div className="d-flex justify-content-center gap-4">
+
+                            <div className="form-check">
+                                <input className="form-check-input" 
+                                name="gender" 
+                                type="radio" 
+                                value="male" 
+                                checked={gender==='male'} 
+                                onChange={showGenderImg} />
+
+                                <label className="form-check-label">Male</label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" 
+                                name="gender" 
+                                type="radio" 
+                                value="female" 
+                                checked={gender==="female"} 
+                                onChange={showGenderImg} />
+
+                                <label className="form-check-label">Female</label>
+                            </div>
+
+                        </div>
+
+                        <div className="mt-4">
+                            <img src={gender==='male' ? maleimage: femaleimage}  
+                                alt=""
+                                className="img-fluid rounded shadow"
+                                width="300"
+                                height="300"
+                            />
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+         ReactDOM.render(<App />, document.getElementById('div1'))
+    </script>
+</body>
+</html>

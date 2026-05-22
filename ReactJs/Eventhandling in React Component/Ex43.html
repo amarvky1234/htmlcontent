@@ -1,0 +1,121 @@
+<!--Display name in h1 id in h2 on button beside student name in
+React Component-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+         function StudentApp() {
+            const [selectedName, setSelectedName] = React.useState("");
+            const [selectedLastName, setSelectedLastName] = React.useState("");
+            const [selectedAge, setSelectedAge] = React.useState("");
+            const [selectedGender, setSelectedGender] = React.useState("");
+
+            const students = [
+                    {
+                        firstname: "Praveen",
+                        lastname: "Gubbala",
+                        age: 40,
+                        gender: "male",
+                    },
+                    {
+                        firstname: "Smrithi",
+                        lastname: "mandana",
+                        age: 25,
+                        gender: "female",
+                    },
+                    {
+                        firstname: "mithali",
+                        lastname: "raj",
+                        age: 39,
+                        gender: "female",
+                    },
+                    {
+                        firstname: "Rohit",
+                        lastname: "Sharma",
+                        age: 35,
+                        gender: "male",
+                    },
+                    {
+                        firstname: "Sachin",
+                        lastname: "Tendulkar",
+                        age: 50,
+                        gender: "male",
+                    },
+                ];
+
+                function displayStudentInfo(stud) {
+                    setSelectedName(stud.firstname);
+                    setSelectedLastName(stud.lastname)
+                    setSelectedAge(stud.age)
+                    setSelectedGender(stud.gender)
+                }
+
+            return (
+                <div>
+                    <div className="col-md-4">
+                        <div className="card shadow border-0 rounded-4">
+                            <div className="card-header bg-primary text-white">
+                                <h3 className="mb-0">Student List</h3>
+                            </div>
+
+                            <ul className="list-group list-group-flush">
+                                {
+                                    students.map((s, i)=>{
+                                        return (
+                                            <li 
+                                                key={i} 
+                                                className="list-group-item list-group-item-action"
+                                                onClick={() => displayStudentInfo(s)}
+                                                style={{cursor:'pointer'}}
+                                            >
+                                                {s.firstname} {s.lastname}
+                                            </li>)
+                                    })
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div className="card shadow border-0 rounded-4">
+                            <div className="card-header bg-success text-white">
+                                <h3 className="mb-0">Student Details</h3>
+                            </div>
+                            <div className="card-body">
+                                <div>
+                                    <h2 className="text-primary">
+                                        {selectedName} {selectedLastName}
+                                    </h2>
+                                    <hr/>
+                                    <h4>
+                                        Age :
+                                        <span className="badge bg-warning text-dark ms-2">
+                                            {selectedAge}
+                                        </span>
+                                    </h4>
+                                    <h4>
+                                        Gender :
+                                        <span className="badge bg-info ms-2">
+                                            {selectedGender}
+                                        </span>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            )
+         }
+         ReactDOM.render(<StudentApp />, document.getElementById('div1'))
+    </script>
+</body>
+</html>

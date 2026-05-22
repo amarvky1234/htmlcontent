@@ -1,0 +1,30 @@
+<!--Bindevent handler with arguments-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divTag"></div>
+    <script type="text/babel"">
+        
+        function display(x) {
+                document.getElementById("h1").innerHTML = x;
+        }
+
+        let ele = <div>
+                    <button value="1" onClick={() => display(1)}>Button 1</button>
+                    <button onClick={() => display(10)}>Button 2</button>
+                    <button onClick={() => display(200)}>Button 3</button>
+                    <button onClick={() => display(9999)}>Button 4</button>
+                    <h1 id="h1"></h1>
+                  </div>
+        ReactDOM.render(ele, document.getElementById("divTag"))
+    </script>
+</body>
+</html>

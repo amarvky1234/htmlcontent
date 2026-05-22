@@ -1,0 +1,26 @@
+<!--Display even array value in green and odd in red list items-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divEle"></div>
+    <script type="text/babel">
+        let ar = [23, 34, 24, 7579, 64372, 567, 392];
+        let ele = <ul>
+                    {
+                        ar.map((val) => {
+                            return <li style={val%2===0?{color:'green'}:{color:'red'}}>{val}</li>
+                        })
+                    }
+                  </ul>
+        ReactDOM.render(ele, document.getElementById("divEle"));
+    </script>
+</body>
+</html>

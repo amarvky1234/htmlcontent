@@ -1,0 +1,238 @@
+<!--GenUI with JSX-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Employee CRUD</title>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body{
+            font-family: Arial;
+        }
+
+        input{
+            display:block;
+            margin-bottom:10px;
+            padding:5px;
+            width:200px;
+        }
+
+        table{
+            border-collapse: collapse;
+            margin-top:20px;
+        }
+
+        table,th,td{
+            border:1px solid black;
+        }
+
+        th,td{
+            padding:8px;
+        }
+
+        button{
+            margin:3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+    function App(){
+
+        const [firstname,setFirstname] = React.useState("");
+        const [lastname,setLastname] = React.useState("");
+        const [age,setAge] = React.useState("");
+        const [gender,setGender] = React.useState("");
+
+        const [employees,setEmployees] = React.useState([
+            {
+                firstname:"praveen",
+                lastname:"gubbala",
+                age:38,
+                gender:"All"
+            },
+            {
+                firstname:"srikant",
+                lastname:"gubbala",
+                age:28,
+                gender:"Male"
+            }
+        ]);
+
+        const [editIndex,setEditIndex] = React.useState(null);
+
+        function addEmployee(){
+
+            let emp = {
+                firstname,
+                lastname,
+                age,
+                gender
+            };
+
+            if(editIndex === null){
+
+                setEmployees([...employees,emp]);
+
+            }else{
+
+                let updated = [...employees];
+                updated[editIndex] = emp;
+
+                setEmployees(updated);
+
+                setEditIndex(null);
+            }
+
+            setFirstname("");
+            setLastname("");
+            setAge("");
+            setGender("");
+        }
+
+        function deleteEmployee(index){
+
+            let filtered = employees.filter((emp,i)=> i !== index);
+
+            setEmployees(filtered);
+        }
+
+        function editEmployee(index){
+
+            let emp = employees[index];
+
+            setFirstname(emp.firstname);
+            setLastname(emp.lastname);
+            setAge(emp.age);
+            setGender(emp.gender);
+
+            setEditIndex(index);
+        }
+
+        return(
+            <div>
+
+                <input
+                    type="text"
+                    placeholder="Enter the firstname"
+                    value={firstname}
+                    onChange={(e)=>setFirstname(e.target.value)}
+                />
+
+                <input
+                    type="text"
+                    placeholder="Enter the lastname"
+                    value={lastname}
+                    onChange={(e)=>setLastname(e.target.value)}
+                />
+
+                <input
+                    type="number"
+                    placeholder="Enter the age"
+                    value={age}
+                    onChange={(e)=>setAge(e.target.value)}
+                />
+
+                <div>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="All"
+                        checked={gender==="All"}
+                        onChange={(e)=>setGender(e.target.value)}
+                    />
+                    All
+
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="Male"
+                        checked={gender==="Male"}
+                        onChange={(e)=>setGender(e.target.value)}
+                    />
+                    Male
+
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="Female"
+                        checked={gender==="Female"}
+                        onChange={(e)=>setGender(e.target.value)}
+                    />
+                    Female
+                </div>
+
+                <button onClick={addEmployee}>
+                    {editIndex===null ? "Add Employee" : "Update Employee"}
+                </button>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {
+                            employees.map((emp,index)=>{
+
+                                return(
+                                    <tr key={index}>
+
+                                        <td>{emp.firstname}</td>
+                                        <td>{emp.lastname}</td>
+                                        <td>{emp.age}</td>
+                                        <td>{emp.gender}</td>
+
+                                        <td>
+
+                                            <button
+                                                onClick={()=>deleteEmployee(index)}
+                                            >
+                                                Delete
+                                            </button>
+
+                                            <button
+                                                onClick={()=>editEmployee(index)}
+                                            >
+                                                Edit
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+                                );
+                            })
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+        );
+    }
+
+    ReactDOM.render(<App/>,document.getElementById("root"));
+
+    </script>
+
+</body>
+</html>

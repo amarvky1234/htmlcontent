@@ -1,0 +1,81 @@
+<!--Print student details along with gender image in React component-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+        let Pqr = function() {
+            var [students, setStudents] = React.useState([
+                {
+                    firstname: "Rahul",
+                    lastname: "Mehta",
+                    age: 27,
+                    gender: 'male'
+                },
+                {
+                    firstname: "Aman",
+                    lastname: "Kumar",
+                    age: 29,
+                    gender: 'male'
+                },
+                {
+                    firstname: "Priya",
+                    lastname: "Pandey",
+                    age: 25,
+                    gender: 'female'
+                },
+                {
+                    firstname: "Ravi",
+                    lastname: "Rai",
+                    age: 37,
+                    gender: 'male'
+                },
+                {
+                    firstname: "Rani",
+                    lastname: "Kumari",
+                    age: 23,
+                    gender: 'female'
+                },
+                {
+                    firstname: "Raveena",
+                    lastname: "Tandon",
+                    age: 43,
+                    gender: 'female'
+                }
+            ]);
+            var maleimage = "https://i.pinimg.com/736x/2a/4e/8d/2a4e8dab6791ed643d5180bc72167f6d.jpg";
+            var femaleimage = "https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_640.png";
+            return (
+                <div>
+                    <table border="2">
+                        {
+                            students.map((s)=>{
+                                return (
+                                    <tr>
+                                        <td>{s.firstname}</td>
+                                        <td>{s.lastname}</td>
+                                        <td>{s.age}</td>
+                                        <td>
+                                            {
+                                                <img src={s.gender === 'male' ? maleimage:femaleimage} width="75px" />
+                                            }
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </table>
+                </div>
+            )
+        }
+        ReactDOM.render(<Pqr></Pqr>, document.getElementById("div1"));
+    </script>
+</body>

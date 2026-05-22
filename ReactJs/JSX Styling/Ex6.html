@@ -1,0 +1,64 @@
+<!--Display each array object in flex boxes-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divEle"></div>
+    <script type="text/babel">
+            let info = [
+                          {
+                            Firstname: "Ajayalok",
+                            Lastname: "Pal",
+                            Gender: "Male",
+                            Age: 37
+                          },
+                          {
+                            Firstname: "Reena",
+                            Lastname: "Rai",
+                            Gender: "Female",
+                            Age: 31
+                          },
+                          {
+                            Firstname: "Amarjeet",
+                            Lastname: "Kumar",
+                            Gender: "Male",
+                            Age: 36
+                          },
+                          {
+                            Firstname: "Rohit",
+                            Lastname: "Sharma",
+                            Gender: "Male",
+                            Age: 37
+                          },
+                          {
+                            Firstname: "Rani",
+                            Lastname: "Kumari",
+                            Gender: "Female",
+                            Age: 27
+                          }
+                       ]
+            let ele = <div style={{display:'flex', flexWrap:'wrap'}}>
+                            {
+                              info.map((e) => {
+                                return (<div style={{border: '1px solid', margin:"10px", padding: '10px', width:'250px'}}>
+                                            <div style={e.Gender==='Male' ? {backgroundColor:'lightblue'}:{backgroundColor:'pink'}}>
+                                                <h1>First Name:{e.Firstname}</h1>
+                                                <h1>Last Name:{e.Lastname}</h1>
+                                                <h1>Gender:{e.Gender}</h1>
+                                                <h1>Age:{e.Age}</h1>
+                                            </div>
+                                    </div>)
+                              })  
+                            }
+                      </div>
+            ReactDOM.render(ele, document.getElementById("divEle"))
+    </script>
+</body>
+</html>

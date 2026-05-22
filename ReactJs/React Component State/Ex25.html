@@ -1,0 +1,33 @@
+<!--Print merged array values in sorted order of given two arrays
+in React component-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+        let Pqr = function() {
+            var [ar, setAr] = React.useState([23, 11, 4, 5, 1]);
+            var [br, setBr] = React.useState([13, 51, 42, 57, 10]);
+            return (
+                <div>
+                    {
+                        ar.concat(br).sort((a,b)=> {
+                            return a - b;
+                        }).map((e)=>{
+                            return <h2>{e}</h2>
+                        })
+                    }
+                </div>
+            )
+        }
+        ReactDOM.render(<Pqr></Pqr>, document.getElementById("div1"));
+    </script>
+</body>

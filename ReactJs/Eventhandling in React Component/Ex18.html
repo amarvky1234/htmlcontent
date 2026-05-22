@@ -1,0 +1,44 @@
+<!--Display addition of two text box values in h1 on textbox on button
+click in React Component-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+         function App() {
+            const [value1, SetValue1] = React.useState("");
+            const [value2, SetValue2] = React.useState("");
+            const [result, SetResult] = React.useState("");
+
+            const addition = () => {
+                SetResult(Number(value1) + Number(value2));
+            }
+
+            const subtraction = () => {
+                SetResult(Number(value1) - Number(value2));
+            }
+
+            return (
+                <div>
+                    <input type="text" value={value1} onChange={(e) => SetValue1(e.target.value)} />
+                    <br/>
+                    <input type="text" value={value2} onChange={(e) => SetValue2(e.target.value)} />
+                    <br/><br/>
+                    <button onClick={addition}>Add</button>
+                    <button onClick={subtraction}>Sub</button>
+                    <h1>{result}</h1>
+                </div>
+            )
+         }
+         ReactDOM.render(<App />, document.getElementById('div1'))
+    </script>
+</body>
+</html>

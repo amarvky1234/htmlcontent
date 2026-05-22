@@ -1,0 +1,37 @@
+<!--Push text box value to an array display in list items-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divTag"></div>
+    <script type="text/babel">
+       let ar = [];
+
+       function push() {
+            let val = document.getElementById("in").value;
+            document.getElementById("ul").innerHTML = "";
+            
+            ar.push(val);
+            ar.forEach((v) => {
+                let li = document.createElement("li");
+                li.innerHTML = v;
+                document.getElementById("ul").appendChild(li);
+            })
+       }
+
+        let ele = <div>
+                    <input type="text" id="in" />
+                    <button onClick={push}>Click here push value</button>
+                    <ul id="ul"></ul>
+                  </div>
+        ReactDOM.render(ele, document.getElementById("divTag"))
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!--Print each object in a seperate list for a given array of student
+objects in React component-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+        let Pqr = function() {
+            var [student, setStudent] = React.useState([
+                {
+                    firstname: "Rahul",
+                    lastname: "Roy",
+                    age: 24
+                },
+                {
+                    firstname: "Raveena",
+                    lastname: "Rai",
+                    age: 23
+                },
+                {
+                    firstname: "Ashutosh",
+                    lastname: "Kumar",
+                    age: 27
+                },
+                {
+                    firstname: "Rachel",
+                    lastname: "Kumari",
+                    age: 25
+                }
+            ]);
+            return (
+                <div>
+                    {
+                        student.map((s)=>{
+                            return(
+                                <ul>
+                                    <li>{s.firstname}</li>
+                                    <li>{s.lastname}</li>
+                                    <li>{s.age}</li>
+                                </ul>
+                            )
+                        })
+                    }
+                </div>
+            )
+        }
+        ReactDOM.render(<Pqr></Pqr>, document.getElementById("div1"));
+    </script>
+</body>

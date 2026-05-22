@@ -1,0 +1,68 @@
+<!--Display substraction of two text box values in h1 on textbox on
+button click in React Component-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+         function App() {
+            const [value1, setValue1] = React.useState("");
+            const [value2, setValue2] = React.useState("");
+            const [result, setResult] = React.useState("");
+
+            function subtraction() {
+                setResult(Number(value1) - Number(value2))
+            }
+            return (
+                <div className="container mt-5">
+                    <div className="row justify-content-center">
+                        <div className="col-md-5">
+                            <div className="card shadow-lg p-4 border-0 rounded-4">
+                                <h2 className="text-center mb-4">
+                                    Subtraction App
+                                </h2>
+                                <div className="mb-3">
+                                    <input className="form-control form-control-lg"
+                                        type="number" 
+                                        placeholder="Enter First Number"
+                                        value={value1} 
+                                        onChange={(e)=> setValue1(e.target.value)} 
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <input className="form-control form-control-lg"
+                                        type="number" 
+                                        placeholder="Enter Second Number"
+                                        value={value2} 
+                                        onChange={(e)=> setValue2(e.target.value)}  
+                                    />
+                                </div>
+                                <button className="btn btn-danger btn-lg w-100"
+                                    onClick={subtraction}>
+                                    Subtract
+                                </button>
+                                <div className="alert alert-primary text-center mt-4">
+                                    <h2>Result : {result}</h2>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+         }
+         ReactDOM.render(<App />, document.getElementById('div1'))
+    </script>
+</body>
+</html>

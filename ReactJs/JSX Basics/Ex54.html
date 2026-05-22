@@ -1,0 +1,78 @@
+<!--Generation of table using JSX-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divTag"></div>
+    <Script type="text/babel">
+        var students = [
+                {
+                    firstname:'pravee',
+                    lastname:'gubbala',
+                    age:38
+                },
+                {
+                    firstname:'anupama',
+                    lastname:'reddy',
+                    age:28
+                },
+                {
+                    firstname:'priya',
+                    lastname:'kaman',
+                    age:23
+                },
+                {
+                    firstname:'kiran',
+                    lastname:'rao',
+                    age:25
+                },
+                {
+                    firstname:'triveni',
+                    lastname:'manu',
+                    age:29
+                }
+            ];
+        
+        function deleteTask(i) {
+            students.splice(i, 1);
+            console.log(students);
+            ReactDOM.render(studentTable(), document.getElementById("divTag"));
+        }
+
+        function studentTable() {
+            let studTable = 
+                    <table border="2">
+                        <thead>
+                            <tr>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Age</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        {
+                            students.map((s, i)=>{
+                                return(
+                                    <tr>
+                                        <td>{s.firstname}</td>
+                                        <td>{s.lastname}</td>
+                                        <td>{s.age}</td>
+                                        <td><button onClick={() => {deleteTask(i)}}>Delete</button></td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </table>
+            return studTable;
+        }  
+        ReactDOM.render(studentTable(), document.getElementById("divTag"));
+    </Script>
+</body>
+</html>

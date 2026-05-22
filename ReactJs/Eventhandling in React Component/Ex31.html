@@ -1,0 +1,56 @@
+<!--Implement like dislike app in React Component-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+         function App() {
+            const [like, SetLike] = React.useState(0);
+            const [dislike, SetDislike] = React.useState(0);
+
+            function showLike(){
+                SetLike(like + 1);
+            }
+
+            function showDislike(){
+                SetDislike(dislike + 1);
+            }
+
+            return (
+                <div className="container vh-100 d-flex justify-content-center align-items-center">
+                    <div className="card shadow-lg p-5 text-center rounded-4">
+                        <h1 className="text-primary mb-4">
+                            Like Dislike App
+                        </h1>
+                        <div className="mb-4">
+                            <h2 className="text-success">👍 Likes : {like}</h2>
+                            <h2 className="text-danger mt-3">👎 Dislikes : {dislike}</h2>
+                        </div>
+                        <div className="d-flex justify-content-center gap-3">
+                            <button onClick={showLike}
+                                className="btn btn-success btn-lg"
+                            >
+                                👍 Like
+                            </button>
+                            <button onClick={showDislike}
+                                className="btn btn-danger btn-lg"
+                            >
+                                👎 Dislike
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )
+         }
+         ReactDOM.render(<App />, document.getElementById('div1'))
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!--Display radio button value on check in React Component-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+         function App() {
+            const [value, SetValue] = React.useState("");
+
+           function display(event) {
+                SetValue(event.target.value);
+           }
+
+            return (
+                <div className="container mt-5">
+                    <div className="card p-4 shadow">
+                        
+                        <h1 className="text-primary mb-4">Select Country</h1>
+
+                        <div className="form-check">
+                            <input className="form-check-input"
+                                type="radio" 
+                                name="country" 
+                                value="India" 
+                                onChange={display}  />
+
+                            <label className="form-check-label">IND</label>
+                        </div>
+                        <div className="form-check mt-2">
+                            <input className="form-check-input"
+                                type="radio" 
+                                name="country" 
+                                value="United State of America" 
+                                onClick={display} />
+                            
+                            <label className="form-check-label">USA</label>
+                        </div>
+                        <h1 className="mt-4 text-success">{value}</h1>
+                    </div>
+                </div>
+            )
+         }
+         ReactDOM.render(<App />, document.getElementById('div1'))
+    </script>
+</body>
+</html>
