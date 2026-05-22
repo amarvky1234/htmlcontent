@@ -1,0 +1,66 @@
+<!--Display array of objects in table with female students row in pink
+male in blue-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divEle"></div>
+    <script type="text/babel">
+            let people = [
+                          {
+                            Firstname: "Ajayalok",
+                            Lastname: "Pal",
+                            Gender: "Male",
+                            Age: 37
+                          },
+                          {
+                            Firstname: "Reena",
+                            Lastname: "Rai",
+                            Gender: "Female",
+                            Age: 31
+                          },
+                          {
+                            Firstname: "Amarjeet",
+                            Lastname: "Kumar",
+                            Gender: "Male",
+                            Age: 36
+                          },
+                          {
+                            Firstname: "Rohit",
+                            Lastname: "Sharma",
+                            Gender: "Male",
+                            Age: 37
+                          },
+                          {
+                            Firstname: "Rani",
+                            Lastname: "Kumari",
+                            Gender: "Female",
+                            Age: 27
+                          }
+                       ]
+    
+            let ele = <table border="2">
+                            {
+                                people.map((p) => {
+                                    return(
+                                        <tr style={p.Gender==="Female"?{backgroundColor:"pink"}:{backgroundColor:"lightblue"}}>
+                                            <td>{p.Firstname}</td>
+                                            <td>{p.Lastname}</td>
+                                            <td>{p.Age}</td>
+                                            <td>{p.Gender}</td>
+                                        </tr>
+                                    )
+                                })
+                            }            
+                      </table>
+            ReactDOM.render(ele, document.getElementById("divEle"));
+    </script>
+</body>
+</html>

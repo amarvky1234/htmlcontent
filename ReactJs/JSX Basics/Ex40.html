@@ -1,0 +1,26 @@
+<!--Print even numbers in italics and odd numbers in bold in list-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divTag"></div>
+    <Script type="text/babel">
+            var ar = [12, 34, 23, 11, 35, 68, 111]
+            let ele1 = <ul>
+                            {
+                                ar.map((a) => {
+                                    return (a%2===0 ? <li><i>{a}</i></li> : <li><b>{a}</b></li>)
+                                })
+                            }
+                       </ul>
+            ReactDOM.render(ele1, document.getElementById("divTag"));
+    </Script>
+</body>
+</html>

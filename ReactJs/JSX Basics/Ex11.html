@@ -1,0 +1,20 @@
+<!--Print reverse of string praveen in JSX-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divTag1"></div>
+    <div id="divTag2"></div>
+    <Script type="text/babel">
+            let ele1 = <h1>{"india".split("").reverse().join("")}</h1>
+            ReactDOM.render(ele1, document.getElementById("divTag1"));
+    </Script>
+</body>
+</html>

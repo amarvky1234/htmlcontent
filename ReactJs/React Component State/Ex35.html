@@ -1,0 +1,58 @@
+<!--Print a table for the given array of students in React component-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+        let Pqr = function() {
+            var [students, setStudents] = React.useState([
+                {
+                    firstname: "Rahul",
+                    lastname: "Mehta",
+                    age: 27
+                },
+                {
+                    firstname: "Aman",
+                    lastname: "Kumar",
+                    age: 29
+                },
+                {
+                    firstname: "Priya",
+                    lastname: "Pandey",
+                    age: 25
+                },
+                {
+                    firstname: "Ravi",
+                    lastname: "Rai",
+                    age: 31
+                }
+            ]);
+            return (
+                <div>
+                    <table border="2">
+                        {
+                            students.map((s)=>{
+                                return (
+                                    <tr>
+                                        <td>{s.firstname}</td>
+                                        <td>{s.lastname}</td>
+                                        <td>{s.age}</td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </table>
+                </div>
+            )
+        }
+        ReactDOM.render(<Pqr></Pqr>, document.getElementById("div1"));
+    </script>
+</body>

@@ -1,0 +1,23 @@
+<!--Display the text of div on click in console-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divTag"></div>
+    <script type="text/babel"">
+        function msg(e) {
+            console.log(e.target.innerHTML)
+        }
+
+        let ele = <div onClick={msg} style={{border:"1px solid", width:"300px", height:"200px"}}>Welcome to Edupoly ReactJS</div>
+        ReactDOM.render(ele, document.getElementById("divTag"))
+    </script>
+</body>
+</html>

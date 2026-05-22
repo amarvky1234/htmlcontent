@@ -1,0 +1,51 @@
+<!--Display selected checkbox values in console-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divTag"></div>
+    <script type="text/babel"">
+        let male = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-male-cartoon-man-surprising-look-png-image_14584829.png";
+        let female = "https://www.shutterstock.com/image-vector/beautiful-vector-illustration-traditional-indian-260nw-2523085607.jpg";
+        
+        var pl = []
+        
+        function display(e) {
+            if(e.target.checked === false){
+                var i = pl.indexOf(e.target.value);
+                pl.splice(i,1);
+                document.getElementById("h1").innerHTML = pl;
+            }else {
+                pl.push(e.target.value)
+                document.getElementById("h1").innerHTML = pl;
+            }
+        }
+
+        let ele = <div>
+                    <input type="checkbox" value="react" onChange={display} />:ReactJS
+                    <br/>
+                    <input type="checkbox" value="angular" onChange={display} />:Angular
+                    <br/>
+                    <input type="checkbox" value="nodejs" onChange={display} />:Nodejs
+                    <br/>
+                    <input type="checkbox" value="express" onChange={display} />:Express
+                    <br/>
+                    <input type="checkbox" value="mongo" onChange={display} />:Mongodb
+                    <br/>
+                    <input type="checkbox" value="mongoose" onChange={display} />:Mongoose
+                    <br/>
+                    <input type="checkbox" value="mysql" onChange={display} />:MySql
+                    <br/>
+                    <h1 id="h1"></h1>
+                  </div>
+        ReactDOM.render(ele, document.getElementById("divTag"))
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!--Display select box value in h1-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divTag"></div>
+    <script type="text/babel"">
+        let male = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-male-cartoon-man-surprising-look-png-image_14584829.png";
+        let female = "https://www.shutterstock.com/image-vector/beautiful-vector-illustration-traditional-indian-260nw-2523085607.jpg";
+        function display(e) {
+            // document.getElementById("h1").innerHTML = document.getElementById("s1").value;
+            document.getElementById("h1").innerHTML = e.target.value;
+        }
+
+        let ele = <div>
+                     <select name="" id="s1" onChange={display}>
+                        <option value="IND">India</option>
+                        <option value="USA">United States of America</option>
+                        <option value="SRI">Srilanka</option>
+                    </select>
+                    <h1 id="h1"></h1>
+                  </div>
+        ReactDOM.render(ele, document.getElementById("divTag"))
+    </script>
+</body>
+</html>

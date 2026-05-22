@@ -1,0 +1,80 @@
+<!--Implement a stopwatch-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divTag"></div>
+    <script type="text/babel">
+        let mins = 20;
+        let secs = 0;
+        let interval;
+
+        function updateDisplay() {
+            document.getElementById("mi").innerHTML = mins;
+            document.getElementById("se").innerHTML =
+                secs < 10 ? "0" + secs : secs;
+        }
+
+        function start() {
+
+            clearInterval(interval);
+
+            interval = setInterval(() => {
+
+                if (secs === 0) {
+
+                    if (mins === 0) {
+                        clearInterval(interval);
+                        return;
+                    }
+
+                    mins--;
+                    secs = 59;
+
+                } else {
+                    secs--;
+                }
+
+                updateDisplay();
+
+            }, 1000); // 1 second
+        }
+
+        function stop() {
+            clearInterval(interval);
+
+            mins = 20;
+            secs = 0;
+
+            updateDisplay();
+        }
+
+        function pause() {
+            clearInterval(interval);
+        }
+
+        let ele =
+            <div>
+                <h1>
+                    <span id="mi"></span> :
+                    <span id="se"></span>
+                </h1>
+
+                <button onClick={start}>Start</button>
+                <button onClick={stop}>Stop</button>
+                <button onClick={pause}>Pause</button>
+            </div>
+
+        ReactDOM.render(ele, document.getElementById("divTag"));
+
+        updateDisplay();
+    </script>
+</body>
+</html>

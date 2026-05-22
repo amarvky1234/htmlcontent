@@ -1,0 +1,77 @@
+<!--Generation of table in React component-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+        let Pqr = function() {
+            var [student, setStudent] = React.useState([
+                {
+                    firstname: "Rahul",
+                    lastname: "Roy",
+                    age: 24
+                },
+                {
+                    firstname: "Raveena",
+                    lastname: "Rai",
+                    age: 23
+                },
+                {
+                    firstname: "Ashutosh",
+                    lastname: "Kumar",
+                    age: 27
+                },
+                {
+                    firstname: "Rachel",
+                    lastname: "Kumari",
+                    age: 25
+                }
+            ]);
+
+            function del(index) {
+
+                let newStudents = student.filter((s, i) => {
+                    return i !== index;
+                });
+
+                setStudent(newStudents);
+            }
+
+            return (
+                <table border="2">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Age</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            student.map((s, i)=>{
+                                return(
+                                   <tr>
+                                        <td>{s.firstname}</td>
+                                        <td>{s.lastname}</td>
+                                        <td>{s.age}</td>
+                                        <td><button onClick={() => {del(i)}}>Delete</button></td>
+                                   </tr> 
+                                )
+                            })
+                        }
+                    </tbody>
+                </table>
+            )
+        }
+        ReactDOM.render(<Pqr></Pqr>, document.getElementById("div1"));
+    </script>
+</body>

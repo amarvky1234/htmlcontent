@@ -1,0 +1,24 @@
+<!--Apply the color names stored in two variable to JSX different h1-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divEle"></div>
+    <script type="text/babel">
+        let c1 = "purple";
+        let c2 = "brown";
+        let ele = <div>
+                    <h1 style={{color:c1}}>Hello ReactJs</h1>
+                    <h1 style={{color:c2}}>Hello JavaFramework</h1>
+                  </div>
+        ReactDOM.render(ele, document.getElementById("divEle"));
+    </script>
+</body>
+</html>

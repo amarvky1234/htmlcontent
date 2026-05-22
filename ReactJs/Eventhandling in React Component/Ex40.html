@@ -1,0 +1,39 @@
+<!--Display name in h1 id on h2 in React Component-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+         function App() {
+            const [value, SetValue] = React.useState(['Raveena', 'Ruchi', 'Anamika', 'Anjali']);
+
+            function displayNameId(ele, index){
+                document.getElementById("h1").innerHTML = ele;
+                document.getElementById("h2").innerHTML = index;
+            }
+
+            return (
+                <div>
+                    <ul>
+                        {
+                            value.map((e, i)=>{
+                                return <li key={i} onClick={() => displayNameId(e, i)}>{e}</li>
+                            })
+                        }
+                    </ul>
+                    <h1 id="h1"></h1>
+                    <h2 id="h2"></h2>
+                </div>
+            )
+         }
+         ReactDOM.render(<App />, document.getElementById('div1'))
+    </script>
+</body>
+</html>

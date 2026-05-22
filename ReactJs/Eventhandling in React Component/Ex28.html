@@ -1,0 +1,47 @@
+<!--Todolist with delete button in React Component-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+         function App() {
+            const [value, SetValue] = React.useState([]);
+            const [input, SetInput] = React.useState("");
+
+
+            function showValue(){
+                SetValue([...value, input])
+                SetInput("");
+            }
+
+            function remove(index){
+                let updatedValue = [...value]
+                updatedValue.splice(index, 1)
+                SetValue(updatedValue);
+            }
+
+            return (
+                <div>
+                    <input type="text" value={input} onChange={(e)=>{SetInput(e.target.value)}} />
+                    <button onClick={showValue}>Click here to push value</button>
+                    <ul>
+                        {
+                            value.map((e, i)=> {
+                                return <li key={i}>{e}<button onClick={() => remove(i)}>Delete</button></li>
+                            })
+                        }
+                    </ul>
+                </div>
+            )
+         }
+         ReactDOM.render(<App />, document.getElementById('div1'))
+    </script>
+</body>
+</html>

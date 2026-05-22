@@ -1,0 +1,72 @@
+<!--Display each array object in flex boxes with respective gender images-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="divEle"></div>
+    <script type="text/babel">
+            let info = [
+                          {
+                            Firstname: "Ajayalok",
+                            Lastname: "Pal",
+                            Gender: "Male",
+                            Age: 37
+                          },
+                          {
+                            Firstname: "Reena",
+                            Lastname: "Rai",
+                            Gender: "Female",
+                            Age: 31
+                          },
+                          {
+                            Firstname: "Amarjeet",
+                            Lastname: "Kumar",
+                            Gender: "Male",
+                            Age: 36
+                          },
+                          {
+                            Firstname: "Rohit",
+                            Lastname: "Sharma",
+                            Gender: "Male",
+                            Age: 37
+                          },
+                          {
+                            Firstname: "Rani",
+                            Lastname: "Kumari",
+                            Gender: "Female",
+                            Age: 27
+                          }
+                       ]
+
+            var maleimage="https://i.pinimg.com/736x/2a/4e/8d/2a4e8dab6791ed643d5180bc72167f6d.jpg";
+            var femaleimage="https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_640.png";
+
+            let ele = <div style={{display:'flex', flexWrap:'wrap'}}>
+                            {
+                              info.map((e) => {
+                                return (<div style={{border:'1px solid', width:'450px', display:'flex', alignContent:'start'}}>
+                                            <div style={{margin:"10px", padding: '10px', width:'200px'}}>
+                                              <div style={e.Gender==='Male' ? {backgroundColor:'lightblue'}:{backgroundColor:'pink'}}>
+                                                  <h3>First Name:{e.Firstname}</h3>
+                                                  <h3>Last Name:{e.Lastname}</h3>
+                                                  <h3>Gender:{e.Gender}</h3>
+                                                  <h3>Age:{e.Age}</h3>
+                                              </div>
+                                           </div>
+                                           <div style={{width:"150px"}}><img width="100%" src={e.Gender==="Male"?maleimage:femaleimage} /></div>
+                                        </div>
+                                    )
+                              })  
+                            }
+                      </div>
+            ReactDOM.render(ele, document.getElementById("divEle"))
+    </script>
+</body>
+</html>

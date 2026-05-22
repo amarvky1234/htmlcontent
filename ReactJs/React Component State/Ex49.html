@@ -1,0 +1,55 @@
+<!--Print the given array of students in cards in React component-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script type="text/babel">
+        let Pqr = function() {
+            var [student, setStudent] = React.useState([
+                {
+                    firstname: "Rahul",
+                    lastname: "Roy",
+                    age: 24
+                },
+                {
+                    firstname: "Raveena",
+                    lastname: "Rai",
+                    age: 23
+                },
+                {
+                    firstname: "Ashutosh",
+                    lastname: "Kumar",
+                    age: 27
+                },
+                {
+                    firstname: "Rachel",
+                    lastname: "Kumari",
+                    age: 25
+                }
+            ]);
+            return (
+                <div>
+                    {
+                        student.map((s)=>{
+                            return(
+                                <div style={{border:"2px solid", margin:"10px", padding:"15px"}}>
+                                    <h1>{s.firstname+" "+s.lastname}</h1>
+                                    <span>Age:{s.age}</span>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            )
+        }
+        ReactDOM.render(<Pqr></Pqr>, document.getElementById("div1"));
+    </script>
+</body>

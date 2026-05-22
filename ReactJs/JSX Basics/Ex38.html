@@ -1,0 +1,27 @@
+<!--Print only the numbers of array greater than 25 of numbers
+in list items copy-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <ul id="ulTag"></ul>
+    <Script type="text/babel">
+            var ar = [12, 34, 23, 11, 35, 68, 111]
+            let ele1 = <div>
+                            {
+                                ar.map((a) => {
+                                    return (a>25 ? <li>{a}</li>:null)
+                                })
+                            }
+                        </div>
+            ReactDOM.render(ele1, document.getElementById("ulTag"));
+    </Script>
+</body>
+</html>
