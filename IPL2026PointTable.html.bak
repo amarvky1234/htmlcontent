@@ -56,8 +56,7 @@
 			IPL 2026 Points Table
 		</h1 class="text-center mb-4 title">
 
-		<div class="table-responsive shadow-lg table-card">
-
+		<div class="table-responsive">
 			<table class="table table-hover align-middle mb-0 text-center">
 				<thead class="table-dark">
 					<tr>
