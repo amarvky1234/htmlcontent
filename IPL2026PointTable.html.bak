@@ -52,11 +52,12 @@
 </head>
 <body>
      <div class="container py-5">
-		<h1>
+		<h1 class="text-center mb-4 title fw-bold">
 			IPL 2026 Points Table
-		</h1 class="text-center mb-4 title">
+		</h1>
 
-		<div class="table-responsive">
+		<div class="table-responsive shadow-lg table-card">
+
 			<table class="table table-hover align-middle mb-0 text-center">
 				<thead class="table-dark">
 					<tr>
