@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .stat-card {
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .doctor-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold fs-3">
+                <i class="bi bi-hospital"></i>
+                MediCare
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            Doctors
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            Patients
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            Appointments
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="btn btn-light ms-2">
+                            Logout
+                        </button>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="container my-5">
+
+        <!-- Dashboard Heading -->
+        <div class="mb-5">
+
+            <h2 class="fw-bold">
+                Hospital Dashboard
+            </h2>
+
+            <p class="text-muted">
+                Manage patients, doctors, and appointments efficiently.
+            </p>
+
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="row g-4 mb-5">
+
+            <div class="col-md-3">
+
+                <div class="card shadow border-0 stat-card">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-people-fill fs-1 text-primary"></i>
+
+                        <h5 class="mt-3">
+                            Total Patients
+                        </h5>
+
+                        <h2 class="text-primary">
+                            1,245
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card shadow border-0 stat-card">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-person-badge-fill fs-1 text-success"></i>
+
+                        <h5 class="mt-3">
+                            Doctors
+                        </h5>
+
+                        <h2 class="text-success">
+                            48
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card shadow border-0 stat-card">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-calendar-check-fill fs-1 text-warning"></i>
+
+                        <h5 class="mt-3">
+                            Appointments
+                        </h5>
+
+                        <h2 class="text-warning">
+                            126
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card shadow border-0 stat-card">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-exclamation-triangle-fill fs-1 text-danger"></i>
+
+                        <h5 class="mt-3">
+                            Emergency Cases
+                        </h5>
+
+                        <h2 class="text-danger">
+                            9
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Doctors Section -->
+        <h3 class="fw-bold mb-4">
+            Available Doctors
+        </h3>
+
+        <div class="row g-4 mb-5">
+
+            <!-- Doctor 1 -->
+            <div class="col-md-4">
+
+                <div class="card shadow border-0 text-center h-100">
+
+                    <div class="card-body">
+
+                        <img src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg" class="doctor-img mb-3" alt="Doctor">
+
+                        <h5>
+                            Dr. Sarah Johnson
+                        </h5>
+
+                        <p class="text-muted">
+                            Cardiologist
+                        </p>
+
+                        <span class="badge bg-success">
+                            12 Years Experience
+                        </span>
+
+                        <button class="btn btn-primary w-100 mt-3">
+                            View Schedule
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="col-md-4">
+
+                <div class="card shadow border-0 text-center h-100">
+
+                    <div class="card-body">
+
+                        <img src="https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg" class="doctor-img mb-3" alt="Doctor">
+
+                        <h5>
+                            Dr. Michael Smith
+                        </h5>
+
+                        <p class="text-muted">
+                            Neurologist
+                        </p>
+
+                        <span class="badge bg-success">
+                            10 Years Experience
+                        </span>
+
+                        <button class="btn btn-primary w-100 mt-3">
+                            View Schedule
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Doctor 3 -->
+            <div class="col-md-4">
+
+                <div class="card shadow border-0 text-center h-100">
+
+                    <div class="card-body">
+
+                        <img src="https://images.pexels.com/photos/5998473/pexels-photo-5998473.jpeg" class="doctor-img mb-3" alt="Doctor">
+
+                        <h5>
+                            Dr. Priya Sharma
+                        </h5>
+
+                        <p class="text-muted">
+                            Pediatrician
+                        </p>
+
+                        <span class="badge bg-success">
+                            8 Years Experience
+                        </span>
+
+                        <button class="btn btn-primary w-100 mt-3">
+                            View Schedule
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Patients Table -->
+        <div class="card shadow border-0 mb-5">
+
+            <div class="card-body">
+
+                <h3 class="fw-bold mb-4">
+                    Recent Patients
+                </h3>
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle">
+
+                        <thead class="table-primary">
+
+                            <tr>
+
+                                <th>Patient ID</th>
+
+                                <th>Name</th>
+
+                                <th>Age</th>
+
+                                <th>Department</th>
+
+                                <th>Status</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>P001</td>
+
+                                <td>Rahul Kumar</td>
+
+                                <td>32</td>
+
+                                <td>Cardiology</td>
+
+                                <td>
+                                    <span class="badge bg-success">
+                                        Admitted
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>P002</td>
+
+                                <td>Priya Singh</td>
+
+                                <td>27</td>
+
+                                <td>Neurology</td>
+
+                                <td>
+                                    <span class="badge bg-warning text-dark">
+                                        Observation
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>P003</td>
+
+                                <td>Amit Verma</td>
+
+                                <td>45</td>
+
+                                <td>Orthopedics</td>
+
+                                <td>
+                                    <span class="badge bg-danger">
+                                        Critical
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>P004</td>
+
+                                <td>Neha Sharma</td>
+
+                                <td>36</td>
+
+                                <td>Pediatrics</td>
+
+                                <td>
+                                    <span class="badge bg-success">
+                                        Admitted
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Appointment Form -->
+        <div class="card shadow border-0 mb-5">
+
+            <div class="card-body">
+
+                <h3 class="fw-bold mb-4">
+                    Book Appointment
+                </h3>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <input type="text" class="form-control" placeholder="Patient Name">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <select class="form-select">
+
+                            <option>Select Doctor</option>
+
+                            <option>Dr. Sarah Johnson</option>
+
+                            <option>Dr. Michael Smith</option>
+
+                            <option>Dr. Priya Sharma</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <select class="form-select">
+
+                            <option>Select Department</option>
+
+                            <option>Cardiology</option>
+
+                            <option>Neurology</option>
+
+                            <option>Pediatrics</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <input type="date" class="form-control">
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <input type="time" class="form-control">
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <button class="btn btn-primary w-100">
+                            Book Appointment
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Emergency Alerts -->
+        <h3 class="fw-bold mb-4">
+            Emergency Alerts
+        </h3>
+
+        <div class="alert alert-danger">
+
+            🚨 ICU Bed Availability Low! Immediate Attention Required.
+
+        </div>
+
+        <div class="alert alert-warning mb-5">
+
+            ⚠ Blood Bank Stock Running Low.
+
+        </div>
+
+        <!-- Recent Activities -->
+        <div class="card shadow border-0 mb-5">
+
+            <div class="card-body">
+
+                <h3 class="fw-bold mb-4">
+                    Recent Activities
+                </h3>
+
+                <ul class="list-group">
+
+                    <li class="list-group-item">
+                        Patient Rahul Kumar admitted to ICU.
+                    </li>
+
+                    <li class="list-group-item">
+                        Appointment booked for Priya Singh.
+                    </li>
+
+                    <li class="list-group-item">
+                        Dr. Michael Smith updated schedule.
+                    </li>
+
+                    <li class="list-group-item">
+                        Laboratory reports uploaded successfully.
+                    </li>
+
+                    <li class="list-group-item">
+                        New patient registration completed.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+
+        <h5>
+            MediCare Hospital Dashboard
+        </h5>
+
+        <p class="mb-0">
+            © 2026 All Rights Reserved
+        </p>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
