@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodieGo - Food Delivery App</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body{
+            background-color:#f8f9fa;
+        }
+
+        .hero{
+            min-height: 80vh;
+            background:
+                linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                url("https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .category-card{
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover{
+            transform:translateY(-5px);
+        }
+
+        .restaurant-card{
+            transition:0.3s;
+        }
+
+        .restaurant-card:hover{
+            transform:translateY(-8px);
+        }
+
+        .food-img{
+            height:220px;
+            object-fit:cover;
+        }
+
+        .category-icon{
+            /* font-size:40px; */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3">
+                <i class="bi bi-bag-heart-fill"></i>
+                FoodieGo
+            </a>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Restaurants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-light text-danger ms-2 fw-bold">
+                            Login
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <Section class="hero d-flex align-items-center">
+        <div class="container text-center text-white">
+            <h1 class="display-3 fw-bold">
+                Delicious Food Delivered To Your Doorstep
+            </h1>
+            <p class="lead mb-5">
+                Order from your favorite restaurants anytime.  
+            </p>
+
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text"
+                                class="form-control form-control-lg"
+                                placeholder="Search restaurants or dishes"
+                        >
+                        <button class="btn btn-danger btn-lg">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </Section>
+
+    <!-- Categories -->
+    <div class="container my-5">
+        <h2 class="fw-bold text-center mb-5">
+            Popular Categories
+        </h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card shadow border-0 text-center p-4 category-card">
+                    <div class="category-icon">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6zwvnonlW5T-Z0YP8YluC9dsoCTH4qHhzm6eCuB_nqm2OsbHnFyM7VXVq&s=10"
+                            width="90"
+                            height="90"
+                            alt="Pizza"
+                            class="rounded-circle shadow">
+                    </div>
+                    <h5 class="mt-3">
+                        Pizza
+                    </h5>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow border-0 text-center p-4 category-card">
+                    <div class="category-icon">
+                        <img src="https://assets.bonappetit.com/photos/5d1cb1880813410008e914fc/master/pass/Print-Summer-Smash-Burger.jpg"
+                            width="90"
+                            height="90"
+                            alt="Burger"
+                            class="rounded-circle shadow">
+                    </div>
+                    <h5 class="mt-3">
+                        Burgers
+                    </h5>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow border-0 text-center p-4 category-card">
+                    <div class="category-icon">
+                        <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/02/veg-noodles-vegetable-noodles-recipe.jpg"
+                            width="90"
+                            height="90"
+                            alt="Burger"
+                            class="rounded-circle shadow">
+                    </div>
+                    <h5 class="mt-3">
+                        Noodles
+                    </h5>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow border-0 text-center p-4 category-card">
+                    <div class="category-icon">
+                        <img src="https://hips.hearstapps.com/hmg-prod/images/no-bake-desserts-strawberry-delight-682cd8f4b76cf.jpg?crop=0.99xw:1xh;center,top"
+                            width="90"
+                            height="90"
+                            alt="Burger"
+                            class="rounded-circle shadow">
+                    </div>
+                    <h5 class="mt-3">
+                        Desserts
+                    </h5>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Featured Restaurants -->
+    <div class="container my-5">
+        <h2 class="fw-bold text-center mb-5">
+            Featured Restaurants
+        </h2>
+        <div class="row g-4">
+
+            <!-- Restaurant 1 -->
+             <div class="col-md-4">
+                <div class="card shadow border-0 h-100 restaurant-card">
+                    <img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg"
+                         class="card-img-top food-img"
+                        alt="Pizza">
+                    <div class="card-body">
+                        <h4>Pizza Palace</h4>
+                        <p class="text-muted">Italian • Fast Food</p>
+                        <span class="badge bg-success">★ 4.8</span>
+                        <span class="badge bg-warning text-dark">30 mins</span>
+                        <button class="btn btn-danger w-100 mt-3">Order Now</button>
+                    </div>
+                </div>
+             </div>
+
+             <!-- Restaurant 2 -->
+             <div class="col-md-4">
+                <div class="card shadow border-0 h-100 restaurant-card">
+                    <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg"
+                         class="card-img-top food-img"
+                        alt="Burger">
+                    <div class="card-body">
+                        <h4>Burger Hub</h4>
+                        <p class="text-muted">American • Burgers</p>
+                        <span class="badge bg-success">★ 4.6</span>
+                        <span class="badge bg-warning text-dark">25 mins</span>
+                        <button class="btn btn-danger w-100 mt-3">Order Now</button>
+                    </div>
+                </div>
+             </div>
+
+             <!-- Restaurant 3 -->
+             <div class="col-md-4">
+                <div class="card shadow border-0 h-100 restaurant-card">
+                    <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg"
+                         class="card-img-top food-img"
+                        alt="Noodles">
+                    <div class="card-body">
+                        <h4>Asian Delight</h4>
+                        <p class="text-muted">Chinese • Asian</p>
+                        <span class="badge bg-success">★ 4.7</span>
+                        <span class="badge bg-warning text-dark">35 mins</span>
+                        <button class="btn btn-danger w-100 mt-3">Order Now</button>
+                    </div>
+                </div>
+             </div>
+
+        </div>
+
+    </div>
+
+    <!-- Special Offers -->
+    <div class="container my-5">
+        <h2 class="fw-bold text-center mb-5">
+            Today's Special Offers
+        </h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card bg-danger text-white shadow border-0">
+                    <div class="card-body text-center p-5">
+                        <h3>
+                            50% OFF
+                        </h3>
+                        <p class="mb-0">
+                           On your first order above ₹499 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-danger text-white shadow border-0">
+                    <div class="card-body text-center p-5">
+                        <h3>
+                            FREE DELIVERY
+                        </h3>
+                        <p class="mb-0">
+                           On orders above ₹299 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
