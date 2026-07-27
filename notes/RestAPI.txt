@@ -1,0 +1,83 @@
+Here are short, interview-friendly answers for REST API questions.
+========================================================================
+1. What is REST?
+REST (Representational State Transfer) is an architectural style for building web APIs using HTTP methods to perform CRUD operations on resources.
+
+2. Difference between REST and SOAP?
+REST				SOAP
+Architectural style		Protocol
+Uses JSON (mostly)		Uses XML
+Faster and lightweight		Slower and heavier
+Easy to use			More complex
+Uses HTTP			Can use HTTP, SMTP, TCP, etc.
+
+3. What are HTTP Methods?
+GET – Retrieve data
+POST – Create new data
+PUT – Update/replace entire resource
+PATCH – Partially update resource
+DELETE – Remove resource
+
+4. Difference between PUT and PATCH?
+PUT
+Updates the entire resource.
+Missing fields may be overwritten.
+
+PATCH
+Updates only specified fields.
+Leaves other fields unchanged.
+
+5. Difference between GET and POST?
+GET				POST
+Retrieves data			Creates data
+Data sent in URL		Data sent in request body
+Can be cached			Usually not cached
+Safe and idempotent		Not idempotent
+
+6. What are HTTP Status Codes?
+200 OK – Request successful
+201 Created – Resource created
+204 No Content – Success, no response body
+400 Bad Request – Invalid request
+401 Unauthorized – Authentication required
+403 Forbidden – Access denied
+404 Not Found – Resource not found
+500 Internal Server Error – Server error
+
+7. What is Idempotency?
+An operation is idempotent if performing it multiple times produces the same result as performing it once.
+Examples:
+GET ✅
+PUT ✅
+DELETE ✅
+POST ❌ (usually)
+
+8. What is Stateless API?
+A stateless API does not store client session information. Each request contains all the information needed to process it (e.g., JWT token).
+
+9. What is API Versioning?
+API versioning allows changes without breaking existing clients.
+Examples:
+/api/v1/users
+/api/v2/users
+
+10. How do you design RESTful APIs?
+Use nouns for resources (/users, /appointments)
+Use correct HTTP methods (GET, POST, PUT, PATCH, DELETE)
+Return proper HTTP status codes
+Keep APIs stateless
+Use meaningful URLs
+Validate input and handle errors
+Secure APIs using authentication (JWT/OAuth)
+Support pagination, filtering, and sorting when needed
+
+Example:
+GET    /api/users
+GET    /api/users/1
+POST   /api/users
+PUT    /api/users/1
+PATCH  /api/users/1
+DELETE /api/users/1
+These answers are concise and suitable for MERN stack interviews.
+
+

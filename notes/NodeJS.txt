@@ -1,0 +1,565 @@
+Node.js Interview Questions & Answers (Basic to Intermediate)
+===============================================================
+
+Basic
+1. What is Node.js?
+Answer:
+Node.js is an open-source, cross-platform JavaScript runtime environment built on Google's V8 JavaScript engine. It allows developers to run JavaScript outside the browser, mainly for building server-side applications.
+Node.js is designed for high-performance and scalable applications because it uses an event-driven, non-blocking I/O model.
+Features
+Built on V8 Engine
+Single-threaded event loop
+Non-blocking I/O
+Asynchronous programming
+Cross-platform
+Large NPM ecosystem
+Common Uses
+REST APIs
+Real-time applications (Chat apps)
+Streaming applications
+Microservices
+Authentication servers
+Interview Answer:
+Node.js is a JavaScript runtime built on Chrome's V8 engine that allows JavaScript to run on the server. It uses an event-driven, non-blocking I/O architecture, making it ideal for building scalable and high-performance applications such as REST APIs, chat applications, and real-time systems.
+
+2. Why is Node.js Single Threaded?
+Answer:
+Node.js executes JavaScript code on a single main thread.
+Instead of creating one thread per request like traditional servers, Node.js handles multiple requests using:
+Event Loop
+Callback Queue
+Worker Threads (internally via libuv)
+This reduces memory usage and context switching.
+Advantages
+Lightweight
+Faster request handling
+Better scalability
+Lower memory consumption
+Important
+Although JavaScript runs on a single thread, Node.js itself is not limited to one thread.
+Operations like:
+File Reading
+Database Queries
+DNS Lookup
+Compression
+are executed in libuv's thread pool.
+Interview Answer:
+Node.js uses a single JavaScript thread to execute code. Instead of creating multiple threads for every request, it relies on the Event Loop and asynchronous operations handled by libuv, allowing it to efficiently serve many clients simultaneously.
+
+3. What is Event Loop?
+Answer:
+The Event Loop is the core mechanism that allows Node.js to perform asynchronous operations without blocking the main thread.
+
+Working
+Request comes
+       ↓
+JavaScript executes
+       ↓
+Async Task starts
+       ↓
+Main thread continues
+       ↓
+Task finishes
+       ↓
+Callback enters Queue
+       ↓
+Event Loop executes callback
+Example
+console.log("Start");
+setTimeout(() => {
+    console.log("Timeout");
+}, 0);
+console.log("End");
+
+Output
+Start
+End
+Timeout
+
+Because the callback waits in the queue until the call stack becomes empty.
+Interview Answer:
+The Event Loop continuously checks whether the call stack is empty. If it is, it takes pending callbacks from the callback queue and executes them, enabling asynchronous and non-blocking behavior.
+
+4. What is Non-Blocking I/O?
+Answer:
+Non-blocking I/O means Node.js does not wait for operations like file reading, database queries, or network requests to complete.
+Instead:
+Starts operation
+Continues executing other code
+Executes callback when task finishes
+Example
+fs.readFile("data.txt", () => {
+    console.log("File Loaded");
+});
+console.log("Running...");
+
+Output
+Running...
+File Loaded
+
+Interview Answer:
+Non-blocking I/O allows Node.js to initiate an operation and continue executing other tasks instead of waiting. Once the operation completes, its callback or Promise is executed.
+
+5. Difference between setTimeout() and setInterval()
+setTimeout()	setInterval()
+Executes once	Executes repeatedly
+Stops automatically	Runs until cleared
+Used for delayed execution	Used for periodic tasks
+
+Example
+setTimeout(() => {
+    console.log("Runs once");
+}, 2000);
+setInterval(() => {
+    console.log("Runs every 2 sec");
+}, 2000);
+
+Stop interval
+const id = setInterval(() => {},1000);
+clearInterval(id);
+
+Interview Answer:
+setTimeout() executes a callback only once after the specified delay, whereas setInterval() repeatedly executes the callback at fixed intervals until it is cleared.
+
+6. What is Callback Hell?
+Answer:
+Callback Hell occurs when multiple asynchronous operations are nested inside one another, making the code difficult to read and maintain.
+Example
+login(function () {
+    getUser(function () {
+        getOrders(function () {
+            payment(function () {
+
+            });
+        });
+    });
+});
+
+Problems
+Hard to read
+Hard to debug
+Difficult to maintain
+
+Solutions
+Promises
+Async/Await
+
+Interview Answer:
+Callback Hell is a situation where multiple nested callbacks create deeply indented and difficult-to-maintain code. It can be avoided using Promises or Async/Await.
+
+7. What are Promises?
+A Promise represents the eventual completion or failure of an asynchronous operation.
+
+States
+Pending
+Fulfilled
+Rejected
+
+Example
+const promise = new Promise((resolve, reject) => {
+    let success = true;
+    if(success)
+        resolve("Success");
+    else
+        reject("Failed");
+
+});
+
+promise
+.then(res => console.log(res))
+.catch(err => console.log(err));
+
+Interview Answer:
+A Promise is an object that represents the result of an asynchronous operation. It has three states: pending, fulfilled, and rejected. Promises improve readability over nested callbacks.
+
+8. What is Async/Await?
+Async/Await is syntactic sugar over Promises that makes asynchronous code look like synchronous code.
+
+Example
+async function getData(){
+    try{
+        const data = await fetchData();
+        console.log(data);
+    }catch(err){
+       console.log(err);
+    }
+}
+
+Advantages
+Cleaner code
+Easier debugging
+Better error handling
+
+Interview Answer:
+Async/Await simplifies working with Promises. The async keyword declares an asynchronous function, and await pauses execution until the Promise resolves without blocking the event loop.
+
+9. What is NPM?
+NPM (Node Package Manager) is the default package manager for Node.js.
+
+Uses
+Install packages
+Manage dependencies
+Publish packages
+Run scripts
+
+Commands
+npm init
+npm install express
+npm uninstall express
+npm update
+npm run start
+
+Interview Answer:
+NPM is the default package manager for Node.js. It is used to install, update, remove, and manage project dependencies, as well as run project scripts.
+
+10. What is package.json?
+It is the configuration file of a Node.js project.
+
+Contains
+Name
+Version
+Dependencies
+Scripts
+Author
+License
+
+Example
+{
+  "name":"project",
+  "version":"1.0.0",
+  "scripts":{
+      "start":"node index.js"
+  },
+  "dependencies":{
+      "express":"^5.0.0"
+  }
+}
+
+Interview Answer:
+package.json is the configuration file for a Node.js project. It stores metadata such as project information, dependencies, scripts, and version details.
+
+Intermediate
+11. Difference between CommonJS and ES Modules
+CommonJS	ES Modules
+require()	import
+module.exports	export
+Synchronous loading	Static module loading
+Default in older Node.js	Standard JavaScript module system
+
+Example
+CommonJS
+
+const fs = require("fs");
+ES Module
+import fs from "fs";
+
+Interview Answer:
+CommonJS uses require() and module.exports, while ES Modules use import and export. ES Modules are the standard JavaScript module system and support static analysis and better optimization.
+
+12. What is Stream?
+A stream is a way to process data piece by piece (chunks) instead of loading the entire data into memory.
+
+Benefits
+Faster
+Memory efficient
+Suitable for large files
+
+Example
+const fs = require("fs");
+const stream = fs.createReadStream("video.mp4");
+stream.on("data",(chunk)=>{
+    console.log(chunk.length);
+});
+
+Interview Answer:
+A stream is an abstraction for handling data in chunks rather than all at once. Streams improve performance and reduce memory usage when working with large files or network data.
+
+13. Types of Streams
+There are four types:
+Readable Stream
+Reads data.
+Example
+fs.createReadStream()
+
+Writable Stream
+Writes data.
+fs.createWriteStream()
+
+Duplex Stream
+Can read and write.
+Example
+TCP Socket
+Transform Stream
+Reads, modifies, writes.
+
+Example
+Compression
+Encryption
+
+Interview Answer:
+Node.js has four stream types: Readable (read data), Writable (write data), Duplex (read and write), and Transform (modify data while reading and writing).
+
+14. What is Buffer?
+A Buffer is a temporary storage area for binary data.
+
+Used for
+Images
+Videos
+Audio
+File uploads
+Network packets
+
+Example
+const buffer = Buffer.from("Hello");
+console.log(buffer);
+
+Interview Answer:
+A Buffer is a built-in Node.js object used to store and manipulate binary data. It is commonly used for handling files, streams, and network communication.
+
+15. What is Cluster Module?
+The Cluster module allows a Node.js application to create multiple worker processes that share the same server port, enabling the app to utilize multiple CPU cores.
+
+Benefits:
+Better CPU utilization
+Improved performance
+Higher availability (if one worker crashes, others continue)
+
+Interview Answer:
+The Cluster module lets Node.js create multiple processes, each running on a different CPU core, to improve performance and scalability for CPU-bound workloads.
+
+16. What is Worker Threads?
+Worker Threads allow JavaScript code to run in parallel threads for CPU-intensive tasks.
+
+Examples:
+Image processing
+Data compression
+Heavy calculations
+
+Unlike the Cluster module, worker threads share memory with the main process.
+
+Interview Answer:
+Worker Threads enable parallel execution of JavaScript code for CPU-intensive tasks without blocking the main event loop. They are useful for operations like image processing and complex computations.
+
+17. Difference between Process and Thread
+Process						Thread
+Independent execution unit			Lightweight execution unit within a process
+Has its own memory				Shares memory with other threads in the same process
+More resource-intensive				Less resource-intensive
+Communication is slower (IPC)			Communication is faster (shared memory)
+
+Interview Answer:
+A process is an independent program with its own memory space, while a thread is a smaller execution unit within a process that shares the same memory. Threads are lighter and faster than processes.
+
+18. What are Environment Variables?
+Environment variables are external configuration values used to store settings and sensitive information without hardcoding them into the application.
+Examples:
+Database URL
+JWT Secret
+API Keys
+Port Number
+
+Using a .env file with the dotenv package:
+PORT=3000
+MONGO_URI=mongodb://localhost:27017/mydb
+JWT_SECRET=mySecretKey
+require("dotenv").config();
+
+console.log(process.env.PORT);
+
+Why use them?
+Improve security
+Support different environments (development, testing, production)
+Avoid hardcoding sensitive data
+
+Interview Answer
+Environment variables are configuration values stored outside the source code. They are commonly used to manage secrets like API keys, database URLs, and application settings securely across different environments.
+
+19. What is EventEmitter?
+EventEmitter is a core Node.js class that enables event-driven programming. Objects can emit named events, and listeners can respond when those events occur.
+Example:
+const EventEmitter = require("events");
+const emitter = new EventEmitter();
+emitter.on("greet", (name) => {
+  console.log(`Hello, ${name}`);
+});
+emitter.emit("greet", "Amarjeet");
+
+Output:
+Hello, Amarjeet
+
+Common methods:
+on() – Register an event listener
+once() – Register a listener that runs only once
+emit() – Trigger an event
+off() / removeListener() – Remove a listener
+
+Interview Answer:
+EventEmitter is a built-in Node.js class used for implementing event-driven architecture. It allows objects to emit events and lets other parts of the application listen and respond to those events.
+
+20. How does Node.js handle concurrency?
+Although JavaScript in Node.js runs on a single main thread, Node.js can handle many concurrent requests efficiently using:
+Event Loop – Manages asynchronous tasks.
+Non-blocking I/O – Doesn't wait for file, network, or database operations.
+libuv Thread Pool – Handles tasks like file system operations, DNS lookups, and cryptography in background threads.
+Operating System – Manages asynchronous network I/O.
+Worker Threads or Cluster (when needed) – Used for CPU-intensive work or to utilize multiple CPU cores.
+Flow
+Incoming Requests
+        │
+        ▼
+   Event Loop
+        │
+ ┌──────┴────────┐
+ │               │
+ ▼               ▼
+Async I/O    CPU-intensive Task
+(libuv/OS)   (Worker Thread)
+ │               │
+ └──────┬────────┘
+        ▼
+Callback/Promise Resolution
+        ▼
+Response Sent
+
+Interview Answer:
+
+Node.js handles concurrency through its event-driven, non-blocking architecture. The Event Loop executes JavaScript on a single thread, while asynchronous I/O operations are delegated to the operating system or libuv's thread pool. For CPU-intensive tasks, Node.js can use Worker Threads or the Cluster module, allowing it to serve many concurrent requests efficiently.
+============================================================================================================================================================================================
+Yes. For interviews, short and direct answers are often the best. Here are concise answers to all the questions:
+Node.js Interview Questions (Short Answers)
+
+1. What is Node.js?
+Node.js is an open-source JavaScript runtime built on Chrome's V8 engine that allows JavaScript to run on the server.
+
+2. Why is Node.js Single Threaded?
+Node.js executes JavaScript on a single thread and uses the Event Loop to handle multiple requests efficiently.
+
+3. What is Event Loop?
+The Event Loop manages asynchronous operations by executing callbacks when the call stack is empty.
+
+4. What is Non-Blocking I/O?
+Non-blocking I/O allows Node.js to continue executing other code without waiting for I/O operations to finish.
+
+5. Difference between setTimeout() and setInterval()?
+setTimeout() → Runs once after a specified delay.
+setInterval() → Runs repeatedly at fixed intervals.
+
+6. What is Callback Hell?
+Callback Hell is deeply nested callbacks that make code difficult to read and maintain.
+
+7. What are Promises?
+A Promise is an object that represents the eventual success or failure of an asynchronous operation.
+
+8. What is Async/Await?
+Async/Await is a cleaner way to write asynchronous code using Promises.
+
+9. What is NPM?
+NPM (Node Package Manager) is used to install, manage, and update Node.js packages.
+
+10. What is package.json?
+package.json is the configuration file that stores project information, dependencies, and scripts.
+
+Intermediate
+11. Difference between CommonJS and ES Modules?
+CommonJS uses require() and module.exports.
+ES Modules use import and export.
+
+12. What is Stream?
+A Stream processes data in chunks instead of loading the entire data into memory.
+
+13. Types of Streams?
+Readable
+Writable
+Duplex
+Transform
+
+14. What is Buffer?
+A Buffer is used to store and manipulate binary data in Node.js.
+
+15. What is Cluster Module?
+The Cluster module creates multiple Node.js processes to utilize multiple CPU cores.
+
+16. What is Worker Threads?
+Worker Threads run CPU-intensive JavaScript tasks in parallel without blocking the main thread.
+
+17. Difference between Process and Thread?
+Process: Independent program with its own memory.
+Thread: Lightweight unit of execution that shares memory within a process.
+
+18. What are Environment Variables?
+Environment variables store configuration values like API keys, database URLs, and secrets outside the source code.
+
+19. What is EventEmitter?
+EventEmitter is a Node.js class used to create and handle custom events.
+
+20. How does Node.js handle concurrency?
+Node.js handles concurrency using the Event Loop, non-blocking I/O, and libuv's thread pool, allowing it to serve many requests efficiently.
+
+These answers are ideal for 2–3 years MERN Stack interview preparation because they are short, accurate, and easy to remember.
+Node.js Interview Questions – Very Short Answers
+
+1. What is Node.js?
+Node.js is a JavaScript runtime that runs JavaScript on the server.
+
+2. Why is Node.js Single Threaded?
+It uses a single thread with the Event Loop to handle multiple requests efficiently.
+
+3. What is Event Loop?
+The Event Loop executes asynchronous callbacks when the call stack is empty.
+
+4. What is Non-Blocking I/O?
+It allows Node.js to continue executing code without waiting for I/O operations to finish.
+
+5. Difference between setTimeout() and setInterval()?
+setTimeout() → Runs once.
+setInterval() → Runs repeatedly.
+
+6. What is Callback Hell?
+Deeply nested callbacks that make code hard to read.
+
+7. What are Promises?
+Promises handle asynchronous operations and represent success or failure.
+
+8. What is Async/Await?
+A cleaner syntax for working with Promises.
+
+9. What is NPM?
+The default package manager for Node.js.
+
+10. What is package.json?
+A file that stores project metadata, dependencies, and scripts.
+
+Intermediate
+11. CommonJS vs ES Modules?
+CommonJS: require()
+ES Modules: import
+
+12. What is Stream?
+A way to process data in chunks.
+
+13. Types of Streams?
+Readable, Writable, Duplex, Transform.
+
+14. What is Buffer?
+A temporary storage for binary data.
+
+15. What is Cluster Module?
+Runs multiple Node.js processes to use multiple CPU cores.
+
+16. What are Worker Threads?
+Threads for running CPU-intensive tasks in parallel.
+
+17. Process vs Thread?
+Process: Independent program.
+Thread: Execution unit inside a process.
+
+18. What are Environment Variables?
+Variables used to store configuration and sensitive data.
+
+19. What is EventEmitter?
+A class used to create and handle custom events.
+
+20. How does Node.js handle concurrency?
+Using the Event Loop, non-blocking I/O, and libuv.
+
+These are 1–2 line interview answers that are easy to remember and suitable for quick interview responses.

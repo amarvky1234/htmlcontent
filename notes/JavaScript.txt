@@ -1,0 +1,281 @@
+JavaScript Interview Questions & Answers (Short & Interview-Friendly)
+=======================================================================
+Basic
+1. Difference between var, let, and const?
+var						let					const
+Function scoped					Block scoped				Block scoped
+Can be redeclared				Cannot be redeclared			Cannot be redeclared
+Can be reassigned				Can be reassigned			Cannot be reassigned
+Hoisted with undefined				Hoisted but in TDZ			Hoisted but in TDZ
+var a = 10;
+let b = 20;
+const c = 30;
+
+2. What is Hoisting?
+Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their scope before execution.
+console.log(a); // undefined
+var a = 10;
+let and const are hoisted but cannot be accessed before declaration because of the Temporal Dead Zone (TDZ).
+
+3. What is Closure?
+A closure is a function that remembers variables from its outer scope even after the outer function has finished executing.
+function outer() {
+  let count = 0;
+  return function () {
+    count++;
+    console.log(count);
+  };
+}
+
+const counter = outer();
+counter(); //1
+counter(); //2
+Use Cases
+Data hiding
+Private variable
+Event handlers
+Memoization
+
+4. What is Scope?
+Scope determines where variables can be accessed.
+
+Types:
+Global Scope
+Function Scope
+Block Scope
+let a = 10; // Global
+function test() {
+  let b = 20; // Function
+}
+
+if (true) {
+  let c = 30; // Block
+}
+
+5. What is Event Bubbling?
+In Event Bubbling, the event starts from the target element and moves upward to its parent elements.
+child → parent → grandparent
+
+6. What is Event Capturing?
+In Event Capturing, the event starts from the top parent and moves down to the target element.
+grandparent → parent → child
+Enable capturing:
+element.addEventListener("click", handler, true);
+
+7. What is Callback Function?
+A callback is a function passed as an argument to another function and executed later.
+function greet(name, callback) {
+  console.log(name);
+  callback();
+}
+greet("John", () => console.log("Welcome"));
+
+8. What is Arrow Function?
+Arrow functions provide a shorter syntax and do not have their own this.
+const add = (a, b) => a + b;
+
+9. Difference between == and ===?
+==
+Loose equality
+Converts data types before comparison
+===
+Strict equality
+Compares both value and data type
+
+5 == "5"   // true
+5 === "5"  // false
+
+10. What is Template Literal?
+Template literals allow embedding variables using backticks ( ) and ${}.
+const name = "John";
+console.log(`Hello ${name}`);
+
+Intermediate
+11. What is Destructuring?
+Extract values from arrays or objects into variables.
+const user = {
+  name: "John",
+  age: 25
+};
+const { name, age } = user;
+
+12. What is Spread Operator (...)?
+Copies or expands arrays and objects.
+const arr1 = [1,2];
+const arr2 = [...arr1,3,4];
+console.log(arr2);
+Output
+[1,2,3,4]
+
+13. What is Rest Operator (...)?
+Collects multiple values into one array.
+function sum(...numbers) {
+  console.log(numbers);
+}
+
+sum(1,2,3);
+Output
+[1,2,3]
+
+14. What is Optional Chaining (?.)?
+Safely accesses nested properties without throwing an error.
+const user = {};
+console.log(user.address?.city);
+Output
+undefined
+
+15. What is Nullish Coalescing Operator (??)?
+Returns the right value only when the left value is null or undefined.
+let name = null;
+console.log(name ?? "Guest");
+Output
+Guest
+
+16. Difference between map(), filter(), and reduce()?
+Method	Purpose
+map()		Transforms each element
+filter()	Returns matching elements
+reduce()	Reduces array to a single value
+arr.map(x => x*2);
+arr.filter(x => x>5);
+arr.reduce((sum,x)=>sum+x,0);
+
+17. Difference between forEach() and map()?
+forEach()			map()
+Doesn't return new array	Returns new array
+Used for iteration		Used for transformation
+arr.forEach(x=>console.log(x));
+const result = arr.map(x=>x*2);
+
+18. What is Debouncing?
+Debouncing delays function execution until the user stops triggering the event.
+Example:
+Search box
+Auto-suggestions
+
+19. What is Throttling?
+Throttling limits a function to execute only once within a specified time interval.
+Example:
+Scroll event
+Window resize
+
+20. What is Promise Chaining?
+Executing asynchronous tasks one after another using .then().
+fetchData()
+.then(data => process(data))
+.then(result => console.log(result))
+.catch(err => console.log(err));
+
+Advanced
+21. Explain Prototype and Prototype Chain.
+Every JavaScript object has a hidden prototype from which it can inherit properties and methods.
+The prototype chain is the mechanism JavaScript uses to look up properties through linked prototypes.
+const obj = {};
+console.log(obj.toString());
+toString() comes from Object.prototype.
+
+22. What is Currying?
+Currying converts a function with multiple arguments into a series of functions, each taking one argument.
+function add(a){
+    return function(b){
+        return a+b;
+    }
+}
+console.log(add(2)(3));
+Output
+5
+
+23. What is Memoization?
+Memoization stores the result of expensive function calls so repeated calls with the same input return the cached result.
+Example:
+Fibonacci
+API caching
+Heavy calculations
+
+24. Explain call(), apply(), and bind().
+Used to change the value of this.
+person.greet.call(user);
+person.greet.apply(user);
+const fn = person.greet.bind(user);
+fn();
+Difference
+call() → arguments separately.
+apply() → arguments as an array.
+bind() → returns a new function.
+
+25. What is Event Loop?
+The Event Loop allows JavaScript (which is single-threaded) to handle asynchronous operations.
+Flow:
+Call Stack
+      ↓
+Web APIs
+      ↓
+Callback Queue / Microtask Queue
+      ↓
+Event Loop
+      ↓
+Call Stack
+
+26. What are Microtasks and Macrotasks?
+Microtasks (Higher Priority)
+Promise
+queueMicrotask
+MutationObserver
+Macrotasks
+setTimeout
+setInterval
+setImmediate
+Execution order:
+Synchronous Code
+↓
+Microtasks
+↓
+Macrotasks
+
+27. Explain Execution Context.
+Execution Context is the environment in which JavaScript code runs.
+Types:
+Global Execution Context
+Function Execution Context
+Eval Execution Context (rare)
+Each context has:
+Memory Creation Phase
+Execution Phase
+
+28. What is Garbage Collection?
+Garbage Collection automatically removes objects from memory that are no longer reachable, helping prevent memory leaks.
+
+29. What is Deep Copy vs Shallow Copy?
+Shallow Copy				Deep Copy
+Copies only first level			Copies all nested levels
+Nested objects share references		Completely independent
+Faster					Slower
+// Shallow Copy
+const copy = {...obj};
+
+// Deep Copy
+const deep = structuredClone(obj);
+
+30. Explain Closures with Example.
+A closure is created when an inner function accesses variables from its outer function even after the outer function has finished executing.
+function counter() {
+  let count = 0;
+  return function () {
+    count++;
+    return count;
+  };
+}
+const c = counter();
+console.log(c()); //1
+console.log(c()); //2
+console.log(c()); //3
+Why it works:
+The inner function "closes over" the count variable, so it remembers and updates its value between calls.
+Common Uses:
+Private variables
+Data encapsulation
+Event handlers
+Timers
+Memoization
+
+
