@@ -1,0 +1,196 @@
+Here are some Advanced CSS interview questions with short, interview-friendly answers.
+
+1. What is Flexbox?
+Answer:
+Flexbox is a one-dimensional layout system used to align and distribute items in a row or column.
+
+2. What is CSS Grid?
+Answer:
+CSS Grid is a two-dimensional layout system used to create complex layouts with rows and columns.
+
+3. Difference between Flexbox and Grid?
+Answer:
+Flexbox: One-dimensional (row or column).
+Grid: Two-dimensional (rows and columns).
+
+4. What is the Box Model?
+Answer:
+The CSS Box Model consists of Content, Padding, Border, and Margin.
+
+5. What is box-sizing: border-box?
+Answer:
+It includes padding and border inside the element's specified width and height.
+
+6. What is Positioning in CSS?
+Answer:
+Positioning controls where an element appears on the page.
+Types:
+static
+relative
+absolute
+fixed
+sticky
+
+7. Difference between Relative and Absolute positioning?
+Answer:
+Relative: Moves relative to its original position.
+Absolute: Moves relative to the nearest positioned parent.
+
+8. What is z-index?
+Answer:
+z-index controls the stacking order of overlapping elements. A higher value appears on top.
+
+9. What is Responsive Design?
+Answer:
+Responsive design makes a website adapt to different screen sizes using media queries, flexible layouts, and responsive units.
+
+10. What are Media Queries?
+Answer:
+Media queries apply different CSS styles based on screen size or device characteristics.
+Example:
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+11. What is CSS Specificity?
+Answer:
+Specificity determines which CSS rule is applied when multiple rules target the same element.
+Priority:
+Inline > ID > Class > Element
+
+12. What is the difference between display: none and visibility: hidden?
+Answer:
+display: none: Removes the element from the layout.
+visibility: hidden: Hides the element but keeps its space.
+
+13. Difference between opacity: 0 and display: none?
+Answer:
+opacity: 0: Element is invisible but still occupies space and can receive events.
+display: none: Element is completely removed from the layout.
+
+14. What is the difference between em, rem, %, px, and vw?
+Answer:
+px: Fixed size.
+em: Relative to parent font size.
+rem: Relative to root (html) font size.
+%: Relative to parent.
+vw: Relative to viewport width.
+
+15. What are CSS Variables?
+Answer:
+CSS variables store reusable values using --variable-name.
+Example:
+:root {
+  --primary-color: blue;
+}
+
+button {
+  color: var(--primary-color);
+}
+
+16. What are Pseudo-classes?
+Answer:
+Pseudo-classes style elements based on their state.
+Examples:
+:hover
+:focus
+:active
+:first-child
+
+17. What are Pseudo-elements?
+Answer:
+Pseudo-elements style specific parts of an element.
+Examples:
+::before
+::after
+::first-letter
+::first-line
+
+18. What is the difference between ::before and ::after?
+Answer:
+::before inserts content before the element.
+::after inserts content after the element.
+
+19. What are CSS Transitions?
+Answer:
+Transitions create smooth changes between CSS property values.
+Example:
+
+button {
+  transition: all 0.3s ease;
+}
+
+20. What are CSS Animations?
+Answer:
+Animations allow elements to change styles over time using @keyframes.
+
+21. Difference between Transition and Animation?
+Answer:
+Transition: Runs when a property changes.
+Animation: Runs automatically or repeatedly using keyframes.
+
+22. What is transform in CSS?
+Answer:
+It changes an element's position, size, or rotation without affecting the layout.
+Examples:
+translate()
+rotate()
+scale()
+skew()
+
+23. What is overflow?
+Answer:
+It controls how content is handled when it exceeds its container.
+Values:
+visible
+hidden
+scroll
+auto
+
+24. What is the difference between inline, block, and inline-block?
+Answer:
+Block: Takes full width and starts on a new line.
+Inline: Takes only required width; width/height don't apply.
+Inline-block: Behaves like inline but allows width and height.
+
+25. What is the difference between min-width, max-width, and width?
+Answer:
+width: Fixed width.
+min-width: Minimum allowed width.
+max-width: Maximum allowed width.
+
+26. What is a CSS Preprocessor?
+Answer:
+A CSS preprocessor (like Sass or Less) adds features such as variables, nesting, and mixins to make CSS easier to manage.
+
+27. What is BEM?
+Answer:
+BEM (Block, Element, Modifier) is a CSS naming convention that improves readability and maintainability.
+Example:
+.card {}
+.card__title {}
+.card--active {}
+
+28. What is calc() in CSS?
+Answer:
+calc() performs calculations to determine CSS property values.
+Example:
+width: calc(100% - 20px);
+
+29. What is the difference between nth-child() and nth-of-type()?
+Answer:
+nth-child(): Counts all sibling elements.
+nth-of-type(): Counts only siblings of the same element type.
+
+30. How do you optimize CSS performance?
+Answer:
+Minify CSS.
+Remove unused CSS.
+Use efficient selectors.
+Avoid excessive nesting.
+Use caching and compression.
+Prefer CSS over JavaScript for animations when possible.
+
+These 30 questions cover the most commonly asked advanced CSS interview topics for frontend and MERN developer interviews.

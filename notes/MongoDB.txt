@@ -1,0 +1,437 @@
+1. Difference between SQL and MongoDB
+SQL (Relational Database)				MongoDB (NoSQL Database)
+Stores data in Tables					Stores data in Collections
+Data is stored in Rows					Data is stored in Documents (JSON/BSON)
+Fixed Schema						Flexible Schema
+Uses SQL Queries					Uses MongoDB Query Language (MQL)
+Supports JOIN operations				Uses Embedding or $lookup
+Best for structured data				Best for semi-structured/unstructured data
+Vertical Scaling					Horizontal Scaling (Sharding)
+
+Example
+SQL
+Users Table
+id | name | age
+1  | Amar | 24
+MongoDB
+{
+  "_id": "123",
+  "name": "Amar",
+  "age": 24
+}
+
+Interview Answer
+SQL stores data in tables with a fixed schema, whereas MongoDB stores data in collections as JSON-like documents with a flexible schema. SQL is ideal for structured data, while MongoDB is better for applications where the data model changes frequently.
+
+2. What is a Collection in MongoDB?
+A Collection is a group of related documents.
+It is similar to a table in SQL.
+Example
+Database
+    Users Collection
+        Document1
+        Document2
+        Document3
+
+Example
+db.users.insertOne({
+    name:"Amar",
+    age:24
+})
+
+Here,
+Database → hospital
+Collection → users
+Interview Answer
+A collection is a container that stores multiple MongoDB documents. It is similar to a table in SQL but does not enforce a fixed schema.
+
+3. What is a Document?
+A Document is a single record stored inside a collection.
+MongoDB stores documents in BSON (Binary JSON) format.
+Example
+{
+   "_id":"abc123",
+   "name":"Rahul",
+   "age":25,
+   "city":"Hyderabad"
+}
+
+Equivalent SQL
+id | name | age | city
+Each row = one document.
+Interview Answer
+A document is the basic unit of data in MongoDB. It stores information as key-value pairs in BSON format, which is similar to JSON.
+
+4. What are MongoDB Indexes?
+Indexes improve the speed of searching data.
+
+Without an index
+MongoDB scans every document.
+
+With an index
+MongoDB directly jumps to matching documents.
+Example
+db.users.createIndex({ email: 1 })
+
+Now
+db.users.find({ email: "abc@gmail.com" })
+becomes much faster.
+
+Types
+Single Field Index
+Compound Index
+Text Index
+Unique Index
+TTL Index
+Geospatial Index
+In your healthcare project
+
+You can create indexes like:
+doctorSchema.index({ city:1 });
+doctorSchema.index({ specialization:1 });
+doctorSchema.index({
+    city:1,
+    specialization:1
+});
+This makes doctor searches by city and specialization much faster.
+
+Interview Answer
+MongoDB indexes improve query performance by allowing the database to locate matching documents without scanning the entire collection. They are especially useful for fields that are frequently searched, sorted, or filtered.
+
+5. What is _id in MongoDB?
+Every document has a unique _id field.
+Example
+{
+   "_id":"685fdf1abfd123",
+   "name":"Amar"
+}
+If you don't provide _id, MongoDB automatically generates an ObjectId.
+Example
+db.users.insertOne({
+    name:"Amar"
+})
+MongoDB creates
+{
+ "_id": ObjectId("6858f1d...."),
+ "name":"Amar"
+}
+Properties of ObjectId
+
+Unique
+12 bytes
+Contains timestamp
+Used as Primary Key
+
+Interview Answer
+_id is the unique identifier for every MongoDB document. MongoDB automatically generates an ObjectId if one is not provided, ensuring each document can be uniquely identified.
+
+6. Difference between find() and findOne()
+find()
+Returns multiple documents.
+db.users.find({
+   city:"Hyderabad"
+})
+
+Output
+[
+ {},
+ {},
+ {},
+ {}
+]
+Returns a cursor.
+
+findOne()
+Returns only the first matching document.
+db.users.findOne({
+    city:"Hyderabad"
+})
+
+Output
+{
+ "name":"Amar"
+}
+
+Comparison
+find()				findOne()
+Returns multiple documents	Returns only one document
+Returns a Cursor		Returns a Document
+Can use .limit()		No need
+
+Interview Answer
+find() returns all matching documents as a cursor, while findOne() returns only the first matching document. I use findOne() when I expect a single result, such as fetching a user by email.
+
+7. Difference between updateOne() and replaceOne()
+updateOne()
+Updates only specified fields.
+
+Example
+db.users.updateOne(
+    {name:"Amar"},
+    {
+       $set:{
+          age:25
+       }
+    }
+)
+
+Output
+Before
+{
+"name":"Amar",
+"age":24,
+"city":"Hyderabad"
+}
+
+After
+{
+"name":"Amar",
+"age":25,
+"city":"Hyderabad"
+}
+
+replaceOne()
+Replaces the entire document except _id.
+db.users.replaceOne(
+   {name:"Amar"},
+   {
+      name:"Rahul",
+      age:28
+   }
+)
+Output
+{
+"name":"Rahul",
+"age":28
+}
+
+Notice
+city field is removed.
+
+Comparison
+updateOne()			replaceOne()
+Updates selected fields		Replaces entire document
+Uses operators like $set	No update operators
+Existing fields remain		Missing fields are removed
+
+Interview Answer
+updateOne() modifies only the specified fields using update operators like $set, while replaceOne() replaces the entire document except the _id field. replaceOne() removes any fields not included in the replacement document.
+
+8. How do you optimize MongoDB queries?
+Common techniques:
+1. Create Indexes
+db.users.createIndex({
+   email:1
+})
+2. Return only required fields (Projection)
+Instead of
+db.users.find()
+Use
+db.users.find(
+{},
+{
+   name:1,
+   email:1
+})
+3. Limit Results
+db.users.find().limit(10)
+4. Pagination
+.find()
+.skip(20)
+.limit(10)
+5. Use Aggregation
+Avoid loading unnecessary data into your application by performing filtering, grouping, and calculations within MongoDB.
+6. Avoid Regex when Possible
+Regex searches can be slow, especially when they cannot use an index. Use exact matches or prefix-based searches when appropriate.
+7. Use Compound Indexes
+Example
+
+{
+city:1,
+specialization:1
+}
+8. Use .lean() in Mongoose
+User.find().lean();
+Returns plain JavaScript objects instead of Mongoose documents, reducing memory usage and improving performance for read-only operations.
+
+Healthcare Project Example
+In my healthcare appointment booking project, I optimized doctor search by creating indexes on fields like city and specialization, implementing server-side pagination with skip() and limit(), and using projections to fetch only the required fields. This improved search performance and reduced response times.
+
+9. Explain Aggregation Pipeline Stages
+Aggregation processes documents through a sequence of stages, where the output of one stage becomes the input for the next.
+Example
+db.orders.aggregate([
+   {
+      $match:{
+         status:"Completed"
+      }
+   },
+   {
+      $group:{
+          _id:"$city",
+          total:{
+             $sum:1
+          }
+      }
+   },
+   {
+      $sort:{
+         total:-1
+      }
+   }
+])
+Common Stages
+$match
+
+Filters documents.
+{
+$match:{
+city:"Delhi"
+}
+}
+$group
+Groups documents and performs calculations.
+{
+$group:{
+_id:"$city",
+count:{
+$sum:1
+}
+}
+}
+$project
+
+Selects or reshapes fields.
+
+{
+$project:{
+name:1,
+city:1
+}
+}
+$sort
+
+Sorts documents.
+
+{
+$sort:{
+fee:1
+}
+}
+$limit
+
+Returns a limited number of documents.
+
+{
+$limit:10
+}
+$skip
+
+Skips documents for pagination.
+
+{
+$skip:20
+}
+$lookup
+
+Performs a join with another collection.
+
+{
+$lookup:{
+from:"appointments",
+localField:"_id",
+foreignField:"doctorId",
+as:"appointments"
+}
+}
+Interview Answer
+The aggregation pipeline is a framework for processing and transforming data in MongoDB. It passes documents through multiple stages such as $match for filtering, $group for aggregation, $project for selecting fields, $sort for ordering results, $skip and $limit for pagination, and $lookup for joining data from another collection. It is commonly used for reports, analytics, and complex data transformations.
+
+============================================================================================================================================================================================
+MongoDB Interview Questions (Short Answers)
+Basic
+1. What is MongoDB?
+MongoDB is a NoSQL, document-oriented database that stores data in JSON-like (BSON) documents.
+
+2. Difference between SQL and MongoDB?
+SQL: Tables, rows, fixed schema.
+MongoDB: Collections, documents, flexible schema.
+
+3. What is a Collection in MongoDB?
+A Collection is a group of related documents. It is similar to a table in SQL.
+
+4. What is a Document?
+A Document is a single record stored in a collection. It is similar to a row in SQL.
+
+5. What is BSON?
+BSON (Binary JSON) is MongoDB's storage format. It is faster and supports more data types than JSON.
+
+6. What are MongoDB Indexes?
+Indexes improve query performance by allowing MongoDB to find data quickly.
+
+7. What is _id in MongoDB?
+_id is the unique identifier for every document. MongoDB creates it automatically if not provided.
+
+8. Difference between find() and findOne()?
+find(): Returns all matching documents.
+findOne(): Returns only the first matching document.
+
+9. What is Aggregation Framework?
+The Aggregation Framework is used to process, transform, and analyze data through multiple pipeline stages.
+
+10. What are Embedded Documents and References?
+Embedded Documents: Store related data inside the same document.
+References: Store related data in separate collections using document IDs.
+
+Intermediate
+11. What is Sharding?
+Sharding splits data across multiple servers to improve scalability and performance.
+
+12. What is Replication?
+Replication creates multiple copies of data on different servers for high availability and backup.
+
+13. Difference between $match and $project?
+$match: Filters documents.
+$project: Selects or reshapes fields.
+
+14. How do you create indexes?
+Use the createIndex() method.
+db.users.createIndex({ email: 1 })
+
+15. What is the purpose of $lookup?
+$lookup is used to join data from another collection, similar to an SQL JOIN.
+
+16. Explain MongoDB Atlas.
+MongoDB Atlas is MongoDB's cloud database service that provides hosting, backups, monitoring, and automatic scaling.
+
+17. What are Transactions in MongoDB?
+Transactions ensure that multiple operations succeed or fail together, maintaining data consistency.
+
+18. Difference between updateOne() and replaceOne()?
+updateOne(): Updates specific fields.
+replaceOne(): Replaces the entire document (except _id).
+
+19. How do you optimize MongoDB queries?
+Create indexes.
+Use projections.
+Use pagination (skip() and limit()).
+Write efficient queries.
+
+20. Explain Aggregation Pipeline Stages.
+Common stages:
+$match – Filter documents.
+$group – Group and calculate data.
+$project – Select fields.
+$sort – Sort data.
+$limit – Limit results.
+$lookup – Join collections.
+
+
+
+
+
+
+
+
+
+

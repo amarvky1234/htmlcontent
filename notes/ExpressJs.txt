@@ -1,0 +1,436 @@
+Express.js Interview Questions & Answers
+=============================================
+1. What is Express.js?
+Answer:
+Express.js is a lightweight, fast, and flexible web framework built on top of Node.js. It simplifies backend development by providing features like routing, middleware, request handling, response handling, and REST API development.
+Instead of writing everything using Node.js's built-in HTTP module, Express provides an easier and more organized way to build web applications.
+Example:
+const express = require("express");
+const app = express();
+app.get("/", (req, res) => {
+    res.send("Hello Express");
+});
+app.listen(3000);
+
+2. Why use Express over Node.js HTTP module?
+Answer:
+Node.js provides only the basic HTTP server, while Express adds many useful features that reduce development time.
+Node.js HTTP	Express.js
+Low-level API	High-level framework
+Manual routing	Easy routing
+No middleware	Built-in middleware support
+More code	Less code
+Hard to maintain	Easy to maintain
+Example in Node.js
+const http = require("http");
+http.createServer((req, res) => {
+    if(req.url === "/"){
+        res.end("Home");
+    }
+}).listen(3000);
+Same in Express
+app.get("/", (req,res)=>{
+    res.send("Home");
+});
+Interview Tip:
+Express is built on top of Node.js and provides routing, middleware, error handling, and many utilities that make backend development faster and cleaner.
+
+3. What is Middleware?
+Answer:
+Middleware is a function that executes between the request and the response.
+It can:
+Modify request
+Modify response
+Execute code
+Validate user
+Authenticate JWT
+Log requests
+Call next middleware
+It receives three parameters:
+(req, res, next)
+Example:
+app.use((req,res,next)=>{
+    console.log("Request Received");
+    next();
+});
+
+4. Types of Middleware in Express
+There are five main types.
+1. Application Middleware
+Runs for the whole application.
+app.use((req,res,next)=>{
+    console.log("App Middleware");
+    next();
+});
+2. Router Middleware
+Runs only for a specific router.
+router.use((req,res,next)=>{
+    console.log("Router Middleware");
+    next();
+});
+3. Error Middleware
+Handles application errors.
+app.use((err,req,res,next)=>{
+    res.status(500).json({
+        message: err.message
+    });
+});
+4. Built-in Middleware
+Examples:
+express.json()
+express.urlencoded()
+express.static()
+5. Third-party Middleware
+Examples:
+Helmet
+CORS
+Morgan
+Cookie-parser
+Multer
+
+5. What is next()?
+Answer:
+next() passes control to the next middleware.
+Without calling next(), the request will stop there.
+Example:
+app.use((req,res,next)=>{
+    console.log("Middleware 1");
+    next();
+});
+app.use((req,res)=>{
+    res.send("Hello");
+});
+
+Flow:
+Request
+↓
+Middleware 1
+↓
+next()
+↓
+Route Handler
+↓
+Response
+
+6. Difference between Application Middleware and Router Middleware
+Application Middleware		Router Middleware
+Applied to entire app		Applied only to specific router
+Defined using app.use()		Defined using router.use()
+Runs for every request		Runs for selected routes
+
+Application Middleware:
+app.use(authMiddleware);
+
+Router Middleware:
+router.use(authMiddleware);
+
+7. How do you handle errors in Express?
+Express uses Error Handling Middleware.
+Example:
+app.get("/",(req,res,next)=>{
+    try{
+        throw new Error("Something went wrong");
+    }
+    catch(err){
+        next(err);
+    }
+});
+Error middleware:
+app.use((err,req,res,next)=>{
+    res.status(500).json({
+        success:false,
+        message:err.message
+    });
+});
+
+8. What is Express Router?
+Router helps split routes into different files.
+Example:
+routes/
+userRoutes.js
+doctorRoutes.js
+appointmentRoutes.js
+Example:
+const router = express.Router();
+router.get("/", getUsers);
+module.exports = router;
+Main file:
+app.use("/users", userRoutes);
+Benefits:
+Modular code
+Easy maintenance
+Better readability
+
+9. What is CORS?
+CORS stands for Cross-Origin Resource Sharing.
+Browsers block requests coming from different origins.
+Suppose:
+Frontend
+localhost:5173
+Backend
+localhost:3300
+Without CORS:
+Blocked by Browser
+Enable:
+const cors = require("cors");
+app.use(cors());
+Specific origin:
+app.use(cors({
+    origin:"http://localhost:5173",
+    credentials:true
+}));
+
+10. How do you serve static files?
+Use Express Static Middleware.
+Example:
+public/
+images/
+css/
+js/
+app.use(express.static("public"));
+Access:
+localhost:3000/logo.png
+
+11. What is JWT Authentication?
+JWT (JSON Web Token) is a secure way to authenticate users in stateless APIs.
+Flow:
+Login
+↓
+Verify Credentials
+↓
+Generate JWT
+↓
+Send Token
+↓
+Client Stores Token
+↓
+Every Request
+↓
+Verify Token
+↓
+Access Protected Route
+Generate:
+const token = jwt.sign(
+    {id:user._id},
+    SECRET_KEY,
+    {expiresIn:"1d"}
+);
+Verify:
+jwt.verify(token,SECRET_KEY);
+
+12. How do you secure Express APIs?
+Some best practices include:
+JWT Authentication
+Password hashing using bcrypt
+Helmet
+CORS
+Rate Limiting
+Input validation
+HTTPS
+Environment variables
+MongoDB injection prevention
+Parameter validation
+Interview Tip: In my healthcare appointment booking project, I secured APIs using JWT authentication, bcrypt for password hashing, protected middleware for authenticated routes, CORS, and environment variables for sensitive configuration.
+
+13. Difference between Authentication and Authorization
+Authentication		Authorization
+Verifies identity	Verifies permissions
+"Who are you?"		"What can you access?"
+Login			Role checking
+JWT/Login		Admin/User permissions
+
+Example:
+Authentication
+Login Successfully
+Authorization
+Admin can delete doctors
+User cannot
+
+14. What is Helmet?
+Helmet is Express middleware that secures applications by setting various HTTP security headers.
+Install:
+npm install helmet
+Use:
+const helmet = require("helmet");
+app.use(helmet());
+Helmet helps protect against attacks such as clickjacking, MIME-type sniffing, and some cross-site scripting (XSS) scenarios by configuring browser security headers.
+
+15. What is Rate Limiting?
+Rate Limiting restricts the number of requests a client can make in a given time.
+Purpose:
+Prevent DDoS attacks
+Prevent brute-force login attempts
+Avoid API abuse
+Example:
+const rateLimit = require("express-rate-limit");
+const limiter = rateLimit({
+    windowMs:15*60*1000,
+    max:100
+});
+app.use(limiter);
+
+16. Explain Express Request Lifecycle.
+Client Request
+↓
+Express Server
+↓
+Application Middleware
+↓
+Router Middleware
+↓
+Authentication Middleware
+↓
+Controller
+↓
+Database
+↓
+Response
+↓
+Client
+
+Example:
+User Login
+↓
+JWT Middleware
+↓
+Controller
+↓
+MongoDB
+↓
+JSON Response
+
+17. How do you upload files using Express?
+Use Multer middleware.
+Install:
+npm install multer
+Example:
+const multer = require("multer");
+const upload = multer({
+    dest:"uploads/"
+});
+app.post(
+    "/upload",
+    upload.single("image"),
+    (req,res)=>{
+        res.send("Uploaded");
+    }
+);
+
+Use cases:
+Profile pictures
+Doctor certificates
+Medical reports
+PDFs
+
+18. What is Cookie Parser?
+cookie-parser is middleware that reads cookies from the request and makes them available in req.cookies.
+Install:
+npm install cookie-parser
+Use:
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+Access:
+req.cookies.token
+It is commonly used for cookie-based authentication and session management.
+
+19. How do you connect MongoDB with Express?
+Install Mongoose:
+npm install mongoose
+Connection:
+const mongoose = require("mongoose");
+mongoose.connect(process.env.MONGO_URI)
+.then(()=>{
+    console.log("MongoDB Connected");
+})
+.catch((err)=>{
+    console.log(err);
+});
+Store the connection string in a .env file instead of hardcoding it.
+
+20. How do you structure a large Express application?
+A common folder structure is:
+project/
+├── config/
+│   └── db.js
+├── controllers/
+├── middleware/
+├── models/
+├── routes/
+├── services/
+├── utils/
+├── uploads/
+├── .env
+├── app.js
+└── server.js
+
+Responsibilities:
+config/ – Database and app configuration
+controllers/ – Business logic
+middleware/ – Authentication, error handling, logging
+models/ – Mongoose schemas
+routes/ – API endpoints
+services/ – Reusable business logic or integrations (e.g., email, SMS)
+utils/ – Helper functions
+server.js – Starts the server
+app.js – Configures Express, middleware, and routes
+
+This modular architecture improves maintainability, scalability, testing, and collaboration in larger applications.
+
+Interview Tips (Must Remember)
+Know the complete request lifecycle: Client → Middleware → Route → Controller → Database → Response.
+Clearly explain the difference between Authentication and Authorization.
+Understand how JWT, CORS, Helmet, and Rate Limiting work together to secure an API.
+Be able to explain why middleware is used and when to call next().
+If discussing your healthcare appointment booking project, mention that you organized it using routes, controllers, models, middleware, and configuration files, connected MongoDB with Mongoose, and protected APIs using JWT authentication.
+
+What is Express Router?
+Answer:
+Express Router is a feature in Express.js that allows you to organize routes into separate files. Instead of writing all routes in app.js or server.js, you can group related routes (such as users, doctors, or appointments) into individual router files, making the application modular and easier to maintain.
+Example
+userRoutes.js
+const express = require("express");
+const router = express.Router();
+router.get("/", (req, res) => {
+    res.send("All Users");
+});
+router.post("/", (req, res) => {
+    res.send("Create User");
+});
+module.exports = router;
+
+app.js
+const express = require("express");
+const userRoutes = require("./routes/userRoutes");
+
+const app = express();
+app.use("/users", userRoutes);
+app.listen(3000);
+URL Mapping
+GET  /users      → Get all users
+POST /users      → Create a new user
+Advantages
+Organizes routes into separate files.
+Makes the code modular and easier to maintain.
+Improves readability.
+Makes it easier for multiple developers to work on different modules.
+Interview Answer (30 seconds)
+
+**Express Router is used to create modular and organized routes in an Express application. It allows us to separate routes into different files based on features, such as users, doctors, or appointments, making the code cleaner, easier to maintain, and scalable. We create a router using express.Router() and mount it in the main application using app.use().`
+
+Follow-up Interview Question: Why do we use express.Router() instead of defining all routes in app.js?
+Answer: To keep the application modular, avoid a large app.js file, improve maintainability, and make feature-based development easier.
+
+in sort
+What is Express Router? (Short Answer)
+Answer:
+Express Router is used to organize routes into separate files. It helps make the application modular, clean, and easy to maintain. We create a router using express.Router() and connect it to the main app using app.use().
+
+Example:
+const router = express.Router();
+router.get("/", (req, res) => {
+    res.send("Users");
+});
+module.exports = router;
+
+Interview One-liner:
+Express Router is a mini Express application used to group related routes into separate files for better code organization and maintainability.
