@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    
+    <!--Navbar-->
+    <nav class="bg-gray-900 text-white px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">ShopZone</h1>
+
+            <div class="hidden md:flex gap-8">
+                <a href="#" class="hover:text-yellow-400">Home</a>
+                <a href="#" class="hover:text-yellow-400">Products</a>
+                <a href="#" class="hover:text-yellow-400">Categories</a>
+                <a href="#" class="hover:text-yellow-400">Contact</a>
+            </div>
+
+            <div class="text-2xl">
+                🛒
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product -->
+    <section>
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div class="grid md:grid-cols-2">
+
+                <!--Image-->
+                <div class="bg-gray-100 flex items-center justify-center p-12">
+                    <div class="text-9xl">
+                        👟
+                    </div>
+                </div>
+
+                <!--Details-->
+                <div class="p-10">
+                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+                        In Stock
+                    </span>
+                    <h1 class="text-4xl font-bold mt-5">
+                        Premium Running Shoes
+                    </h1>
+                    <div class="flex items-center gap-2 mt-4">
+                        <span class="text-yellow-500">★★★★★</span>
+                        <span class="text-gray-500">(245 Reviews)</span>
+                    </div>
+                    <p class="text-3xl font-bold text-blue-600 mt-6">
+                        ₹2,999
+                    </p>
+                    <p class="text-gray-600 mt-5 leading-7">
+                        Comfortable and lightweight running shoes designed
+                        for everyday workouts, running and walking.
+                    </p>
+
+                    <div class="mt-6">
+                        <h3 class="font-bold mb-3">Select Size</h3>
+                        <div class="flex gap-3">
+                            <button class="border px-5 py-2 rounded-lg hover:bg-blue-600 hover:text-white">7</button>
+                            <button class="border px-5 py-2 rounded-lg hover:bg-blue-600 hover:text-white">8</button>
+                            <button class="border px-5 py-2 rounded-lg hover:bg-blue-600 hover:text-white">9</button>
+                            <button class="border px-5 py-2 rounded-lg hover:bg-blue-600 hover:text-white">10</button>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 mt-8">
+                        <button class="flex-1 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700">
+                            Add to Cart
+                        </button>
+                        <button class="flex-1 bg-orange-500 px-5 py-2 rounded-lg font-semibold hover:bg-orange-600">
+                            Buy Now
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>
