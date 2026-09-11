@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Feed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    
+    <nav class="bg-white shadow p-4">
+        <div class="max-w-3xl mx-auto flex justify-between">
+            <h1 class="text-2xl font-bold text-blue-600">
+                Connect
+            </h1>
+            <div class="text-xl">
+                🔔 👤
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-2xl mx-auto px-4 py-8">
+        <!--Create Post-->
+        <div class="bg-white rounded-xl shadow p-5 mb-6">
+            <div class="flex gap-3">
+                <div class="w-10 h-10 rounded-full bg-blue-500 text-white
+                        flex items-center justify-center">
+                    A
+                </div>
+                <input class="flex-1 bg-gray-100 rounded-full px-5 outline-none"
+                    placeholder="What's on your mind?">
+            </div>
+
+            <div class="border-t mt-5 pt-4 flex justify-around">
+                <button>📷 Photo</button>
+                <button>🎥 Video</button>
+                <button>😊 Feeling</button>
+            </div>
+        </div>
+
+        <!--Post-->
+        <div class="bg-white rounded-xl shadow p-5">
+            <div class="flex gap-3">
+                <div class="w-10 h-10 bg-purple-500 text-white rounded-full
+                        flex items-center justify-center">
+                    R
+                </div>
+                <div>
+                    <h3 class="font-bold">
+                        Rahul Sharma
+                    </h3>
+                    <p class="text-gray-400 text-sm">
+                        2 hours ago
+                    </p>
+                </div>
+            </div>
+            <p class="mt-5">
+               Just completed my first React project!
+                Feeling excited about the journey 🚀 
+            </p>
+            <div class="bg-gray-100 h-64 rounded-xl mt-5 flex items-center justify-center text-7xl">
+                🚀
+            </div>
+            <div class="border-t mt-5 pt-4 flex justify-around">
+                <button class="hover:text-blue-600">
+                    👍 Like
+                </button>
+                <button class="hover:text-blue-600">
+                    💬 Comment
+                </button>
+                <button class="hover:text-blue-600">
+                    ↗ Share
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
