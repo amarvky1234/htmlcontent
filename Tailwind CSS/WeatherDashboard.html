@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen">
+    
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">
+                WeatherNow
+            </h1>
+            <button class="text-gray-600">
+                ⚙️
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+        <!--Search-->
+        <div class="flex gap-3 max-w-xl">
+            <input type="text"
+                placeholder="Search city..."
+                class="flex-1 px-5 py-3 bg-white rounded-xl border outline-none
+                    focus:ring-2 focus:ring-blue-500">
+            <button class="bg-blue-600 text-white px-6 rounded-xl">
+                Search
+            </button>
+        </div>
+
+        <!-- Current Weather -->
+        <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white
+            rounded-3xl p-8 mt-8">
+            <div class="flex flex-col md:flex-row justify-between gap-8">
+                <div>
+                    <p class="text-blue-100">
+                        Hyderabad, India
+                    </p>
+                    <h1 class="text-7xl font-bold mt-4">
+                        29°
+                    </h1>
+                    <p class="text-xl mt-2">
+                        Partly Cloudy
+                    </p>
+                </div>
+                <div class="text-8xl">
+                    🌤️
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-10">
+                <div>
+                    <p class="text-blue-100">Humidity</p>
+                    <p class="text-xl font-bold">68%</p>
+                </div>
+                <div>
+                    <p class="text-blue-100">Wind</p>
+                    <p class="text-xl font-bold">12 km/h</p>
+                </div>
+                <div>
+                    <p class="text-blue-100">Pressure</p>
+                    <p class="text-xl font-bold">1012 hPa</p>
+                </div>
+                <div>
+                    <p class="text-blue-100">Visibility</p>
+                    <p class="text-xl font-bold">8 km</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Forecast-->
+        <h2 class="text-2xl font-bold mt-10 mb-5">
+            5 Day Forecast
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div class="bg-white rounded-xl p-5 text-center shadow">
+                <p class="font-semibold">Mon</p>
+                <div class="text-4xl my-4">☀️</div>
+                <p class="font-bold">31°</p>
+                <p class="text-gray-400">24°</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 text-center shadow">
+                <p class="font-semibold">Tue</p>
+                <div class="text-4xl my-4">🌤️</div>
+                <p class="font-bold">30°</p>
+                <p class="text-gray-400">23°</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 text-center shadow">
+                <p class="font-semibold">Wed</p>
+                <div class="text-4xl my-4">🌧️</div>
+                <p class="font-bold">27°</p>
+                <p class="text-gray-400">22°</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 text-center shadow">
+                <p class="font-semibold">Thu</p>
+                <div class="text-4xl my-4">⛅</div>
+                <p class="font-bold">29°</p>
+                <p class="text-gray-400">23°</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 text-center shadow">
+                <p class="font-semibold">Fri</p>
+                <div class="text-4xl my-4">☀️</div>
+                <p class="font-bold">32°</p>
+                <p class="text-gray-400">25°</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
