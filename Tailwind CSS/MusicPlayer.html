@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-950 text-white min-h-screen">
+
+    <div class="max-w-4xl mx-auto px-6 py-10">
+        <h1 class="text-3xl font-bold">
+            My Music
+        </h1>
+
+        <!--Album-->
+        <div class="mt-10 bg-gray-900 rounded-3xl p-8">
+            <div class="flex flex-col md:flex-row gap-10 items-center">
+                <div class="w-64 h-64 bg-gradient-to-r from-purple-500 to-pink-500
+                        flex items-center justify-center text-8xl shadow-xl">
+                    🎵
+                </div>
+                <div class="flex-1">
+                    <p class="text-gray-400">
+                        NOW PLAYING
+                    </p>
+                    <h2 class="text-4xl font-bold mt-3">
+                        Midnight Dreams
+                    </h2>
+                    <p class="text-gray-400 mt-2">
+                        Alex Morgan
+                    </p>
+
+                    <!-- Progress -->
+                    <div class="mt-10">
+                        <div class="h-2 bg-gray-700 rounded-full">
+                            <div class="h-2 bg-purple-500 rounded-full w-2/3">
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-500 mt-2">
+                            <span>2:34</span>
+                            <span>4:12</span>
+                        </div>
+                    </div>
+
+                    <!--Controls-->
+                    <div class="flex items-center justify-center gap-8 mt-8">
+                        <button class="text-2xl">
+                            ⏮
+                        </button>
+                        <button class="w-14 h-14 rounded-full bg-purple-600 text-2xl">
+                            ▶
+                        </button>
+                        <button class="text-2xl">
+                            ⏭
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Playlist-->
+        <h2 class="text-2xl font-bold mt-10 mb-5">
+            Playlist
+        </h2>
+        <div class="space-y-3">
+            <div class="bg-gray-900 p-4 rounded-xl flex items-center gap-4">
+                <span>01</span>
+                <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center">
+                    🎵
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold">
+                        Midnight Dreams
+                    </h3>
+                    <p class="text-gray-500 text-sm">
+                        Alex Morgan
+                    </p>
+                </div>
+                <span class="text-gray-500">
+                    4:12
+                </span>
+            </div>
+
+            <div class="bg-gray-900 p-4 rounded-xl flex items-center gap-4">
+                <span>02</span>
+                <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                    🎸
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold">
+                        Summer Nights
+                    </h3>
+                    <p class="text-gray-500 text-sm">
+                        John Smith
+                    </p>
+                </div>
+                <span class="text-gray-500">
+                    3:45
+                </span>
+            </div>
+
+            <div class="bg-gray-900 p-4 rounded-xl flex items-center gap-4">
+                <span>02</span>
+                <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
+                    🎹
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold">
+                        Ocean Waves
+                    </h3>
+                    <p class="text-gray-500 text-sm">
+                        Emma Lee
+                    </p>
+                </div>
+                <span class="text-gray-500">
+                    5:02
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
