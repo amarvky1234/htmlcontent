@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    
+    <nav class="bg-white shadow px-6 py-4 flex justify-between">
+        <h1 class="text-2xl font-bold text-blue-600">ShopCart</h1>
+        <span>👤 Account</span>
+    </nav>
+
+    <div class="max-w-6xl mx-auto p-6">
+        <h2 class="text-3xl font-bold mb-6">Shopping Cart</h2>
+
+        <div class="grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 bg-white rounded-xl shadow p-6">
+                <div class="flex gap-5 border-b pb-5">
+                    <div class="w-28 h-28 bg-gray-100 flex items-center justify-center text-5xl">
+                        👟
+                    </div>
+
+                    <div class="flex-1">
+                        <h3 class="font-bold text-xl">Running Shoes</h3>
+                        <p class="text-gray-500">Sports Collection</p>
+                        <p class="font-bold mt-3">₹2,499</p>
+                        <div class="flex gap-3 mt-3">
+                            <button class="border px-3">−</button>
+                            <span>1</span>
+                            <button class="border px-3">+</button>
+                        </div>
+                    </div>
+
+                    <button class="text-red-500">Remove</button>
+                </div>
+
+                <div class="flex gap-5 pt-5">
+                    <div class="w-28 h-28 bg-gray-100 flex items-center justify-center text-5xl">
+                        🎧
+                    </div>
+
+                    <div class="flex-1">
+                        <h3 class="font-bold text-xl">Wireless Headphones</h3>
+                        <p class="text-gray-500">Bluetooth</p>
+                        <p class="font-bold mt-3">₹1,999</p>
+                        <div class="flex gap-3 mt-3">
+                            <button class="border px-3">−</button>
+                            <span>1</span>
+                            <button class="border px-3">+</button>
+                        </div>
+                    </div>
+
+                    <button class="text-red-500">Remove</button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-6 h-fit">
+                <h3 class="text-xl font-bold">Order Summary</h3>
+                <div class="flex justify-between mt-6">
+                    <span>Subtotal</span>
+                    <span>₹4,498</span>
+                </div>
+                <div class="flex justify-between mt-6">
+                    <span>Delivery</span>
+                    <span>₹100</span>
+                </div>
+
+                <hr class="my-5">
+
+                <div class="flex justify-between font-bold text-xl">
+                    <span>Total</span>
+                    <span>₹4,598</span>
+                </div>
+
+                <button class="w-full bg-blue-600 text-white py-3 rounded-lg mt-6">
+                     Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
