@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+   
+    <div class="max-w-7xl mx-auto p-6">
+
+        <div class="flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-bold">Employees</h1>
+                <p class="text-gray-500">Manage your team</p>
+            </div>
+
+            <button class="bg-blue-600 text-white px-5 py-3 rounded-lg">
+                + Add Employee
+            </button>
+        </div>
+
+        <div class="bg-white rounded-xl shadow mt-8">
+            <table class="w-full text-left">
+                <thead class="bg-gray-100">
+                    <th class="p-5">Employee</th>
+                    <th class="p-5">Department</th>
+                    <th class="p-5">Position</th>
+                    <th class="p-5">Status</th>
+                    <th class="p-5">Action</th>
+                </thead>
+
+                <tbody>
+                    <tr class="border-t">
+                        <td class="p-5 font-semibold">Rahul Sharma</td>
+                        <td class="p-5">Engineering</td>
+                        <td class="p-5">Developer</td>
+                        <td class="p-5 text-green-600">Active</td>
+                        <td class="p-5">✏️ 🗑️</td>
+                    </tr>
+                    <tr class="border-t">
+                        <td class="p-5 font-semibold">Priya Singh</td>
+                        <td class="p-5">HR</td>
+                        <td class="p-5">Manager</td>
+                        <td class="p-5 text-green-600">Active</td>
+                        <td class="p-5">✏️ 🗑️</td>
+                    </tr>
+                    <tr class="border-t">
+                        <td class="p-5 font-semibold">Amit Kumar</td>
+                        <td class="p-5">Marketing</td>
+                        <td class="p-5">Executive</td>
+                        <td class="p-5 text-yellow-600">On Leave</td>
+                        <td class="p-5">✏️ 🗑️</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
